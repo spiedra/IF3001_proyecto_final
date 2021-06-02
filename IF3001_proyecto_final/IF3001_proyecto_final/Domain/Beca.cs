@@ -8,9 +8,10 @@ namespace IF3001_proyecto_final.Domain
 {
     class Beca
     {
-        public Beca()
+        public Beca(int id, string tipoBeca)
         {
-
+            this.Id = id;
+            this.TipoBeca = tipoBeca;
         }
 
         public int Id { get; set; }

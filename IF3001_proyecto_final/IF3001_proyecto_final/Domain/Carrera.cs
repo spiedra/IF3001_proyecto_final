@@ -8,9 +8,10 @@ namespace IF3001_proyecto_final.Domain
 {
     class Carrera
     {
-        public Carrera()
+        public Carrera(int id, string nombre)
         {
-
+            this.Id = id;
+            this.Nombre = nombre;
         }
 
         public int Id { get; set; }

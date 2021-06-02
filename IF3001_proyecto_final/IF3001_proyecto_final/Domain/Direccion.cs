@@ -8,9 +8,10 @@ namespace IF3001_proyecto_final.Domain
 {
     class Direccion
     {
-        public Direccion()
+        public Direccion(int id, string detalles)
         {
-
+            this.Id = id;
+            this.Detalles = detalles;
         }
 
         public int Id { get; set; }

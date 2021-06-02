@@ -8,9 +8,14 @@ namespace IF3001_proyecto_final.Domain
 {
     class Estudiante
     {
-        public Estudiante()
+        public Estudiante(int id, string nombre, string apellidos, int edad, string promedio, string carnet)
         {
-
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.Edad = edad;
+            this.Promedio = promedio;
+            this.Carnet = carnet;
         }
 
         public int Id { get; set; }

@@ -8,9 +8,11 @@ namespace IF3001_proyecto_final.Domain
 {
     class Curso
     {
-        public Curso()
+        public Curso(int id, string nombre, int creditos)
         {
-
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Creditos = creditos;
         }
 
         public int Id { get; set; }

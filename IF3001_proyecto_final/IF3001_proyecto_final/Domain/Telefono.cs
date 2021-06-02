@@ -8,9 +8,10 @@ namespace IF3001_proyecto_final.Domain
 {
     class Telefono
     {
-        public Telefono()
+        public Telefono(int id, string numero)
         {
-
+            this.Id = id;
+            this.Numero = numero;
         }
 
         public int Id { get; set; }
