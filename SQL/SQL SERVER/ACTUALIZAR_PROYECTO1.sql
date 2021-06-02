@@ -1,0 +1,67 @@
+CREATE PROCEDURE sp_ACTUALIZAR_ESTUDIANTE
+@param_ID_ESTUDIANTE INT,
+@param_NOMBRE_ESTUDIATE VARCHAR(32),
+@param_APELLIDOS_ESTUDIANTE VARCHAR(32),
+@param_EDAD INT,
+@param_PROMEDIO VARCHAR(32),
+@param_CARNE VARCHAR(32),
+AS
+
+BEGIN
+
+UPDATE tb_ESTUDIANTE
+SET NOMBRE_ESTUDIANTE=@param_NOMBRE_ESTUDIANTE,
+APELLIDOS_ESTUDIANTE=@param_APELLIDOS_ESTUDIANTE,
+EDAD=@param_EDAD,
+PROMEDIO=@param_PROMEDIO,
+CARNE=@param_CARNE WHERE ID_ESTUDIANTE=@param_ESTUDIANTE;
+END
+
+--------------------------------------------------------------------
+CREATE PROCEDURE sp_ACTUALIZAR_CURSO
+@param_ID_CURSO INT,
+@param_NOMBRE_CURSO VARCHAR(32),
+@param_CREDITOS INT
+AS
+
+BEGIN
+
+UPDATE tb_CURSO 
+SET NOMBRE_CURSO=@param_CURSO,
+CREDITOS=@param_CREDITOS 
+WHERE ID_CURSO=@param_ID_CURSO;
+
+END
+
+-----------------------------------------------------------------
+
+CREATE PROCEDURE sp_ACTUALIZAR_CARRERA
+@param_ID_CARRERA INT,
+@param_NOMBRE_CARRERA VARCHAR(32)
+AS
+
+BEGIN
+
+UPDATE tb_CARRERA SET NOMBRE_CARRERA=@param_NOMBRE_CARRERA WHERE ID_CARRERA=@param_ID_CARRERA;
+
+END
+
+------------------------------------------------------------
+
+
+CREATE PROCEDURE sp_ACTUALIZAR_SEDE
+@param_ID_SEDE INT,
+@param_NOMBRE_SEDE VARCHAR(32)
+AS
+
+BEGIN
+
+UPDATE tb_SEDE SET NOMBRE_SEDE=@param_NOMBRE_SEDE WHERE ID_SEDE=@param_ID_SEDE;
+
+END
+
+------------------------------------------------------------
+
+
+
+
