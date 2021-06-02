@@ -1,0 +1,81 @@
+CREATE PROCEDURE sp_INSERTAR_ESTUDIANTE
+@param_NOMBRE_ESTUDIANTE VARCHAR(32),
+@param_APELLIDOS_ESTUDIANTE VARCHAR(32),
+@param_EDAD INT,
+@param_PROMEDIO VARCHAR(32),
+@param_CARNE VARCHAR(32)
+AS
+BEGIN
+
+INSERT INTO tb_ESTUDIANTE VALUES
+
+(
+@param_NOMBRE_ESTUDIANTE,
+@param_APELLIDOS_ESTUDIANTE,
+@param_EDAD,
+@param_PROMEDIO,
+@param_CARNE
+);
+
+END
+
+---------------------------------------------------------
+
+CREATE PROCEDURE sp_INSERTAR_BECA
+@param_TIPO_BECA INT
+AS
+BEGIN
+
+INSERT INTO tb_BECA VALUES
+(
+@param_TIPO_BECA
+);
+
+END
+
+---------------------------------------------------------
+
+CREATE PROCEDURE sp_INSERTAR_CARRERA
+@param_NOMBRE_CARRERA VARCHAR(32)
+AS
+BEGIN
+
+INSERT INTO tb_CARRERA VALUES
+(
+@param_NOMBRE_CARRERA
+)
+
+END
+
+---------------------------------------------------------
+
+CREATE PROCEDURE sp_INSERTAR_CURSO
+@param_NOMBRE_CURSO VARCHAR(32),
+@param_CREDITOS INT
+AS
+BEGIN 
+
+INSERT INTO tb_CURSO VALUES
+(
+ @param_NOMBRE_CURSO,
+ @param_CREDITOS
+);
+
+END
+
+--------------------------------------------------------
+
+CREATE PROCEDURE sp_SEDE
+@param_NOMBRE_SEDE VARCHAR(32)
+AS
+BEGIN
+
+INSERT INTO tb_SEDE VALUES
+(
+@param_NOMBRE_SEDE
+);
+
+END
+
+
+
