@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace IF3001_proyecto_final.Layouts
 {
-    public partial class MainForm : Form
+    public partial class GestionEstudianteForm : Form
     {
-        public MainForm()
+        public GestionEstudianteForm()
         {
             InitializeComponent();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

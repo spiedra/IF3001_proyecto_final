@@ -67,6 +67,7 @@ namespace IF3001_proyecto_final.Layouts
             this.gestionEstudianteToolStripMenuItem.ShowShortcutKeys = false;
             this.gestionEstudianteToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.gestionEstudianteToolStripMenuItem.Text = "&Gestionar Estudiante";
+            this.gestionEstudianteToolStripMenuItem.Click += new System.EventHandler(this.gestionEstudianteToolStripMenuItem_Click);
             // 
             // administracionToolStripMenuItem
             // 
@@ -100,6 +101,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindowForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
