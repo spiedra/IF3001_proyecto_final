@@ -24,7 +24,8 @@ namespace IF3001_proyecto_final.Layouts
 
         private void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
+            gestionEstudianteForm.Show();
         }
     }
 }

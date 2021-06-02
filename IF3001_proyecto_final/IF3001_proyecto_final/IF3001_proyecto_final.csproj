@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <None Remove="Domain\Beca.cs~RFd90281.TMP" />
+    <None Remove="Domain\Carrera.cs~RFdb24d4.TMP" />
+    <None Remove="Domain\Estudiante.cs~RFd772c9.TMP" />
+    <None Remove="Domain\Sede.cs~RFdbf11d.TMP" />
+    <None Remove="Domain\Telefono.cs~RFd9e84d.TMP" />
+    <None Remove="Layouts\GestionEstudianteForm.cs~RFce69bc.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Business\" />
     <Folder Include="Utility\" />
