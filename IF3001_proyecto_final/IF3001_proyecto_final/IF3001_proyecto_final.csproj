@@ -7,17 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Business\BecaBusiness.cs~RFe7537b.TMP" />
     <None Remove="Domain\Beca.cs~RFd90281.TMP" />
     <None Remove="Domain\Carrera.cs~RFdb24d4.TMP" />
+    <None Remove="Domain\Carrera.cs~RFe1d21e.TMP" />
+    <None Remove="Domain\Curso.cs~RFdebb0b.TMP" />
+    <None Remove="Domain\Direccion.cs~RFe2f225.TMP" />
     <None Remove="Domain\Estudiante.cs~RFd772c9.TMP" />
     <None Remove="Domain\Sede.cs~RFdbf11d.TMP" />
+    <None Remove="Domain\Sede.cs~RFdf2713.TMP" />
     <None Remove="Domain\Telefono.cs~RFd9e84d.TMP" />
     <None Remove="Layouts\GestionEstudianteForm.cs~RFce69bc.TMP" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Business\" />
     <Folder Include="Utility\" />
   </ItemGroup>
 
