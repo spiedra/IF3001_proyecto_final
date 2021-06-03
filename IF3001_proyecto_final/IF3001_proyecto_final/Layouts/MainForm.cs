@@ -27,5 +27,11 @@ namespace IF3001_proyecto_final.Layouts
             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
             gestionEstudianteForm.Show();
         }
+
+        private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionCarreraForm gestionCarreraForm = new GestionCarreraForm();
+            gestionCarreraForm.Show();
+        }
     }
 }
