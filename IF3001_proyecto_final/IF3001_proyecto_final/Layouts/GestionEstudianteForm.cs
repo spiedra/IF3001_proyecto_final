@@ -16,5 +16,10 @@ namespace IF3001_proyecto_final.Layouts
         {
             InitializeComponent();
         }
+
+        private void GestionEstudianteForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
