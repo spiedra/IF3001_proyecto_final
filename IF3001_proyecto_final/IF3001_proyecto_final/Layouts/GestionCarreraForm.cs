@@ -23,7 +23,6 @@ namespace IF3001_proyecto_final.Layouts
             {
                 MessageBox.Show("Button on row {0} clicked" + e.RowIndex);
             }
-            MessageBox.Show("B");
         }
     }
 }
