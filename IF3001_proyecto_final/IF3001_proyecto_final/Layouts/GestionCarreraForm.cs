@@ -17,9 +17,13 @@ namespace IF3001_proyecto_final.Layouts
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grid_carrera_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.ColumnIndex == grid_carrera.Columns["btn_modificar"].Index && e.RowIndex >= 0)
+            {
+                MessageBox.Show("Button on row {0} clicked" + e.RowIndex);
+            }
+            MessageBox.Show("B");
         }
     }
 }

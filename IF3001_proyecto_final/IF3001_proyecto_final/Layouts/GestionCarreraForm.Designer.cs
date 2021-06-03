@@ -34,14 +34,14 @@ namespace IF3001_proyecto_final.Layouts
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid_carrera = new System.Windows.Forms.DataGridView();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_carrera)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,7 +83,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.grid_carrera);
             this.groupBox2.Location = new System.Drawing.Point(23, 240);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(643, 328);
@@ -91,20 +91,21 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar y eliminar carrera";
             // 
-            // dataGridView1
+            // grid_carrera
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grid_carrera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_carrera.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.column_id,
             this.column_nombre,
             this.btn_modificar,
             this.btn_eliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 249);
-            this.dataGridView1.TabIndex = 0;
+            this.grid_carrera.Location = new System.Drawing.Point(18, 43);
+            this.grid_carrera.Name = "grid_carrera";
+            this.grid_carrera.RowHeadersWidth = 51;
+            this.grid_carrera.RowTemplate.Height = 29;
+            this.grid_carrera.Size = new System.Drawing.Size(579, 249);
+            this.grid_carrera.TabIndex = 0;
+            this.grid_carrera.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_carrera_CellContentClick);
             // 
             // column_id
             // 
@@ -155,7 +156,7 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_carrera)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,7 +168,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button btn_agregar_carrera;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_nombre;
         private System.Windows.Forms.DataGridViewButtonColumn btn_modificar;
