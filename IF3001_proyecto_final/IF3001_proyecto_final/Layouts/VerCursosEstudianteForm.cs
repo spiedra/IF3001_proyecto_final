@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace IF3001_proyecto_final.Layouts
 {
-    public partial class GestionEstudianteForm : Form
+    public partial class VerCursosEstudianteForm : Form
     {
-        public GestionEstudianteForm()
+        public VerCursosEstudianteForm()
         {
             InitializeComponent();
         }
 
-        private void GestionEstudianteForm_Load(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
+        private void VerCursosEstudianteForm_Load(object sender, EventArgs e)
         {
 
         }

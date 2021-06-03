@@ -29,27 +29,25 @@ namespace IF3001_proyecto_final.Layouts
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.gp_registro_estudiantes = new System.Windows.Forms.GroupBox();
+            this.btn_agregar_estudiante = new System.Windows.Forms.Button();
+            this.txt_carne = new System.Windows.Forms.TextBox();
+            this.lbl_carne = new System.Windows.Forms.Label();
+            this.txt_promedio = new System.Windows.Forms.TextBox();
+            this.lbl_promedio = new System.Windows.Forms.Label();
+            this.txt_edad = new System.Windows.Forms.TextBox();
+            this.lbl_edad = new System.Windows.Forms.Label();
+            this.txt_apellidos = new System.Windows.Forms.TextBox();
+            this.lbl_apellidos = new System.Windows.Forms.Label();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.lbl_nombre = new System.Windows.Forms.Label();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lvl_carne_buscar = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.gp_lista_estudiantes = new System.Windows.Forms.GroupBox();
+            this.btn_ver_carrera = new System.Windows.Forms.Button();
+            this.btn_ver_cursos = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,128 +58,130 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
+            this.gp_registro_estudiantes.SuspendLayout();
+            this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gp_registro_estudiantes
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(32, 29);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 273);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Registro de estudiantes";
+            this.gp_registro_estudiantes.Controls.Add(this.btn_agregar_estudiante);
+            this.gp_registro_estudiantes.Controls.Add(this.txt_carne);
+            this.gp_registro_estudiantes.Controls.Add(this.lbl_carne);
+            this.gp_registro_estudiantes.Controls.Add(this.txt_promedio);
+            this.gp_registro_estudiantes.Controls.Add(this.lbl_promedio);
+            this.gp_registro_estudiantes.Controls.Add(this.txt_edad);
+            this.gp_registro_estudiantes.Controls.Add(this.lbl_edad);
+            this.gp_registro_estudiantes.Controls.Add(this.txt_apellidos);
+            this.gp_registro_estudiantes.Controls.Add(this.lbl_apellidos);
+            this.gp_registro_estudiantes.Controls.Add(this.txt_nombre);
+            this.gp_registro_estudiantes.Controls.Add(this.lbl_nombre);
+            this.gp_registro_estudiantes.Location = new System.Drawing.Point(32, 29);
+            this.gp_registro_estudiantes.Name = "gp_registro_estudiantes";
+            this.gp_registro_estudiantes.Size = new System.Drawing.Size(486, 273);
+            this.gp_registro_estudiantes.TabIndex = 0;
+            this.gp_registro_estudiantes.TabStop = false;
+            this.gp_registro_estudiantes.Text = "Registro de estudiantes";
             // 
-            // button1
+            // btn_agregar_estudiante
             // 
-            this.button1.Location = new System.Drawing.Point(337, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 31);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Agregar estudiante";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_agregar_estudiante.Location = new System.Drawing.Point(214, 205);
+            this.btn_agregar_estudiante.Name = "btn_agregar_estudiante";
+            this.btn_agregar_estudiante.Size = new System.Drawing.Size(153, 31);
+            this.btn_agregar_estudiante.TabIndex = 10;
+            this.btn_agregar_estudiante.Text = "Agregar estudiante";
+            this.btn_agregar_estudiante.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txt_carne
             // 
-            this.textBox5.Location = new System.Drawing.Point(227, 208);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(86, 27);
-            this.textBox5.TabIndex = 9;
+            this.txt_carne.Location = new System.Drawing.Point(104, 209);
+            this.txt_carne.Name = "txt_carne";
+            this.txt_carne.Size = new System.Drawing.Size(86, 27);
+            this.txt_carne.TabIndex = 9;
             // 
-            // label5
+            // lbl_carne
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(142, 208);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Carné:";
+            this.lbl_carne.AutoSize = true;
+            this.lbl_carne.Location = new System.Drawing.Point(19, 209);
+            this.lbl_carne.Name = "lbl_carne";
+            this.lbl_carne.Size = new System.Drawing.Size(50, 20);
+            this.lbl_carne.TabIndex = 8;
+            this.lbl_carne.Text = "Carné:";
             // 
-            // textBox4
+            // txt_promedio
             // 
-            this.textBox4.Location = new System.Drawing.Point(433, 125);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 7;
+            this.txt_promedio.Location = new System.Drawing.Point(310, 126);
+            this.txt_promedio.Name = "txt_promedio";
+            this.txt_promedio.Size = new System.Drawing.Size(125, 27);
+            this.txt_promedio.TabIndex = 7;
             // 
-            // label4
+            // lbl_promedio
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Promedio:";
+            this.lbl_promedio.AutoSize = true;
+            this.lbl_promedio.Location = new System.Drawing.Point(214, 126);
+            this.lbl_promedio.Name = "lbl_promedio";
+            this.lbl_promedio.Size = new System.Drawing.Size(77, 20);
+            this.lbl_promedio.TabIndex = 6;
+            this.lbl_promedio.Text = "Promedio:";
             // 
-            // textBox3
+            // txt_edad
             // 
-            this.textBox3.Location = new System.Drawing.Point(227, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(86, 27);
-            this.textBox3.TabIndex = 5;
+            this.txt_edad.Location = new System.Drawing.Point(104, 126);
+            this.txt_edad.Name = "txt_edad";
+            this.txt_edad.Size = new System.Drawing.Size(86, 27);
+            this.txt_edad.TabIndex = 5;
             // 
-            // label3
+            // lbl_edad
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Edad:";
+            this.lbl_edad.AutoSize = true;
+            this.lbl_edad.Location = new System.Drawing.Point(19, 126);
+            this.lbl_edad.Name = "lbl_edad";
+            this.lbl_edad.Size = new System.Drawing.Size(46, 20);
+            this.lbl_edad.TabIndex = 4;
+            this.lbl_edad.Text = "Edad:";
             // 
-            // textBox2
+            // txt_apellidos
             // 
-            this.textBox2.Location = new System.Drawing.Point(433, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 3;
+            this.txt_apellidos.Location = new System.Drawing.Point(310, 53);
+            this.txt_apellidos.Name = "txt_apellidos";
+            this.txt_apellidos.Size = new System.Drawing.Size(125, 27);
+            this.txt_apellidos.TabIndex = 3;
             // 
-            // label2
+            // lbl_apellidos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(337, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Apellidos:";
+            this.lbl_apellidos.AutoSize = true;
+            this.lbl_apellidos.Location = new System.Drawing.Point(214, 53);
+            this.lbl_apellidos.Name = "lbl_apellidos";
+            this.lbl_apellidos.Size = new System.Drawing.Size(75, 20);
+            this.lbl_apellidos.TabIndex = 2;
+            this.lbl_apellidos.Text = "Apellidos:";
             // 
-            // textBox1
+            // txt_nombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(227, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 27);
-            this.textBox1.TabIndex = 1;
+            this.txt_nombre.Location = new System.Drawing.Point(104, 53);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(86, 27);
+            this.txt_nombre.TabIndex = 1;
             // 
-            // label1
+            // lbl_nombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre:";
+            this.lbl_nombre.AutoSize = true;
+            this.lbl_nombre.Location = new System.Drawing.Point(19, 53);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(67, 20);
+            this.lbl_nombre.TabIndex = 0;
+            this.lbl_nombre.Text = "Nombre:";
             // 
-            // button2
+            // btn_buscar
             // 
-            this.button2.Location = new System.Drawing.Point(245, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_buscar.Location = new System.Drawing.Point(245, 36);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(94, 29);
+            this.btn_buscar.TabIndex = 2;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
             // 
             // textBox6
             // 
@@ -190,67 +190,50 @@ namespace IF3001_proyecto_final.Layouts
             this.textBox6.Size = new System.Drawing.Size(125, 27);
             this.textBox6.TabIndex = 1;
             // 
-            // label6
+            // lvl_carne_buscar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Carné:";
+            this.lvl_carne_buscar.AutoSize = true;
+            this.lvl_carne_buscar.Location = new System.Drawing.Point(25, 40);
+            this.lvl_carne_buscar.Name = "lvl_carne_buscar";
+            this.lvl_carne_buscar.Size = new System.Drawing.Size(50, 20);
+            this.lvl_carne_buscar.TabIndex = 0;
+            this.lvl_carne_buscar.Text = "Carné:";
             // 
-            // groupBox3
+            // gp_lista_estudiantes
             // 
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(32, 327);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1213, 258);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lista de estudiantes";
+            this.gp_lista_estudiantes.Controls.Add(this.btn_ver_carrera);
+            this.gp_lista_estudiantes.Controls.Add(this.btn_ver_cursos);
+            this.gp_lista_estudiantes.Controls.Add(this.button4);
+            this.gp_lista_estudiantes.Controls.Add(this.btn_modificar);
+            this.gp_lista_estudiantes.Controls.Add(this.btn_buscar);
+            this.gp_lista_estudiantes.Controls.Add(this.dataGridView1);
+            this.gp_lista_estudiantes.Controls.Add(this.textBox6);
+            this.gp_lista_estudiantes.Controls.Add(this.lvl_carne_buscar);
+            this.gp_lista_estudiantes.Location = new System.Drawing.Point(32, 327);
+            this.gp_lista_estudiantes.Name = "gp_lista_estudiantes";
+            this.gp_lista_estudiantes.Size = new System.Drawing.Size(1006, 258);
+            this.gp_lista_estudiantes.TabIndex = 2;
+            this.gp_lista_estudiantes.TabStop = false;
+            this.gp_lista_estudiantes.Text = "Lista de estudiantes";
+            this.gp_lista_estudiantes.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // button6
+            // btn_ver_carrera
             // 
-            this.button6.Location = new System.Drawing.Point(503, 35);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 31);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Ver carrera";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_ver_carrera.Location = new System.Drawing.Point(503, 35);
+            this.btn_ver_carrera.Name = "btn_ver_carrera";
+            this.btn_ver_carrera.Size = new System.Drawing.Size(94, 31);
+            this.btn_ver_carrera.TabIndex = 6;
+            this.btn_ver_carrera.Text = "Ver carrera";
+            this.btn_ver_carrera.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_ver_cursos
             // 
-            this.button5.Location = new System.Drawing.Point(375, 35);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 29);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Ver cursos";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(750, 36);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 29);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(630, 36);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Modificar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_ver_cursos.Location = new System.Drawing.Point(375, 35);
+            this.btn_ver_cursos.Name = "btn_ver_cursos";
+            this.btn_ver_cursos.Size = new System.Drawing.Size(94, 29);
+            this.btn_ver_cursos.TabIndex = 5;
+            this.btn_ver_cursos.Text = "Ver cursos";
+            this.btn_ver_cursos.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -272,7 +255,7 @@ namespace IF3001_proyecto_final.Layouts
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1178, 116);
+            this.dataGridView1.Size = new System.Drawing.Size(964, 154);
             this.dataGridView1.TabIndex = 0;
             // 
             // ID
@@ -281,7 +264,7 @@ namespace IF3001_proyecto_final.Layouts
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 125;
+            this.ID.Width = 50;
             // 
             // Nombre
             // 
@@ -305,7 +288,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Edad.MinimumWidth = 6;
             this.Edad.Name = "Edad";
             this.Edad.ReadOnly = true;
-            this.Edad.Width = 125;
+            this.Edad.Width = 50;
             // 
             // Carné
             // 
@@ -313,7 +296,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Carné.MinimumWidth = 6;
             this.Carné.Name = "Carné";
             this.Carné.ReadOnly = true;
-            this.Carné.Width = 125;
+            this.Carné.Width = 70;
             // 
             // Promedio
             // 
@@ -321,7 +304,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Promedio.MinimumWidth = 6;
             this.Promedio.Name = "Promedio";
             this.Promedio.ReadOnly = true;
-            this.Promedio.Width = 125;
+            this.Promedio.Width = 80;
             // 
             // Beca
             // 
@@ -329,7 +312,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca.MinimumWidth = 6;
             this.Beca.Name = "Beca";
             this.Beca.ReadOnly = true;
-            this.Beca.Width = 125;
+            this.Beca.Width = 50;
             // 
             // Sede
             // 
@@ -337,7 +320,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Sede.MinimumWidth = 6;
             this.Sede.Name = "Sede";
             this.Sede.ReadOnly = true;
-            this.Sede.Width = 125;
             // 
             // Direccion
             // 
@@ -347,21 +329,39 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(750, 36);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 29);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Eliminar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.Location = new System.Drawing.Point(630, 36);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(94, 29);
+            this.btn_modificar.TabIndex = 3;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = true;
+            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 615);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gp_lista_estudiantes);
+            this.Controls.Add(this.gp_registro_estudiantes);
             this.Name = "GestionEstudianteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionEstudianteForm";
             this.Load += new System.EventHandler(this.GestionEstudianteForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gp_registro_estudiantes.ResumeLayout(false);
+            this.gp_registro_estudiantes.PerformLayout();
+            this.gp_lista_estudiantes.ResumeLayout(false);
+            this.gp_lista_estudiantes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -369,28 +369,26 @@ namespace IF3001_proyecto_final.Layouts
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox gp_registro_estudiantes;
+        private System.Windows.Forms.Button btn_agregar_estudiante;
+        private System.Windows.Forms.TextBox txt_carne;
+        private System.Windows.Forms.Label lbl_carne;
+        private System.Windows.Forms.TextBox txt_promedio;
+        private System.Windows.Forms.Label lbl_promedio;
+        private System.Windows.Forms.TextBox txt_edad;
+        private System.Windows.Forms.Label lbl_edad;
+        private System.Windows.Forms.TextBox txt_apellidos;
+        private System.Windows.Forms.Label lbl_apellidos;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Label lbl_nombre;
+        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lvl_carne_buscar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gp_lista_estudiantes;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_ver_cursos;
+        private System.Windows.Forms.Button btn_ver_carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
@@ -400,5 +398,8 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.DataGridViewTextBoxColumn Beca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sede;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.Button _;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_modificar;
     }
 }
