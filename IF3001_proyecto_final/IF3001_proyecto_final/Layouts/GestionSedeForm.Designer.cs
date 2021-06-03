@@ -34,14 +34,14 @@ namespace IF3001_proyecto_final.Layouts
             this.txtb_nombre_sede = new System.Windows.Forms.TextBox();
             this.btn_agregar_sede = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid_sede = new System.Windows.Forms.DataGridView();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.column_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sede)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,7 +83,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.grid_sede);
             this.groupBox2.Location = new System.Drawing.Point(12, 187);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(625, 241);
@@ -91,20 +91,20 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar y eliminar sede";
             // 
-            // dataGridView1
+            // grid_sede
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grid_sede.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_sede.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.column_id,
             this.column_nombre,
             this.column_modificar,
             this.column_eliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(578, 198);
-            this.dataGridView1.TabIndex = 2;
+            this.grid_sede.Location = new System.Drawing.Point(16, 26);
+            this.grid_sede.Name = "grid_sede";
+            this.grid_sede.RowHeadersWidth = 51;
+            this.grid_sede.RowTemplate.Height = 29;
+            this.grid_sede.Size = new System.Drawing.Size(578, 198);
+            this.grid_sede.TabIndex = 2;
             // 
             // column_id
             // 
@@ -153,7 +153,7 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sede)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,7 +165,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.TextBox txtb_nombre_sede;
         private System.Windows.Forms.Label lb_nombre_sede;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_sede;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_nombre;
         private System.Windows.Forms.DataGridViewButtonColumn column_modificar;
