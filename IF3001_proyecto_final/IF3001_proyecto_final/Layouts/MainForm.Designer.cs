@@ -85,6 +85,7 @@ namespace IF3001_proyecto_final.Layouts
             this.gestionCarreraToolStripMenuItem.ShowShortcutKeys = false;
             this.gestionCarreraToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.gestionCarreraToolStripMenuItem.Text = "&Gestionar Carrera";
+            this.gestionCarreraToolStripMenuItem.Click += new System.EventHandler(this.gestionCarreraToolStripMenuItem_Click);
             // 
             // gestionCursotoolStripMenuItem1
             // 
