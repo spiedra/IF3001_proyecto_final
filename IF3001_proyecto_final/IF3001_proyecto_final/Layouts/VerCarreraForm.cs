@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace IF3001_proyecto_final.Layouts
 {
-    public partial class GestionEstudianteForm : Form
+    public partial class VerCarreraForm : Form
     {
-        public GestionEstudianteForm()
+        public VerCarreraForm()
         {
             InitializeComponent();
         }
 
-        private void GestionEstudianteForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
