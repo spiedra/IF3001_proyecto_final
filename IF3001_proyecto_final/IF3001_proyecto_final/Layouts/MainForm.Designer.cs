@@ -36,6 +36,8 @@ namespace IF3001_proyecto_final.Layouts
             this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCarreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCursotoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionSedetoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionBecaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +75,9 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionCarreraToolStripMenuItem,
-            this.gestionCursotoolStripMenuItem1});
+            this.gestionCursotoolStripMenuItem1,
+            this.gestionSedetoolStripMenuItem1,
+            this.gestionBecaToolStripMenuItem1});
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             this.administracionToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.administracionToolStripMenuItem.Text = "&Administración";
@@ -93,6 +97,23 @@ namespace IF3001_proyecto_final.Layouts
             this.gestionCursotoolStripMenuItem1.Name = "gestionCursotoolStripMenuItem1";
             this.gestionCursotoolStripMenuItem1.Size = new System.Drawing.Size(198, 26);
             this.gestionCursotoolStripMenuItem1.Text = "Gestión Curso";
+            this.gestionCursotoolStripMenuItem1.Click += new System.EventHandler(this.gestionCursotoolStripMenuItem1_Click);
+            // 
+            // gestionSedetoolStripMenuItem1
+            // 
+            this.gestionSedetoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("gestionSedetoolStripMenuItem1.Image")));
+            this.gestionSedetoolStripMenuItem1.Name = "gestionSedetoolStripMenuItem1";
+            this.gestionSedetoolStripMenuItem1.Size = new System.Drawing.Size(198, 26);
+            this.gestionSedetoolStripMenuItem1.Text = "Gestión Sede";
+            this.gestionSedetoolStripMenuItem1.Click += new System.EventHandler(this.gestionSedetoolStripMenuItem1_Click);
+            // 
+            // gestionBecaToolStripMenuItem1
+            // 
+            this.gestionBecaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("gestionBecaToolStripMenuItem1.Image")));
+            this.gestionBecaToolStripMenuItem1.Name = "gestionBecaToolStripMenuItem1";
+            this.gestionBecaToolStripMenuItem1.Size = new System.Drawing.Size(198, 26);
+            this.gestionBecaToolStripMenuItem1.Text = "Gestión beca";
+            this.gestionBecaToolStripMenuItem1.Click += new System.EventHandler(this.gestionBecaToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -122,5 +143,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.ToolStripMenuItem gestionEstudianteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCarreraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCursotoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gestionSedetoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gestionBecaToolStripMenuItem1;
     }
 }

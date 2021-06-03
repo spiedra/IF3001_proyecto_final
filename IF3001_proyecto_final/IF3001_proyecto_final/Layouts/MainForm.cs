@@ -33,5 +33,23 @@ namespace IF3001_proyecto_final.Layouts
             GestionCarreraForm gestionCarreraForm = new GestionCarreraForm();
             gestionCarreraForm.Show();
         }
+
+        private void gestionCursotoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GestionCursoForm gestionCursoForm = new GestionCursoForm();
+            gestionCursoForm.Show();
+        }
+
+        private void gestionSedetoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GestionSedeForm gestionSedeForm = new GestionSedeForm();
+            gestionSedeForm.Show();
+        }
+
+        private void gestionBecaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GestionBecaForm gestionBecaForm = new GestionBecaForm();
+            gestionBecaForm.Show();
+        }
     }
 }

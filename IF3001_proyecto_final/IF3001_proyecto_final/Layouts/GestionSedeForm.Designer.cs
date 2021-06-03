@@ -30,9 +30,9 @@ namespace IF3001_proyecto_final.Layouts
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lb_nombre_sede = new System.Windows.Forms.Label();
-            this.txtb_nombre_sede = new System.Windows.Forms.TextBox();
             this.btn_agregar_sede = new System.Windows.Forms.Button();
+            this.txtb_nombre_sede = new System.Windows.Forms.TextBox();
+            this.lb_nombre_sede = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grid_sede = new System.Windows.Forms.DataGridView();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,28 +49,12 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox1.Controls.Add(this.btn_agregar_sede);
             this.groupBox1.Controls.Add(this.txtb_nombre_sede);
             this.groupBox1.Controls.Add(this.lb_nombre_sede);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(318, 157);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar sede";
-            // 
-            // lb_nombre_sede
-            // 
-            this.lb_nombre_sede.AutoSize = true;
-            this.lb_nombre_sede.Location = new System.Drawing.Point(17, 39);
-            this.lb_nombre_sede.Name = "lb_nombre_sede";
-            this.lb_nombre_sede.Size = new System.Drawing.Size(102, 20);
-            this.lb_nombre_sede.TabIndex = 0;
-            this.lb_nombre_sede.Text = "Nombre sede:";
-            // 
-            // txtb_nombre_sede
-            // 
-            this.txtb_nombre_sede.Location = new System.Drawing.Point(125, 39);
-            this.txtb_nombre_sede.Name = "txtb_nombre_sede";
-            this.txtb_nombre_sede.Size = new System.Drawing.Size(157, 27);
-            this.txtb_nombre_sede.TabIndex = 1;
             // 
             // btn_agregar_sede
             // 
@@ -81,12 +65,28 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_agregar_sede.Text = "Agregar";
             this.btn_agregar_sede.UseVisualStyleBackColor = true;
             // 
+            // txtb_nombre_sede
+            // 
+            this.txtb_nombre_sede.Location = new System.Drawing.Point(125, 39);
+            this.txtb_nombre_sede.Name = "txtb_nombre_sede";
+            this.txtb_nombre_sede.Size = new System.Drawing.Size(157, 27);
+            this.txtb_nombre_sede.TabIndex = 1;
+            // 
+            // lb_nombre_sede
+            // 
+            this.lb_nombre_sede.AutoSize = true;
+            this.lb_nombre_sede.Location = new System.Drawing.Point(17, 39);
+            this.lb_nombre_sede.Name = "lb_nombre_sede";
+            this.lb_nombre_sede.Size = new System.Drawing.Size(102, 20);
+            this.lb_nombre_sede.TabIndex = 0;
+            this.lb_nombre_sede.Text = "Nombre sede:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.grid_sede);
-            this.groupBox2.Location = new System.Drawing.Point(12, 187);
+            this.groupBox2.Location = new System.Drawing.Point(12, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(625, 241);
+            this.groupBox2.Size = new System.Drawing.Size(624, 346);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar y eliminar sede";
@@ -103,7 +103,7 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_sede.Name = "grid_sede";
             this.grid_sede.RowHeadersWidth = 51;
             this.grid_sede.RowTemplate.Height = 29;
-            this.grid_sede.Size = new System.Drawing.Size(578, 198);
+            this.grid_sede.Size = new System.Drawing.Size(578, 295);
             this.grid_sede.TabIndex = 2;
             // 
             // column_id
@@ -144,7 +144,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 451);
+            this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestionSedeForm";

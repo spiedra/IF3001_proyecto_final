@@ -147,7 +147,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 600);
+            this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestionCarreraForm";

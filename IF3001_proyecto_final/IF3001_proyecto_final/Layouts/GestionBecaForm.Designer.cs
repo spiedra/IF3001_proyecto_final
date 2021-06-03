@@ -31,14 +31,14 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grid_beca = new System.Windows.Forms.DataGridView();
-            this.gbx_agregar_carrera = new System.Windows.Forms.GroupBox();
-            this.btn_agregar_carrera = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lb_tipo_beca = new System.Windows.Forms.Label();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gbx_agregar_carrera = new System.Windows.Forms.GroupBox();
+            this.btn_agregar_carrera = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lb_tipo_beca = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_beca)).BeginInit();
             this.gbx_agregar_carrera.SuspendLayout();
@@ -49,7 +49,7 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox2.Controls.Add(this.grid_beca);
             this.groupBox2.Location = new System.Drawing.Point(12, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 328);
+            this.groupBox2.Size = new System.Drawing.Size(643, 344);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar y eliminar beca";
@@ -66,8 +66,44 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_beca.Name = "grid_beca";
             this.grid_beca.RowHeadersWidth = 51;
             this.grid_beca.RowTemplate.Height = 29;
-            this.grid_beca.Size = new System.Drawing.Size(580, 249);
+            this.grid_beca.Size = new System.Drawing.Size(580, 268);
             this.grid_beca.TabIndex = 0;
+            // 
+            // column_id
+            // 
+            this.column_id.HeaderText = "ID";
+            this.column_id.MinimumWidth = 6;
+            this.column_id.Name = "column_id";
+            this.column_id.ReadOnly = true;
+            this.column_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.column_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.column_id.Width = 125;
+            // 
+            // column_nombre
+            // 
+            this.column_nombre.HeaderText = "Tipo de beca";
+            this.column_nombre.MinimumWidth = 6;
+            this.column_nombre.Name = "column_nombre";
+            this.column_nombre.ReadOnly = true;
+            this.column_nombre.Width = 150;
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.HeaderText = "Modificar";
+            this.btn_modificar.MinimumWidth = 6;
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.Width = 125;
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.HeaderText = "Elminar";
+            this.btn_eliminar.MinimumWidth = 6;
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.Width = 125;
             // 
             // gbx_agregar_carrera
             // 
@@ -106,50 +142,15 @@ namespace IF3001_proyecto_final.Layouts
             this.lb_tipo_beca.TabIndex = 0;
             this.lb_tipo_beca.Text = "Tipo de beca:";
             // 
-            // column_id
-            // 
-            this.column_id.HeaderText = "ID";
-            this.column_id.MinimumWidth = 6;
-            this.column_id.Name = "column_id";
-            this.column_id.ReadOnly = true;
-            this.column_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.column_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.column_id.Width = 125;
-            // 
-            // column_nombre
-            // 
-            this.column_nombre.HeaderText = "Tipo de beca";
-            this.column_nombre.MinimumWidth = 6;
-            this.column_nombre.Name = "column_nombre";
-            this.column_nombre.ReadOnly = true;
-            this.column_nombre.Width = 150;
-            // 
-            // btn_modificar
-            // 
-            this.btn_modificar.HeaderText = "Modificar";
-            this.btn_modificar.MinimumWidth = 6;
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Text = "Modificar";
-            this.btn_modificar.Width = 125;
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.HeaderText = "Elminar";
-            this.btn_eliminar.MinimumWidth = 6;
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.Width = 125;
-            // 
             // GestionBecaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 541);
+            this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbx_agregar_carrera);
             this.Name = "GestionBecaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionBecaForm";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_beca)).EndInit();

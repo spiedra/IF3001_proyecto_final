@@ -31,17 +31,17 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grid_beca = new System.Windows.Forms.DataGridView();
-            this.gbx_agregar_carrera = new System.Windows.Forms.GroupBox();
-            this.btn_agregar_carrera = new System.Windows.Forms.Button();
-            this.tbx_nombre_curso = new System.Windows.Forms.TextBox();
-            this.lb_nombre_curso = new System.Windows.Forms.Label();
-            this.lb_creditos = new System.Windows.Forms.Label();
-            this.tbx_creditos = new System.Windows.Forms.TextBox();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_nombre_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_creditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gbx_agregar_carrera = new System.Windows.Forms.GroupBox();
+            this.tbx_creditos = new System.Windows.Forms.TextBox();
+            this.lb_creditos = new System.Windows.Forms.Label();
+            this.btn_agregar_carrera = new System.Windows.Forms.Button();
+            this.tbx_nombre_curso = new System.Windows.Forms.TextBox();
+            this.lb_nombre_curso = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_beca)).BeginInit();
             this.gbx_agregar_carrera.SuspendLayout();
@@ -72,61 +72,6 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_beca.RowTemplate.Height = 29;
             this.grid_beca.Size = new System.Drawing.Size(704, 249);
             this.grid_beca.TabIndex = 0;
-            // 
-            // gbx_agregar_carrera
-            // 
-            this.gbx_agregar_carrera.Controls.Add(this.tbx_creditos);
-            this.gbx_agregar_carrera.Controls.Add(this.lb_creditos);
-            this.gbx_agregar_carrera.Controls.Add(this.btn_agregar_carrera);
-            this.gbx_agregar_carrera.Controls.Add(this.tbx_nombre_curso);
-            this.gbx_agregar_carrera.Controls.Add(this.lb_nombre_curso);
-            this.gbx_agregar_carrera.Location = new System.Drawing.Point(12, 12);
-            this.gbx_agregar_carrera.Name = "gbx_agregar_carrera";
-            this.gbx_agregar_carrera.Size = new System.Drawing.Size(379, 202);
-            this.gbx_agregar_carrera.TabIndex = 4;
-            this.gbx_agregar_carrera.TabStop = false;
-            this.gbx_agregar_carrera.Text = "Agregar beca";
-            // 
-            // btn_agregar_carrera
-            // 
-            this.btn_agregar_carrera.Location = new System.Drawing.Point(155, 151);
-            this.btn_agregar_carrera.Name = "btn_agregar_carrera";
-            this.btn_agregar_carrera.Size = new System.Drawing.Size(134, 29);
-            this.btn_agregar_carrera.TabIndex = 2;
-            this.btn_agregar_carrera.Text = "Agregar";
-            this.btn_agregar_carrera.UseVisualStyleBackColor = true;
-            // 
-            // tbx_nombre_curso
-            // 
-            this.tbx_nombre_curso.Location = new System.Drawing.Point(143, 42);
-            this.tbx_nombre_curso.Name = "tbx_nombre_curso";
-            this.tbx_nombre_curso.Size = new System.Drawing.Size(165, 27);
-            this.tbx_nombre_curso.TabIndex = 1;
-            // 
-            // lb_nombre_curso
-            // 
-            this.lb_nombre_curso.AutoSize = true;
-            this.lb_nombre_curso.Location = new System.Drawing.Point(18, 42);
-            this.lb_nombre_curso.Name = "lb_nombre_curso";
-            this.lb_nombre_curso.Size = new System.Drawing.Size(106, 20);
-            this.lb_nombre_curso.TabIndex = 0;
-            this.lb_nombre_curso.Text = "Nombre curso:";
-            // 
-            // lb_creditos
-            // 
-            this.lb_creditos.AutoSize = true;
-            this.lb_creditos.Location = new System.Drawing.Point(18, 83);
-            this.lb_creditos.Name = "lb_creditos";
-            this.lb_creditos.Size = new System.Drawing.Size(67, 20);
-            this.lb_creditos.TabIndex = 3;
-            this.lb_creditos.Text = "Creditos:";
-            // 
-            // tbx_creditos
-            // 
-            this.tbx_creditos.Location = new System.Drawing.Point(143, 92);
-            this.tbx_creditos.Name = "tbx_creditos";
-            this.tbx_creditos.Size = new System.Drawing.Size(165, 27);
-            this.tbx_creditos.TabIndex = 4;
             // 
             // column_id
             // 
@@ -171,14 +116,70 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.Width = 125;
             // 
+            // gbx_agregar_carrera
+            // 
+            this.gbx_agregar_carrera.Controls.Add(this.tbx_creditos);
+            this.gbx_agregar_carrera.Controls.Add(this.lb_creditos);
+            this.gbx_agregar_carrera.Controls.Add(this.btn_agregar_carrera);
+            this.gbx_agregar_carrera.Controls.Add(this.tbx_nombre_curso);
+            this.gbx_agregar_carrera.Controls.Add(this.lb_nombre_curso);
+            this.gbx_agregar_carrera.Location = new System.Drawing.Point(12, 12);
+            this.gbx_agregar_carrera.Name = "gbx_agregar_carrera";
+            this.gbx_agregar_carrera.Size = new System.Drawing.Size(379, 202);
+            this.gbx_agregar_carrera.TabIndex = 4;
+            this.gbx_agregar_carrera.TabStop = false;
+            this.gbx_agregar_carrera.Text = "Agregar beca";
+            // 
+            // tbx_creditos
+            // 
+            this.tbx_creditos.Location = new System.Drawing.Point(143, 92);
+            this.tbx_creditos.Name = "tbx_creditos";
+            this.tbx_creditos.Size = new System.Drawing.Size(165, 27);
+            this.tbx_creditos.TabIndex = 4;
+            // 
+            // lb_creditos
+            // 
+            this.lb_creditos.AutoSize = true;
+            this.lb_creditos.Location = new System.Drawing.Point(18, 83);
+            this.lb_creditos.Name = "lb_creditos";
+            this.lb_creditos.Size = new System.Drawing.Size(67, 20);
+            this.lb_creditos.TabIndex = 3;
+            this.lb_creditos.Text = "Creditos:";
+            // 
+            // btn_agregar_carrera
+            // 
+            this.btn_agregar_carrera.Location = new System.Drawing.Point(155, 151);
+            this.btn_agregar_carrera.Name = "btn_agregar_carrera";
+            this.btn_agregar_carrera.Size = new System.Drawing.Size(134, 29);
+            this.btn_agregar_carrera.TabIndex = 2;
+            this.btn_agregar_carrera.Text = "Agregar";
+            this.btn_agregar_carrera.UseVisualStyleBackColor = true;
+            // 
+            // tbx_nombre_curso
+            // 
+            this.tbx_nombre_curso.Location = new System.Drawing.Point(143, 42);
+            this.tbx_nombre_curso.Name = "tbx_nombre_curso";
+            this.tbx_nombre_curso.Size = new System.Drawing.Size(165, 27);
+            this.tbx_nombre_curso.TabIndex = 1;
+            // 
+            // lb_nombre_curso
+            // 
+            this.lb_nombre_curso.AutoSize = true;
+            this.lb_nombre_curso.Location = new System.Drawing.Point(18, 42);
+            this.lb_nombre_curso.Name = "lb_nombre_curso";
+            this.lb_nombre_curso.Size = new System.Drawing.Size(106, 20);
+            this.lb_nombre_curso.TabIndex = 0;
+            this.lb_nombre_curso.Text = "Nombre curso:";
+            // 
             // GestionCursoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 576);
+            this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbx_agregar_carrera);
             this.Name = "GestionCursoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionCursoForm";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_beca)).EndInit();
