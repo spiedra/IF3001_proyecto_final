@@ -147,7 +147,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 603);
+            this.ClientSize = new System.Drawing.Size(705, 572);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbx_agregar_carrera);
             this.Name = "GestionBecaForm";
