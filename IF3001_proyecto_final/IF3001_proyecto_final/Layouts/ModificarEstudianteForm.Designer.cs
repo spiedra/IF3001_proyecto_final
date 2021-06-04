@@ -30,8 +30,6 @@ namespace IF3001_proyecto_final.Layouts
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_modificar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.txt_carne = new System.Windows.Forms.TextBox();
             this.lbl_carne = new System.Windows.Forms.Label();
             this.txt_promedio = new System.Windows.Forms.TextBox();
@@ -42,6 +40,8 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_apeliidos = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,24 +65,6 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modificar datos de estudiante";
-            // 
-            // btn_modificar
-            // 
-            this.btn_modificar.Location = new System.Drawing.Point(216, 198);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(94, 29);
-            this.btn_modificar.TabIndex = 0;
-            this.btn_modificar.Text = "Modificar cambios";
-            this.btn_modificar.UseVisualStyleBackColor = true;
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Location = new System.Drawing.Point(343, 198);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(94, 29);
-            this.btn_cancelar.TabIndex = 1;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
             // 
             // txt_carne
             // 
@@ -165,6 +147,24 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_nombre.TabIndex = 11;
             this.lbl_nombre.Text = "Nombre:";
             // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Location = new System.Drawing.Point(343, 198);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(94, 29);
+            this.btn_cancelar.TabIndex = 1;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.Location = new System.Drawing.Point(216, 198);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(94, 29);
+            this.btn_modificar.TabIndex = 0;
+            this.btn_modificar.Text = "Modificar cambios";
+            this.btn_modificar.UseVisualStyleBackColor = true;
+            // 
             // ModificarEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -172,6 +172,7 @@ namespace IF3001_proyecto_final.Layouts
             this.ClientSize = new System.Drawing.Size(692, 346);
             this.Controls.Add(this.groupBox1);
             this.Name = "ModificarEstudianteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarEstudianteForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
