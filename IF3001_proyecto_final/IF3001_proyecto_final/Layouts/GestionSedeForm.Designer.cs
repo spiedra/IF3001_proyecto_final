@@ -37,8 +37,8 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_sede = new System.Windows.Forms.DataGridView();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.column_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sede)).BeginInit();
@@ -97,14 +97,15 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_sede.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.column_id,
             this.column_nombre,
-            this.column_modificar,
-            this.column_eliminar});
+            this.btn_modificar,
+            this.btn_eliminar});
             this.grid_sede.Location = new System.Drawing.Point(16, 26);
             this.grid_sede.Name = "grid_sede";
             this.grid_sede.RowHeadersWidth = 51;
             this.grid_sede.RowTemplate.Height = 29;
             this.grid_sede.Size = new System.Drawing.Size(578, 295);
             this.grid_sede.TabIndex = 2;
+            this.grid_sede.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_sede_CellContentClick);
             // 
             // column_id
             // 
@@ -122,23 +123,23 @@ namespace IF3001_proyecto_final.Layouts
             this.column_nombre.ReadOnly = true;
             this.column_nombre.Width = 150;
             // 
-            // column_modificar
+            // btn_modificar
             // 
-            this.column_modificar.HeaderText = "Modificar";
-            this.column_modificar.MinimumWidth = 6;
-            this.column_modificar.Name = "column_modificar";
-            this.column_modificar.ReadOnly = true;
-            this.column_modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.column_modificar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.column_modificar.Text = "Modificar";
-            this.column_modificar.Width = 125;
+            this.btn_modificar.HeaderText = "Modificar";
+            this.btn_modificar.MinimumWidth = 6;
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.ReadOnly = true;
+            this.btn_modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_modificar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.Width = 125;
             // 
-            // column_eliminar
+            // btn_eliminar
             // 
-            this.column_eliminar.HeaderText = "Eliminar";
-            this.column_eliminar.MinimumWidth = 6;
-            this.column_eliminar.Name = "column_eliminar";
-            this.column_eliminar.Width = 125;
+            this.btn_eliminar.HeaderText = "Eliminar";
+            this.btn_eliminar.MinimumWidth = 6;
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Width = 125;
             // 
             // GestionSedeForm
             // 
@@ -168,7 +169,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.DataGridView grid_sede;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_nombre;
-        private System.Windows.Forms.DataGridViewButtonColumn column_modificar;
-        private System.Windows.Forms.DataGridViewButtonColumn column_eliminar;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_eliminar;
     }
 }
