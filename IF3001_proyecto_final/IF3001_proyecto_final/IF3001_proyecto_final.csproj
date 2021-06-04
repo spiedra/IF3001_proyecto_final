@@ -25,7 +25,6 @@
     <None Remove="Layouts\GestionEstudianteForm.cs~RFce69bc.TMP" />
     <None Remove="Layouts\ModificarCarreraForm.cs~RF1f79f00.TMP" />
     <None Remove="Layouts\ModificarCursoForm.cs~RF241c0c9.TMP" />
-    <None Remove="Layouts\ModificarCursoForm.cs~RF24c1001.TMP" />
   </ItemGroup>
 
   <ItemGroup>
