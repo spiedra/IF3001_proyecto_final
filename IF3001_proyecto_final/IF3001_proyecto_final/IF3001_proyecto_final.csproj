@@ -17,7 +17,13 @@
     <None Remove="Domain\Sede.cs~RFdbf11d.TMP" />
     <None Remove="Domain\Sede.cs~RFdf2713.TMP" />
     <None Remove="Domain\Telefono.cs~RFd9e84d.TMP" />
+    <None Remove="Layouts\1w1ooed2.vtx~" />
+    <None Remove="Layouts\GestionBecaForm.cs~RF1ddbbfc.TMP" />
+    <None Remove="Layouts\GestionCarreraForm.cs~RF1b597ed.TMP" />
+    <None Remove="Layouts\GestionCarreraForm.cs~RF1cccc2c.TMP" />
+    <None Remove="Layouts\GestionCarreraForm.cs~RF1d0da71.TMP" />
     <None Remove="Layouts\GestionEstudianteForm.cs~RFce69bc.TMP" />
+    <None Remove="Layouts\ModificarCarreraForm.cs~RF1f79f00.TMP" />
   </ItemGroup>
 
   <ItemGroup>
