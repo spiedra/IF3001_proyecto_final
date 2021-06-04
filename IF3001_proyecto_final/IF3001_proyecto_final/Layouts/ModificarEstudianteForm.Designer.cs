@@ -42,11 +42,15 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
+            this.lbl_sede = new System.Windows.Forms.Label();
+            this.cb_sede = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_sede);
+            this.groupBox1.Controls.Add(this.lbl_sede);
             this.groupBox1.Controls.Add(this.txt_carne);
             this.groupBox1.Controls.Add(this.lbl_carne);
             this.groupBox1.Controls.Add(this.txt_promedio);
@@ -61,7 +65,7 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox1.Controls.Add(this.btn_modificar);
             this.groupBox1.Location = new System.Drawing.Point(99, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(527, 261);
+            this.groupBox1.Size = new System.Drawing.Size(527, 300);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modificar datos de estudiante";
@@ -149,7 +153,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(343, 198);
+            this.btn_cancelar.Location = new System.Drawing.Point(284, 250);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(94, 29);
             this.btn_cancelar.TabIndex = 1;
@@ -158,12 +162,29 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // btn_modificar
             // 
-            this.btn_modificar.Location = new System.Drawing.Point(216, 198);
+            this.btn_modificar.Location = new System.Drawing.Point(157, 250);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(94, 29);
             this.btn_modificar.TabIndex = 0;
             this.btn_modificar.Text = "Modificar cambios";
             this.btn_modificar.UseVisualStyleBackColor = true;
+            // 
+            // lbl_sede
+            // 
+            this.lbl_sede.AutoSize = true;
+            this.lbl_sede.Location = new System.Drawing.Point(216, 198);
+            this.lbl_sede.Name = "lbl_sede";
+            this.lbl_sede.Size = new System.Drawing.Size(45, 20);
+            this.lbl_sede.TabIndex = 21;
+            this.lbl_sede.Text = "Sede:";
+            // 
+            // cb_sede
+            // 
+            this.cb_sede.FormattingEnabled = true;
+            this.cb_sede.Location = new System.Drawing.Point(312, 197);
+            this.cb_sede.Name = "cb_sede";
+            this.cb_sede.Size = new System.Drawing.Size(125, 28);
+            this.cb_sede.TabIndex = 22;
             // 
             // ModificarEstudianteForm
             // 
@@ -195,5 +216,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Label lbl_apeliidos;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_nombre;
+        private System.Windows.Forms.ComboBox cb_sede;
+        private System.Windows.Forms.Label lbl_sede;
     }
 }
