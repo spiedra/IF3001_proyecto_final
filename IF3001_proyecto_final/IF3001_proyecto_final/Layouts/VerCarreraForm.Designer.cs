@@ -31,12 +31,12 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lbl_seleccionar_carrera = new System.Windows.Forms.Label();
             this.btn_agregar_carrera = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_carrera = new System.Windows.Forms.ComboBox();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,6 +64,23 @@ namespace IF3001_proyecto_final.Layouts
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(331, 126);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 150;
+            // 
+            // btn_accion
+            // 
+            this.btn_accion.HeaderText = "Acción";
+            this.btn_accion.MinimumWidth = 6;
+            this.btn_accion.Name = "btn_accion";
+            this.btn_accion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_accion.Text = "Quitar";
+            this.btn_accion.Width = 70;
             // 
             // lbl_seleccionar_carrera
             // 
@@ -103,23 +120,6 @@ namespace IF3001_proyecto_final.Layouts
             this.cb_carrera.Size = new System.Drawing.Size(152, 28);
             this.cb_carrera.TabIndex = 4;
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 150;
-            // 
-            // btn_accion
-            // 
-            this.btn_accion.HeaderText = "Acción";
-            this.btn_accion.MinimumWidth = 6;
-            this.btn_accion.Name = "btn_accion";
-            this.btn_accion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btn_accion.Text = "Quitar";
-            this.btn_accion.Width = 70;
-            // 
             // VerCarreraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -128,6 +128,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "VerCarreraForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver carreras";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

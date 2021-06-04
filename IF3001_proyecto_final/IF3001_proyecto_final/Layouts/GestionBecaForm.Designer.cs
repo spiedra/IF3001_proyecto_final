@@ -68,6 +68,7 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_beca.RowTemplate.Height = 29;
             this.grid_beca.Size = new System.Drawing.Size(580, 268);
             this.grid_beca.TabIndex = 0;
+            this.grid_beca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_beca_CellContentClick);
             // 
             // column_id
             // 
