@@ -48,6 +48,8 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes = new System.Windows.Forms.GroupBox();
             this.btn_ver_carrera = new System.Windows.Forms.Button();
             this.btn_ver_cursos = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,8 +60,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btn_modificar = new System.Windows.Forms.Button();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -225,6 +225,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_ver_carrera.TabIndex = 6;
             this.btn_ver_carrera.Text = "Ver carrera";
             this.btn_ver_carrera.UseVisualStyleBackColor = true;
+            this.btn_ver_carrera.Click += new System.EventHandler(this.btn_ver_carrera_Click);
             // 
             // btn_ver_cursos
             // 
@@ -234,6 +235,26 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_ver_cursos.TabIndex = 5;
             this.btn_ver_cursos.Text = "Ver cursos";
             this.btn_ver_cursos.UseVisualStyleBackColor = true;
+            this.btn_ver_cursos.Click += new System.EventHandler(this.btn_ver_cursos_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(750, 36);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 29);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Eliminar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.Location = new System.Drawing.Point(630, 36);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(94, 29);
+            this.btn_modificar.TabIndex = 3;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = true;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // dataGridView1
             // 
@@ -320,6 +341,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Sede.MinimumWidth = 6;
             this.Sede.Name = "Sede";
             this.Sede.ReadOnly = true;
+            this.Sede.Width = 125;
             // 
             // Direccion
             // 
@@ -329,29 +351,11 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(750, 36);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 29);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btn_modificar
-            // 
-            this.btn_modificar.Location = new System.Drawing.Point(630, 36);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(94, 29);
-            this.btn_modificar.TabIndex = 3;
-            this.btn_modificar.Text = "Modificar";
-            this.btn_modificar.UseVisualStyleBackColor = true;
-            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 615);
+            this.ClientSize = new System.Drawing.Size(1050, 615);
             this.Controls.Add(this.gp_lista_estudiantes);
             this.Controls.Add(this.gp_registro_estudiantes);
             this.Name = "GestionEstudianteForm";

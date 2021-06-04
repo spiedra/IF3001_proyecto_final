@@ -68,6 +68,7 @@ namespace IF3001_proyecto_final.Layouts
             this.grid_beca.RowTemplate.Height = 29;
             this.grid_beca.Size = new System.Drawing.Size(580, 268);
             this.grid_beca.TabIndex = 0;
+            this.grid_beca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_beca_CellContentClick);
             // 
             // column_id
             // 
@@ -146,7 +147,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 603);
+            this.ClientSize = new System.Drawing.Size(705, 572);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbx_agregar_carrera);
             this.Name = "GestionBecaForm";

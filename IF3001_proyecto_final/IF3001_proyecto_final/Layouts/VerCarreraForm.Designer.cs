@@ -31,10 +31,10 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbl_seleccionar_carrera = new System.Windows.Forms.Label();
-            this.btn_agregar_carrera = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_accion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lbl_seleccionar_carrera = new System.Windows.Forms.Label();
+            this.btn_agregar_carrera = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_carrera = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
@@ -62,8 +62,25 @@ namespace IF3001_proyecto_final.Layouts
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(311, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(331, 126);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 150;
+            // 
+            // btn_accion
+            // 
+            this.btn_accion.HeaderText = "Acción";
+            this.btn_accion.MinimumWidth = 6;
+            this.btn_accion.Name = "btn_accion";
+            this.btn_accion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_accion.Text = "Quitar";
+            this.btn_accion.Width = 70;
             // 
             // lbl_seleccionar_carrera
             // 
@@ -83,22 +100,6 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_agregar_carrera.Text = "Agregar";
             this.btn_agregar_carrera.UseVisualStyleBackColor = true;
             this.btn_agregar_carrera.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 150;
-            // 
-            // btn_accion
-            // 
-            this.btn_accion.HeaderText = "Acción";
-            this.btn_accion.MinimumWidth = 6;
-            this.btn_accion.Name = "btn_accion";
-            this.btn_accion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_accion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btn_accion.Text = "Quitar";
             // 
             // groupBox2
             // 
@@ -127,6 +128,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "VerCarreraForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver carreras";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -142,9 +144,9 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbl_seleccionar_carrera;
         private System.Windows.Forms.Button btn_agregar_carrera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_accion;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cb_carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_accion;
     }
 }

@@ -31,14 +31,14 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_cursos = new System.Windows.Forms.DataGridView();
-            this.cb_cursos = new System.Windows.Forms.ComboBox();
-            this.lbl_seleccionar_curso = new System.Windows.Forms.Label();
-            this.btn_agregar_curso = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_quitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cb_cursos = new System.Windows.Forms.ComboBox();
+            this.lbl_seleccionar_curso = new System.Windows.Forms.Label();
+            this.btn_agregar_curso = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cursos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -69,6 +69,35 @@ namespace IF3001_proyecto_final.Layouts
             this.dgv_cursos.Size = new System.Drawing.Size(388, 149);
             this.dgv_cursos.TabIndex = 0;
             this.dgv_cursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 70;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Siglas
+            // 
+            this.Siglas.HeaderText = "Sigla";
+            this.Siglas.MinimumWidth = 6;
+            this.Siglas.Name = "Siglas";
+            this.Siglas.Width = 70;
+            // 
+            // btn_quitar
+            // 
+            this.btn_quitar.HeaderText = "Acción";
+            this.btn_quitar.MinimumWidth = 6;
+            this.btn_quitar.Name = "btn_quitar";
+            this.btn_quitar.Text = "Quitar";
+            this.btn_quitar.Width = 70;
             // 
             // cb_cursos
             // 
@@ -107,35 +136,6 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 70;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Siglas
-            // 
-            this.Siglas.HeaderText = "Sigla";
-            this.Siglas.MinimumWidth = 6;
-            this.Siglas.Name = "Siglas";
-            this.Siglas.Width = 70;
-            // 
-            // btn_quitar
-            // 
-            this.btn_quitar.HeaderText = "Acción";
-            this.btn_quitar.MinimumWidth = 6;
-            this.btn_quitar.Name = "btn_quitar";
-            this.btn_quitar.Text = "Quitar";
-            this.btn_quitar.Width = 70;
-            // 
             // VerCursosEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -144,6 +144,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "VerCursosEstudianteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver cursos estudiante";
             this.Load += new System.EventHandler(this.VerCursosEstudianteForm_Load);
             this.groupBox1.ResumeLayout(false);

@@ -26,5 +26,23 @@ namespace IF3001_proyecto_final.Layouts
         {
 
         }
+
+        private void btn_ver_cursos_Click(object sender, EventArgs e)
+        {
+            VerCursosEstudianteForm vce = new VerCursosEstudianteForm();
+            vce.Show();
+        }
+
+        private void btn_ver_carrera_Click(object sender, EventArgs e)
+        {
+            VerCarreraForm vc = new VerCarreraForm();
+            vc.Show();
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            ModificarEstudianteForm me = new ModificarEstudianteForm();
+            me.Show();
+        }
     }
 }
