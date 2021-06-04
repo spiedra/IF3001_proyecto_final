@@ -16,5 +16,15 @@ namespace IF3001_proyecto_final.Layouts
         {
             InitializeComponent();
         }
+
+        private void grid_sede_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == grid_sede.Columns["btn_modificar"].Index && e.RowIndex >= 0)
+            {
+                //MessageBox.Show("Button on row {0} clicked" + e.RowIndex);
+                ModificarSedeForm modificarSedeForm = new ModificarSedeForm();
+                modificarSedeForm.Show();
+            }
+        }
     }
 }

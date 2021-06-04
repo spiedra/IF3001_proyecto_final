@@ -30,7 +30,7 @@ namespace IF3001_proyecto_final.Layouts
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.grid_beca = new System.Windows.Forms.DataGridView();
+            this.grid_curso = new System.Windows.Forms.DataGridView();
             this.column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_nombre_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_creditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,13 +43,13 @@ namespace IF3001_proyecto_final.Layouts
             this.tbx_nombre_curso = new System.Windows.Forms.TextBox();
             this.lb_nombre_curso = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_beca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_curso)).BeginInit();
             this.gbx_agregar_carrera.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.grid_beca);
+            this.groupBox2.Controls.Add(this.grid_curso);
             this.groupBox2.Location = new System.Drawing.Point(12, 241);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(750, 319);
@@ -57,21 +57,22 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar y eliminar curso";
             // 
-            // grid_beca
+            // grid_curso
             // 
-            this.grid_beca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_beca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grid_curso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_curso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.column_id,
             this.column_nombre_curso,
             this.column_creditos,
             this.btn_modificar,
             this.btn_eliminar});
-            this.grid_beca.Location = new System.Drawing.Point(18, 43);
-            this.grid_beca.Name = "grid_beca";
-            this.grid_beca.RowHeadersWidth = 51;
-            this.grid_beca.RowTemplate.Height = 29;
-            this.grid_beca.Size = new System.Drawing.Size(704, 249);
-            this.grid_beca.TabIndex = 0;
+            this.grid_curso.Location = new System.Drawing.Point(18, 43);
+            this.grid_curso.Name = "grid_curso";
+            this.grid_curso.RowHeadersWidth = 51;
+            this.grid_curso.RowTemplate.Height = 29;
+            this.grid_curso.Size = new System.Drawing.Size(704, 249);
+            this.grid_curso.TabIndex = 0;
+            this.grid_curso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_beca_CellContentClick);
             // 
             // column_id
             // 
@@ -182,7 +183,7 @@ namespace IF3001_proyecto_final.Layouts
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionCursoForm";
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_beca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_curso)).EndInit();
             this.gbx_agregar_carrera.ResumeLayout(false);
             this.gbx_agregar_carrera.PerformLayout();
             this.ResumeLayout(false);
@@ -192,7 +193,7 @@ namespace IF3001_proyecto_final.Layouts
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView grid_beca;
+        private System.Windows.Forms.DataGridView grid_curso;
         private System.Windows.Forms.GroupBox gbx_agregar_carrera;
         private System.Windows.Forms.Button btn_agregar_carrera;
         private System.Windows.Forms.TextBox tbx_nombre_curso;
