@@ -234,6 +234,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_ver_cursos.TabIndex = 5;
             this.btn_ver_cursos.Text = "Ver cursos";
             this.btn_ver_cursos.UseVisualStyleBackColor = true;
+            this.btn_ver_cursos.Click += new System.EventHandler(this.btn_ver_cursos_Click);
             // 
             // dataGridView1
             // 
