@@ -44,5 +44,11 @@ namespace IF3001_proyecto_final.Layouts
             ModificarEstudianteForm me = new ModificarEstudianteForm();
             me.Show();
         }
+
+        private void btn_contacto_Click(object sender, EventArgs e)
+        {
+            VerContactoForm vc = new VerContactoForm();
+            vc.Show();
+        }
     }
 }

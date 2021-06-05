@@ -46,6 +46,7 @@ namespace IF3001_proyecto_final.Layouts
             this.lvl_carne_buscar = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gp_lista_estudiantes = new System.Windows.Forms.GroupBox();
+            this.btn_contacto = new System.Windows.Forms.Button();
             this.btn_ver_carrera = new System.Windows.Forms.Button();
             this.btn_ver_cursos = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_contacto = new System.Windows.Forms.Button();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -219,6 +219,16 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes.Text = "Lista de estudiantes";
             this.gp_lista_estudiantes.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // btn_contacto
+            // 
+            this.btn_contacto.Location = new System.Drawing.Point(628, 37);
+            this.btn_contacto.Name = "btn_contacto";
+            this.btn_contacto.Size = new System.Drawing.Size(117, 29);
+            this.btn_contacto.TabIndex = 7;
+            this.btn_contacto.Text = "Ver contacto";
+            this.btn_contacto.UseVisualStyleBackColor = true;
+            this.btn_contacto.Click += new System.EventHandler(this.btn_contacto_Click);
+            // 
             // btn_ver_carrera
             // 
             this.btn_ver_carrera.Location = new System.Drawing.Point(503, 35);
@@ -352,15 +362,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
-            // 
-            // btn_contacto
-            // 
-            this.btn_contacto.Location = new System.Drawing.Point(628, 37);
-            this.btn_contacto.Name = "btn_contacto";
-            this.btn_contacto.Size = new System.Drawing.Size(117, 29);
-            this.btn_contacto.TabIndex = 7;
-            this.btn_contacto.Text = "Ver contacto";
-            this.btn_contacto.UseVisualStyleBackColor = true;
             // 
             // GestionEstudianteForm
             // 
