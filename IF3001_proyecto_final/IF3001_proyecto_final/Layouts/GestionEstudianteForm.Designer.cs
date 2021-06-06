@@ -46,6 +46,7 @@ namespace IF3001_proyecto_final.Layouts
             this.lvl_carne_buscar = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gp_lista_estudiantes = new System.Windows.Forms.GroupBox();
+            this.btn_contacto = new System.Windows.Forms.Button();
             this.btn_ver_carrera = new System.Windows.Forms.Button();
             this.btn_ver_cursos = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -201,6 +202,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // gp_lista_estudiantes
             // 
+            this.gp_lista_estudiantes.Controls.Add(this.btn_contacto);
             this.gp_lista_estudiantes.Controls.Add(this.btn_ver_carrera);
             this.gp_lista_estudiantes.Controls.Add(this.btn_ver_cursos);
             this.gp_lista_estudiantes.Controls.Add(this.button4);
@@ -216,6 +218,16 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes.TabStop = false;
             this.gp_lista_estudiantes.Text = "Lista de estudiantes";
             this.gp_lista_estudiantes.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // btn_contacto
+            // 
+            this.btn_contacto.Location = new System.Drawing.Point(628, 37);
+            this.btn_contacto.Name = "btn_contacto";
+            this.btn_contacto.Size = new System.Drawing.Size(117, 29);
+            this.btn_contacto.TabIndex = 7;
+            this.btn_contacto.Text = "Ver contacto";
+            this.btn_contacto.UseVisualStyleBackColor = true;
+            this.btn_contacto.Click += new System.EventHandler(this.btn_contacto_Click);
             // 
             // btn_ver_carrera
             // 
@@ -239,7 +251,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(750, 36);
+            this.button4.Location = new System.Drawing.Point(889, 37);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 29);
             this.button4.TabIndex = 4;
@@ -248,7 +260,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // btn_modificar
             // 
-            this.btn_modificar.Location = new System.Drawing.Point(630, 36);
+            this.btn_modificar.Location = new System.Drawing.Point(776, 36);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(94, 29);
             this.btn_modificar.TabIndex = 3;
@@ -405,5 +417,6 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button _;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_modificar;
+        private System.Windows.Forms.Button btn_contacto;
     }
 }
