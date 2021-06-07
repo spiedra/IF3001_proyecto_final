@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Business\BecaBusiness.cs~RFe7537b.TMP" />
+    <None Remove="Data\EstudianteSqlServerData.cs~RF18430e4.TMP" />
     <None Remove="Domain\Beca.cs~RFd90281.TMP" />
     <None Remove="Domain\Carrera.cs~RFdb24d4.TMP" />
     <None Remove="Domain\Carrera.cs~RFe1d21e.TMP" />

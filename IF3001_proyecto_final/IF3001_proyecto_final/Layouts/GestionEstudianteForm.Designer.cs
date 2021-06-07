@@ -61,6 +61,8 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +70,8 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // gp_registro_estudiantes
             // 
+            this.gp_registro_estudiantes.Controls.Add(this.label1);
+            this.gp_registro_estudiantes.Controls.Add(this.textBox1);
             this.gp_registro_estudiantes.Controls.Add(this.btn_agregar_estudiante);
             this.gp_registro_estudiantes.Controls.Add(this.txt_carne);
             this.gp_registro_estudiantes.Controls.Add(this.lbl_carne);
@@ -81,23 +85,24 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_registro_estudiantes.Controls.Add(this.lbl_nombre);
             this.gp_registro_estudiantes.Location = new System.Drawing.Point(32, 29);
             this.gp_registro_estudiantes.Name = "gp_registro_estudiantes";
-            this.gp_registro_estudiantes.Size = new System.Drawing.Size(486, 273);
+            this.gp_registro_estudiantes.Size = new System.Drawing.Size(486, 307);
             this.gp_registro_estudiantes.TabIndex = 0;
             this.gp_registro_estudiantes.TabStop = false;
             this.gp_registro_estudiantes.Text = "Registro de estudiantes";
             // 
             // btn_agregar_estudiante
             // 
-            this.btn_agregar_estudiante.Location = new System.Drawing.Point(214, 205);
+            this.btn_agregar_estudiante.Location = new System.Drawing.Point(163, 262);
             this.btn_agregar_estudiante.Name = "btn_agregar_estudiante";
             this.btn_agregar_estudiante.Size = new System.Drawing.Size(153, 31);
             this.btn_agregar_estudiante.TabIndex = 10;
             this.btn_agregar_estudiante.Text = "Agregar estudiante";
             this.btn_agregar_estudiante.UseVisualStyleBackColor = true;
+            this.btn_agregar_estudiante.Click += new System.EventHandler(this.btn_agregar_estudiante_Click);
             // 
             // txt_carne
             // 
-            this.txt_carne.Location = new System.Drawing.Point(104, 209);
+            this.txt_carne.Location = new System.Drawing.Point(104, 198);
             this.txt_carne.Name = "txt_carne";
             this.txt_carne.Size = new System.Drawing.Size(86, 27);
             this.txt_carne.TabIndex = 9;
@@ -105,7 +110,7 @@ namespace IF3001_proyecto_final.Layouts
             // lbl_carne
             // 
             this.lbl_carne.AutoSize = true;
-            this.lbl_carne.Location = new System.Drawing.Point(19, 209);
+            this.lbl_carne.Location = new System.Drawing.Point(19, 198);
             this.lbl_carne.Name = "lbl_carne";
             this.lbl_carne.Size = new System.Drawing.Size(50, 20);
             this.lbl_carne.TabIndex = 8;
@@ -211,9 +216,9 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes.Controls.Add(this.dataGridView1);
             this.gp_lista_estudiantes.Controls.Add(this.textBox6);
             this.gp_lista_estudiantes.Controls.Add(this.lvl_carne_buscar);
-            this.gp_lista_estudiantes.Location = new System.Drawing.Point(32, 327);
+            this.gp_lista_estudiantes.Location = new System.Drawing.Point(32, 342);
             this.gp_lista_estudiantes.Name = "gp_lista_estudiantes";
-            this.gp_lista_estudiantes.Size = new System.Drawing.Size(1006, 258);
+            this.gp_lista_estudiantes.Size = new System.Drawing.Size(1006, 318);
             this.gp_lista_estudiantes.TabIndex = 2;
             this.gp_lista_estudiantes.TabStop = false;
             this.gp_lista_estudiantes.Text = "Lista de estudiantes";
@@ -283,12 +288,12 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca,
             this.Sede,
             this.Direccion});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 91);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(964, 154);
+            this.dataGridView1.Size = new System.Drawing.Size(964, 209);
             this.dataGridView1.TabIndex = 0;
             // 
             // ID
@@ -363,11 +368,28 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(310, 198);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 34);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(214, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Dirección:";
+            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 615);
+            this.ClientSize = new System.Drawing.Size(1050, 672);
             this.Controls.Add(this.gp_lista_estudiantes);
             this.Controls.Add(this.gp_registro_estudiantes);
             this.Name = "GestionEstudianteForm";
@@ -418,5 +440,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_contacto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
