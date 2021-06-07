@@ -15,6 +15,42 @@ namespace IF3001_proyecto_final.Data
         private SqlConnection sqlConnection;
         private SqlDataReader sqlDataReader;
 
+        public bool AgregarEstudiante(Estudiante estudiante)
+        {
+            this.EjecutarInsertarEstudiante(estudiante);
+            return this.LeerRespuestaInsertarEstudiante();
+        }
+
+        public Estudiante ObtenerEstudiantePorCarnet(Estudiante estudiante)
+        {
+            this.EjecutarMostrarEstudiantePorCarnet(estudiante);
+            return LeerRespuestaMostrarEstudiantePorCarnet();
+        }
+
+        private void EjecutarMostrarEstudiantePorCarnet(Estudiante estudiante)
+        {
+            string paramCarnet = "@param_CARNE "
+                , commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES_POR_CARNE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
+            this.ExcecuteReader();
+        }
+
+        private Estudiante LeerRespuestaMostrarEstudiantePorCarnet()
+        {
+            if (this.sqlDataReader.Read())
+            {
+                Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
+                    , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8));
+                estudiante.TipoBeca = this.sqlDataReader.GetInt32(6);
+                estudiante.Sede = this.sqlDataReader.GetString(7);
+                return estudiante;
+            }
+            return null;
+        }
+
         private void EjecutarInsertarEstudiante(Estudiante estudiante)
         {
             string paramName = "@param_NOMBRE_ESTUDIANTE"
@@ -28,7 +64,7 @@ namespace IF3001_proyecto_final.Data
             this.InitSqlComponents(commandText);
             this.CreateParameter(paramName, SqlDbType.VarChar, estudiante.Nombre);
             this.CreateParameter(paramLastName, SqlDbType.VarChar, estudiante.Apellidos);
-            this.CreateParameter(paramAge, SqlDbType.VarChar, estudiante.Edad);
+            this.CreateParameter(paramAge, SqlDbType.Int, estudiante.Edad);
             this.CreateParameter(paramAverage, SqlDbType.VarChar, estudiante.Promedio);
             this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
@@ -43,12 +79,6 @@ namespace IF3001_proyecto_final.Data
 
             this.sqlConnection.Close();
             return false;
-        }
-
-        public bool AgregarEstudiante(Estudiante estudiante)
-        {
-            this.EjecutarInsertarEstudiante(estudiante);
-            return this.LeerRespuestaInsertarEstudiante();
         }
 
         private void InitSqlComponents(string commandText)
