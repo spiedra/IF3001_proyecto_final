@@ -33,6 +33,16 @@ namespace IF3001_proyecto_final.Data
             return LeerRespuestaMostarCursosEstudiante();
         }
 
+        public void EliminarCursoEstudiante(int cursoId)
+        {
+            string paramEstudianteId = "@param_ID_ESTUDIANTE  "
+              , commandText = "ADMINISTRACION.sp_BORRAR_CURSO";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramEstudianteId, SqlDbType.Int, cursoId);
+            this.ExecuteNonQuery();
+        }
+
         private void EjecutarMostrarCursosEstudiante(int estudianteId)
         {
             string paramEstudianteId = "@param_ID_ESTUDIANTE  "

@@ -30,5 +30,10 @@ namespace IF3001_proyecto_final.Business
         {
             return this.estudianteSqlServerData.ObtenerCursosEstudiante(estudianteId);
         }
+
+        public void EliminarCursoEstudiante(int cursoId)
+        {
+            this.estudianteSqlServerData.EliminarCursoEstudiante(cursoId);
+        }
     }
 }
