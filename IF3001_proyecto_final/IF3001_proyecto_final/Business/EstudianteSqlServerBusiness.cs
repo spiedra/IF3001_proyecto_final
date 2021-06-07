@@ -20,5 +20,15 @@ namespace IF3001_proyecto_final.Business
         {
             return this.estudianteSqlServerData.AgregarEstudiante(estudiante);
         }
+
+        public Estudiante ObtenerEstudiantePorCarnet(string carnet)
+        {
+            return this.estudianteSqlServerData.ObtenerEstudiantePorCarnet(carnet);
+        }
+
+        public List<Curso> ObtenerCursosEstudiante(int estudianteId)
+        {
+            return this.estudianteSqlServerData.ObtenerCursosEstudiante(estudianteId);
+        }
     }
 }

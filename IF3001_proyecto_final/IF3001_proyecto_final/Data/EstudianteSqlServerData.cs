@@ -21,19 +21,47 @@ namespace IF3001_proyecto_final.Data
             return this.LeerRespuestaInsertarEstudiante();
         }
 
-        public Estudiante ObtenerEstudiantePorCarnet(Estudiante estudiante)
+        public Estudiante ObtenerEstudiantePorCarnet(string carnet)
         {
-            this.EjecutarMostrarEstudiantePorCarnet(estudiante);
+            this.EjecutarMostrarEstudiantePorCarnet(carnet);
             return LeerRespuestaMostrarEstudiantePorCarnet();
         }
 
-        private void EjecutarMostrarEstudiantePorCarnet(Estudiante estudiante)
+        public List<Curso> ObtenerCursosEstudiante(int estudianteId)
+        {
+            this.EjecutarMostrarCursosEstudiante(estudianteId);
+            return LeerRespuestaMostarCursosEstudiante();
+        }
+
+        private void EjecutarMostrarCursosEstudiante(int estudianteId)
+        {
+            string paramEstudianteId = "@param_ID_ESTUDIANTE  "
+                , commandText = "ESTUDIANTE.sp_MOSTRAR_CURSOS_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramEstudianteId, SqlDbType.Int, estudianteId);
+            this.ExcecuteReader();
+        }
+
+        private List<Curso> LeerRespuestaMostarCursosEstudiante()
+        {
+            List<Curso> cursos = new List<Curso>();
+            while (this.sqlDataReader.Read())
+            {
+                Curso curso = new Curso(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
+                    , this.sqlDataReader.GetInt32(2));
+                cursos.Add(curso);
+            }
+            return cursos;
+        }
+
+        private void EjecutarMostrarEstudiantePorCarnet(string carnet)
         {
             string paramCarnet = "@param_CARNE "
                 , commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES_POR_CARNE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
+            this.CreateParameter(paramCarnet, SqlDbType.VarChar, carnet);
             this.ExcecuteReader();
         }
 
