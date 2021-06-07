@@ -45,6 +45,18 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
+        public void InsertarCursoEstudiante()
+        {
+            string paramStudentId = "@param_ID_ESTUDIANTE"
+               , paramCourseName = "@param_NOMBRE_CURSO"
+               , commandText = "ESTUDIANTE.sp_INSERTAR_CURSO_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.CreateParameter(paramCourseName, SqlDbType.Int, nombreCurso);
+            this.ExecuteNonQuery();
+        }
+
         private void EjecutarMostrarCursosEstudiante(int estudianteId)
         {
             string paramEstudianteId = "@param_ID_ESTUDIANTE  "
