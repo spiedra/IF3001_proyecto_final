@@ -9,10 +9,6 @@ namespace IF3001_proyecto_final.Data
 {
     class ConexionSqlServerData
     {
-        private SqlCommand sqlCommand;
-        private SqlConnection sqlConnection;
-        private SqlDataReader sqlDataReader;
-
         public ConexionSqlServerData()
         {
             this.ConnectToDatabase();

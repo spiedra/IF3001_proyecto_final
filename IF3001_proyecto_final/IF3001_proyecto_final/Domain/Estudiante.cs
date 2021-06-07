@@ -8,7 +8,7 @@ namespace IF3001_proyecto_final.Domain
 {
     class Estudiante
     {
-        public Estudiante(int id, string nombre, string apellidos, int edad, string promedio, string carnet)
+        public Estudiante(int id, string nombre, string apellidos, int edad, string promedio, string carnet, string direccion)
         {
             this.Id = id;
             this.Nombre = nombre;
@@ -16,6 +16,7 @@ namespace IF3001_proyecto_final.Domain
             this.Edad = edad;
             this.Promedio = promedio;
             this.Carnet = carnet;
+            this.Direccion = direccion;
         }
 
         public int Id { get; set; }
@@ -24,5 +25,6 @@ namespace IF3001_proyecto_final.Domain
         public int Edad { get; set; }
         public string Promedio { get; set; }
         public string Carnet { get; set; }
+        public string Direccion { get; set; }
     }
 }

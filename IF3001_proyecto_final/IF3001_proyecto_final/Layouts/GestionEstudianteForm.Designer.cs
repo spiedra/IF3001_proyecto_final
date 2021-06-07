@@ -61,7 +61,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txb_direccion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
@@ -71,7 +71,7 @@ namespace IF3001_proyecto_final.Layouts
             // gp_registro_estudiantes
             // 
             this.gp_registro_estudiantes.Controls.Add(this.label1);
-            this.gp_registro_estudiantes.Controls.Add(this.textBox1);
+            this.gp_registro_estudiantes.Controls.Add(this.txb_direccion);
             this.gp_registro_estudiantes.Controls.Add(this.btn_agregar_estudiante);
             this.gp_registro_estudiantes.Controls.Add(this.txt_carne);
             this.gp_registro_estudiantes.Controls.Add(this.lbl_carne);
@@ -368,13 +368,13 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
-            // textBox1
+            // txb_direccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 198);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 34);
-            this.textBox1.TabIndex = 11;
+            this.txb_direccion.Location = new System.Drawing.Point(310, 198);
+            this.txb_direccion.Multiline = true;
+            this.txb_direccion.Name = "txb_direccion";
+            this.txb_direccion.Size = new System.Drawing.Size(125, 34);
+            this.txb_direccion.TabIndex = 11;
             // 
             // label1
             // 
@@ -441,6 +441,6 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_contacto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txb_direccion;
     }
 }
