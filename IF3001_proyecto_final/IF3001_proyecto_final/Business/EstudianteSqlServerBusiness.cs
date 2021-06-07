@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace IF3001_proyecto_final.Business
 {
-    class SedeBusiness
+    class EstudianteSqlServerBusiness
     {
-        public SedeBusiness()
-        {
-
-        }
     }
 }

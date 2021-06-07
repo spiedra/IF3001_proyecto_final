@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace IF3001_proyecto_final.Business
 {
-    class TelefonoBusiness
+    class EstudiantePostgreSqlBusiness
     {
-        public TelefonoBusiness()
+        public EstudiantePostgreSqlBusiness()
         {
 
         }

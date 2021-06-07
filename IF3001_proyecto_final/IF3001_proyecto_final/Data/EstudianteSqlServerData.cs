@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IF3001_proyecto_final.Business
+namespace IF3001_proyecto_final.Data
 {
-    class CarreraBusiness
+    class EstudianteSqlServerData
     {
-        public CarreraBusiness()
-        {
 
-        }
     }
 }
