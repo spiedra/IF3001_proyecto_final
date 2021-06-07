@@ -33,13 +33,15 @@ namespace IF3001_proyecto_final.Data
             return LeerRespuestaMostarCursosEstudiante();
         }
 
-        public void EliminarCursoEstudiante(int cursoId)
+        public void EliminarCursoEstudiante(string carnetEstudiante, string nombreCurso)
         {
-            string paramEstudianteId = "@param_ID_ESTUDIANTE  "
-              , commandText = "ADMINISTRACION.sp_BORRAR_CURSO";
+            string paramStudentCarnet = "@param_CARNE_ESTUDIANTE"
+                , paramCourseName = "@param_NOMBRE_CURSO"
+                , commandText = "ESTUDIANTE.QUITAR_CURSO_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramEstudianteId, SqlDbType.Int, cursoId);
+            this.CreateParameter(paramStudentCarnet, SqlDbType.VarChar, carnetEstudiante);
+            this.CreateParameter(paramCourseName, SqlDbType.VarChar, nombreCurso);
             this.ExecuteNonQuery();
         }
 
