@@ -57,7 +57,7 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public List<Carrera> MostrarCarrerasEstudiante(int estudianteId)
+        public List<Carrera> ObtenerCarrerasEstudiante(int estudianteId)
         {
             this.EjecutarMostraCarreraEstudiante(estudianteId);
             return LeerRespuestaMostrarCarreraEstudiante();
@@ -95,6 +95,38 @@ namespace IF3001_proyecto_final.Data
             this.InitSqlComponents(commandText);
             this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
             this.ExecuteNonQuery();
+        }
+
+        public List<Telefono> ObtenerTelefonosEstudiante(int estudianteId)
+        {
+            this.EjecutarVerContactosEstudiante(estudianteId);
+            return this.LeerRespuestaVerContactorEstudiante();
+        }
+
+        public void EliminarTelefonoEstudiante(int estudianteId, string numeroTelefonico)
+        {
+
+        }
+
+        private void EjecutarVerContactosEstudiante(int estudianteId)
+        {
+            string paramEstudianteId = "@param_ID_ESTUDIANTE"
+                , commandText = "ESTUDIANTE.sp_VER_CONTACTOS_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramEstudianteId, SqlDbType.Int, estudianteId);
+            this.ExcecuteReader();
+        }
+
+        private List<Telefono> LeerRespuestaVerContactorEstudiante()
+        {
+            List<Telefono> telefonos = new List<Telefono>();
+            while (this.sqlDataReader.Read())
+            {
+                Telefono telefono = new Telefono(-1, this.sqlDataReader.GetString(0));
+                telefonos.Add(telefono);
+            }
+            return telefonos;
         }
 
         private void EjecutarMostraCarreraEstudiante(int estudianteId)

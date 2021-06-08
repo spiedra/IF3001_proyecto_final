@@ -41,9 +41,9 @@ namespace IF3001_proyecto_final.Business
             this.estudianteSqlServerData.InsertarCursoEstudiante(estudianteId, nombreCurso);
         }
 
-        public List<Carrera> MostrarCarrerasEstudiante(int estudianteId)
+        public List<Carrera> ObtenerCarrerasEstudiante(int estudianteId)
         {
-            return this.estudianteSqlServerData.MostrarCarrerasEstudiante(estudianteId);
+            return this.estudianteSqlServerData.ObtenerCarrerasEstudiante(estudianteId);
         }
 
         public void EliminarCarreraEstudiante(string nombreCarrera, string carnetEstudiante)
@@ -59,6 +59,11 @@ namespace IF3001_proyecto_final.Business
         public void EliminarEstudiante(int estudianteId)
         {
             this.estudianteSqlServerData.EliminarEstudiante(estudianteId);
+        }
+
+        public List<Telefono> ObtenerTelefonosEstudiante(int estudianteId)
+        {
+            return this.estudianteSqlServerData.ObtenerTelefonosEstudiante(estudianteId);
         }
     }
 }
