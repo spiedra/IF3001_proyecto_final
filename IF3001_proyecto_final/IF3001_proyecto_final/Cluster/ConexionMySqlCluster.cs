@@ -37,7 +37,7 @@ namespace IF3001_proyecto_final.Cluster
                 Server = "34.122.1.75",
                 UserID = "root",
                 Password = "superuser",
-                Database = "proyectodba",
+                //Database = "ESTUDIANTE",
             };
             return mySqlConnectionStringBuilder.ConnectionString;
         }

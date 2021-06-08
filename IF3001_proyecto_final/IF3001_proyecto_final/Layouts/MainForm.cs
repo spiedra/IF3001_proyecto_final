@@ -29,12 +29,14 @@ namespace IF3001_proyecto_final.Layouts
         {
             // GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
             //gestionEstudianteForm.Show();
-            //ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
+            ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
 
-            //MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
+            MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
 
-            ConexionMySqlCluster conexionMySqlCluster = new ConexionMySqlCluster();
-            MessageBox.Show("" + conexionMySqlCluster.ConnectToDatabase());
+            //ConexionMySqlCluster conexionMySqlCluster = new ConexionMySqlCluster();
+            //MessageBox.Show("" + conexionMySqlCluster.ConnectToDatabase());
+           // ListenerCluster listenerCluster = new ListenerCluster();
+           // MessageBox.Show("" + listenerCluster.ConnectToDatabaseInstance());
         }
 
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)

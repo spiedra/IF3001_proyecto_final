@@ -25,17 +25,17 @@ namespace IF3001_proyecto_final.Cluster
             }
             catch (SqlException sqlException)
             {
-                return sqlException.Number;
+                return sqlException.ErrorCode;
             }
         }
 
         static private string GetConnectionString()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "35.193.110";
+            builder.DataSource = "35.193.110.243";
             builder.UserID = "sqlserver";
             builder.Password = "piedra";
-            builder.InitialCatalog = "tes";
+            builder.InitialCatalog = "test";
             return builder.ConnectionString;
         }
     }
