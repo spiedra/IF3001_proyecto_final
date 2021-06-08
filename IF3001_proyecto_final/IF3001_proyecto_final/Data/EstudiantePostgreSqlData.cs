@@ -53,8 +53,8 @@ namespace IF3001_proyecto_final.Data
 
         private void InitNpgsqlComponents(string commandText)
         {
-            ConexionPostgreSqlData conexionPostgreSqlData = new ConexionPostgreSqlData();
-            this.npgsqlConnection = (NpgsqlConnection)conexionPostgreSqlData.ConnectToDatabase();
+            //ConexionPostgreSqlData conexionPostgreSqlData = new ConexionPostgreSqlData();
+          //  this.npgsqlConnection = (NpgsqlConnection)conexionPostgreSqlData.ConnectToDatabase();
             this.npgsqlCommand = new NpgsqlCommand(commandText, this.npgsqlConnection);
         }
 

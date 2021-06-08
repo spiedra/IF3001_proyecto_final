@@ -42,8 +42,8 @@ namespace IF3001_proyecto_final.Data
 
         private void InitSqlComponents(string commandText)
         {
-            ConexionSqlServerData conexionSqlServerData = new ConexionSqlServerData();
-            this.sqlConnection = (SqlConnection)conexionSqlServerData.ConnectToDatabase();
+            //ConexionSqlServerData conexionSqlServerData = new ConexionSqlServerData();
+          //  this.sqlConnection = (SqlConnection)conexionSqlServerData.ConnectToDatabase();
             this.sqlCommand = new SqlCommand(commandText, this.sqlConnection);
         }
 

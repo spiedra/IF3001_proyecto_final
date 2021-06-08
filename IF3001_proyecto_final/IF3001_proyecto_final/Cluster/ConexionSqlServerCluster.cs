@@ -5,11 +5,11 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace IF3001_proyecto_final.Data
+namespace IF3001_proyecto_final.Cluster
 {
-    class ConexionSqlServerData
+    class ConexionSqlServerCluster
     {
-        public ConexionSqlServerData()
+        public ConexionSqlServerCluster()
         {
             this.ConnectToDatabase();
         }
@@ -19,7 +19,9 @@ namespace IF3001_proyecto_final.Data
             try
             {
                 SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
-                return sqlConnection;
+                sqlConnection.Open();
+                sqlConnection.Close();
+                return sqlConnection;                
             }
             catch (SqlException sqlException)
             {
@@ -29,7 +31,12 @@ namespace IF3001_proyecto_final.Data
 
         static private string GetConnectionString()
         {
-            return "Data Source=163.178.107.10; database=IF4101_B97452_LAB1; User Id=laboratorios; Password=KmZpo.2796";
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "35.193.110";
+            builder.UserID = "sqlserver";
+            builder.Password = "piedra";
+            builder.InitialCatalog = "tes";
+            return builder.ConnectionString;
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IF3001_proyecto_final.Cluster;
 
 namespace IF3001_proyecto_final.Layouts
 {
@@ -15,6 +16,8 @@ namespace IF3001_proyecto_final.Layouts
         public MainForm()
         {
             InitializeComponent();
+
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -24,8 +27,14 @@ namespace IF3001_proyecto_final.Layouts
 
         private void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
-            gestionEstudianteForm.Show();
+            // GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
+            //gestionEstudianteForm.Show();
+            //ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
+
+            //MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
+
+            ConexionMySqlCluster conexionMySqlCluster = new ConexionMySqlCluster();
+            MessageBox.Show("" + conexionMySqlCluster.ConnectToDatabase());
         }
 
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
