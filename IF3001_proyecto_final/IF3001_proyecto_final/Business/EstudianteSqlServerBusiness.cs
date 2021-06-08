@@ -65,5 +65,10 @@ namespace IF3001_proyecto_final.Business
         {
             return this.estudianteSqlServerData.ObtenerTelefonosEstudiante(estudianteId);
         }
+
+        public void EliminarTelefonoEstudiante(int estudianteId, string numeroTelefonico)
+        {
+            this.estudianteSqlServerData.EliminarTelefonoEstudiante(estudianteId, numeroTelefonico);
+        }
     }
 }

@@ -115,6 +115,18 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
+        public void InsertarTelefonoEstudiante(int estudianteId, string numeroTelefono)
+        {
+            string paramPhoneNumber = "@param_NUMERO_TELEFONO "
+              , paramStudentId = "@param_ID_ESTUDIANTE "
+              , commandText = "ESTUDIANTE.sp_INSERTAR_TELEFONO_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramPhoneNumber, SqlDbType.VarChar, numeroTelefono);
+            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.ExecuteNonQuery();
+        }
+
         private void EjecutarVerContactosEstudiante(int estudianteId)
         {
             string paramEstudianteId = "@param_ID_ESTUDIANTE"
