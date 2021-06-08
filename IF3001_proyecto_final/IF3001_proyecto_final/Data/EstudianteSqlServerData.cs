@@ -45,7 +45,7 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public void InsertarCursoEstudiante()
+        public void InsertarCursoEstudiante(int estudianteId, string nombreCurso)
         {
             string paramStudentId = "@param_ID_ESTUDIANTE"
                , paramCourseName = "@param_NOMBRE_CURSO"
@@ -53,8 +53,35 @@ namespace IF3001_proyecto_final.Data
 
             this.InitSqlComponents(commandText);
             this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
-            this.CreateParameter(paramCourseName, SqlDbType.Int, nombreCurso);
+            this.CreateParameter(paramCourseName, SqlDbType.VarChar, nombreCurso);
             this.ExecuteNonQuery();
+        }
+
+        public List<Carrera> MostrarCarrerasEstudiante(int estudianteId)
+        {
+            this.EjecutarMostraCarreraEstudiante(estudianteId);
+            return LeerRespuestaMostrarCarreraEstudiante();
+        }
+
+        private void EjecutarMostraCarreraEstudiante(int estudianteId)
+        {
+            string paramStudentId = "@param_ID_ESTUDIANTE"
+            , commandText = "ESTUDIANTE.sp_MOSTRAR_CARRERA_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.ExecuteNonQuery();
+        }
+
+        private List<Carrera> LeerRespuestaMostrarCarreraEstudiante()
+        {
+            List<Carrera> carreras = new List<Carrera>();
+            while (this.sqlDataReader.Read())
+            {
+                Carrera carrera = new Carrera(-1, this.sqlDataReader.GetString(0));
+                carreras.Add(carrera);
+            }
+            return carreras;
         }
 
         private void EjecutarMostrarCursosEstudiante(int estudianteId)
