@@ -63,6 +63,30 @@ namespace IF3001_proyecto_final.Data
             return LeerRespuestaMostrarCarreraEstudiante();
         }
 
+        public void EliminarCarreraEstudiante(string nombreCarrera, string carnetEstudiante)
+        {
+            string paramStudentCarnet = "@param_CARNE_ESTUDIANTE"
+                , paramMajorName = "@param_NOMBRE_CURSO"
+                , commandText = "ESTUDIANTE.QUITAR_CARRERA_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramMajorName, SqlDbType.VarChar, nombreCarrera);
+            this.CreateParameter(paramStudentCarnet, SqlDbType.VarChar, carnetEstudiante);
+            this.ExecuteNonQuery();
+        }
+
+        public void InsertarCarrreraEstudiante(int estudianteId, string nombreCarrera)
+        {
+            string paramStudentId = "@param_ID_ESTUDIANTE"
+               , paramMajorName = "@param_NOMBRE_CARRERA"
+               , commandText = "ESTUDIANTE.sp_INSERTAR_CARRERA_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.CreateParameter(paramMajorName, SqlDbType.VarChar, nombreCarrera);
+            this.ExecuteNonQuery();
+        }
+
         private void EjecutarMostraCarreraEstudiante(int estudianteId)
         {
             string paramStudentId = "@param_ID_ESTUDIANTE"
@@ -134,7 +158,7 @@ namespace IF3001_proyecto_final.Data
         {
             string paramName = "@param_NOMBRE_ESTUDIANTE"
                 , paramLastName = "@param_APELLIDOS_ESTUDIANTE"
-                , paramAge = "@param_EDAD "
+                , paramAge = "@param_EDAD"
                 , paramAverage = "@param_PROMEDIO"
                 , paramCarnet = "@param_CARNE"
                 , paramAddress = "@param_direccion"
