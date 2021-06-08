@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace IF3001_proyecto_final.Data
 {
-    class ConexionSqlServerData
+    class ConexionPostgreSqlData
     {
-        public ConexionSqlServerData()
+        public ConexionPostgreSqlData()
         {
             this.ConnectToDatabase();
         }
@@ -18,12 +18,12 @@ namespace IF3001_proyecto_final.Data
         {
             try
             {
-                SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
-                return sqlConnection;
+                NpgsqlConnection npgsqlConnection = new NpgsqlConnection(GetConnectionString());
+                return npgsqlConnection;
             }
-            catch (SqlException sqlException)
+            catch (NpgsqlException npgsqlException)
             {
-                return sqlException.Number;
+                return npgsqlException.ErrorCode;
             }
         }
 
