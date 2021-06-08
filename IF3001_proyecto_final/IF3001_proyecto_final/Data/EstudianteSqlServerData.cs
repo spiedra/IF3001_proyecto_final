@@ -105,7 +105,14 @@ namespace IF3001_proyecto_final.Data
 
         public void EliminarTelefonoEstudiante(int estudianteId, string numeroTelefonico)
         {
+            string paramStudentId = "@param_ID_ESTUDIANTE"
+               , paramNumber = "@param_NUMERO"
+               , commandText = "ESTUDIANTE.sp_QUITAR_TELEFONO_ESTUDIANTE";
 
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.CreateParameter(paramNumber, SqlDbType.VarChar, numeroTelefonico);
+            this.ExecuteNonQuery();
         }
 
         private void EjecutarVerContactosEstudiante(int estudianteId)
