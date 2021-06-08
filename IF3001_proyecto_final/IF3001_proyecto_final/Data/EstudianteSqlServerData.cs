@@ -87,6 +87,16 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
+        public void EliminarEstudiante(int estudianteId)
+        {
+            string paramStudentId = "@param_ID_ESTUDIANTE"
+              , commandText = "ESTUDIANTE.sp_BORRAR_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.ExecuteNonQuery();
+        }
+
         private void EjecutarMostraCarreraEstudiante(int estudianteId)
         {
             string paramStudentId = "@param_ID_ESTUDIANTE"
