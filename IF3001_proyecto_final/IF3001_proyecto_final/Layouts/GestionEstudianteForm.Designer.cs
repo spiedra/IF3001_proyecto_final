@@ -115,7 +115,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_agregar_estudiante.TabIndex = 10;
             this.btn_agregar_estudiante.Text = "Agregar estudiante";
             this.btn_agregar_estudiante.UseVisualStyleBackColor = true;
-            this.btn_agregar_estudiante.Click += new System.EventHandler(this.btn_agregar_estudiante_Click);
+          
             // 
             // txt_carne
             // 
@@ -440,12 +440,12 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_contacto;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-=======
+
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
->>>>>>> Randall
+
     }
 }
