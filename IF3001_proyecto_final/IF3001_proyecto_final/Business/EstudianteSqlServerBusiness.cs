@@ -41,7 +41,7 @@ namespace IF3001_proyecto_final.Business
             this.estudianteSqlServerData.InsertarCursoEstudiante(estudianteId, nombreCurso);
         }
 
-        public List<Carrera> MostrarCarreraEstudiante(int estudianteId)
+        public List<Carrera> MostrarCarrerassEstudiante(int estudianteId)
         {
             return this.estudianteSqlServerData.MostrarCarrerasEstudiante(estudianteId);
         }
