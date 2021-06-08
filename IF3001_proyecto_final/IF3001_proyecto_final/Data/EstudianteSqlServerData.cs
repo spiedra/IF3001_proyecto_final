@@ -127,6 +127,30 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
+        public void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        {
+            string paramId = "@param_ID_ESTUDIANTE"
+               , paramName = "@param_NOMBRE_ESTUDIANTE"
+               , paramLastName = "@param_APELLIDOS_ESTUDIANTE"
+               , paramAge = "@param_EDAD"
+               , paramAverage = "@param_PROMEDIO"
+               , paramCarnet = "@param_CARNE"
+               , paramAddress = "@param_direccion"
+               , paramSName = "@param_NOMBRE_SEDE "
+               , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
+
+            this.InitSqlComponents(commandText);
+            this.CreateParameter(paramId, SqlDbType.VarChar, estudiante.Id);
+            this.CreateParameter(paramName, SqlDbType.VarChar, estudiante.Nombre);
+            this.CreateParameter(paramLastName, SqlDbType.VarChar, estudiante.Apellidos);
+            this.CreateParameter(paramAge, SqlDbType.Int, estudiante.Edad);
+            this.CreateParameter(paramAverage, SqlDbType.VarChar, estudiante.Promedio);
+            this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
+            this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
+            this.CreateParameter(paramSName, SqlDbType.VarChar, estudiante.Sede);
+            this.ExecuteNonQuery();
+        }
+
         private void EjecutarVerContactosEstudiante(int estudianteId)
         {
             string paramEstudianteId = "@param_ID_ESTUDIANTE"

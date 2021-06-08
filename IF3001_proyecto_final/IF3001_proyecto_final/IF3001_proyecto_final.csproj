@@ -10,6 +10,7 @@
     <None Remove="Business\BecaBusiness.cs~RFe7537b.TMP" />
     <None Remove="Business\CarreraSqlServerBusiness .cs~RF2171785.TMP" />
     <None Remove="Business\CursoSqlServerBusiness.cs~RF210b993.TMP" />
+    <None Remove="Business\TelefonoSqlServerBusiness.cs~RF25517e5.TMP" />
     <None Remove="Data\EstudianteSqlServerData.cs~RF18430e4.TMP" />
     <None Remove="Domain\Beca.cs~RFd90281.TMP" />
     <None Remove="Domain\Carrera.cs~RFdb24d4.TMP" />
