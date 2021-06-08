@@ -29,6 +29,7 @@ namespace IF3001_proyecto_final.Layouts
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gp_registro_estudiantes = new System.Windows.Forms.GroupBox();
             this.btn_agregar_estudiante = new System.Windows.Forms.Button();
             this.txt_carne = new System.Windows.Forms.TextBox();
@@ -61,6 +62,8 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -363,6 +366,12 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -418,5 +427,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_contacto;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

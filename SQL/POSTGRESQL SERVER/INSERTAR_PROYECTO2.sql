@@ -5,11 +5,17 @@ param_NOMBRE_ESTUDIANTE VARCHAR(32),
  param_EDAD INT,
  param_PROMEDIO VARCHAR(32),
  param_CARNE VARCHAR(32),
- param_direccion varchar(32)
+ param_direccion varchar(32),
+param_sede VARCHAR(32),
+param_tipo_beca VARCHAR(32)
 ) RETURNS INT
 language plpgsql    
 AS $$
-DECLARE local_id_direccion INT;
+DECLARE 
+local_id_direccion INT;
+local_id_estudiante INT;
+local_id_beca INT;
+local_id_sede INT;
 BEGIN
 
 
@@ -39,6 +45,13 @@ BEGIN
 		param_CARNE,
 		local_id_direccion
 		);
+		SET local_id_estudiante=lastval;
+		
+		SET local_id_beca='SELECT ID_BECA FROM ADMINISTRACION.tb_BECA WHERE TIPO_BECA=param_tipo_beca';
+		SET local_id_sede='SELECT ID_SEDE FROM ADMINISTRACION.tb_SEDE WHERE NOMBRE_SEDE=param_sede';
+
+		INSERT INTO ESTUDIANTE.tb_ESTUDIANTE_SEDE (ID_ESTUDIANTE, ID_SEDE) VALUES (local_id_estudiante, local_id_sede);
+		INSERT INTO ESTUDIANTE.tb_ESTUDIANTE_BECA(ID_ESTUDIANTE,ID_BECA) VALUES (local_id_estudiante, local_id_beca);
 		RETURN 1;
 	
 	END IF;
