@@ -29,7 +29,7 @@ namespace IF3001_proyecto_final.Data
 
         static private string GetConnectionString()
         {
-            return "Data Source=163.178.107.10; database=IF4101_B97452_LAB1; User Id=laboratorios; Password=KmZpo.2796";
+            return "Data Source=34.71.67.93; database=proyectoDBA; User Id=postgres; Password=superuser";
         }
     }
 }
