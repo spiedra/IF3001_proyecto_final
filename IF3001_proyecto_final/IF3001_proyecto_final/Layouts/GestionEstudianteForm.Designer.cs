@@ -30,6 +30,8 @@ namespace IF3001_proyecto_final.Layouts
         private void InitializeComponent()
         {
             this.gp_registro_estudiantes = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_agregar_estudiante = new System.Windows.Forms.Button();
             this.txt_carne = new System.Windows.Forms.TextBox();
             this.lbl_carne = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -89,6 +89,23 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_registro_estudiantes.TabIndex = 0;
             this.gp_registro_estudiantes.TabStop = false;
             this.gp_registro_estudiantes.Text = "Registro de estudiantes";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(214, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Dirección:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(310, 198);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 34);
+            this.textBox1.TabIndex = 11;
             // 
             // btn_agregar_estudiante
             // 
@@ -368,23 +385,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(310, 198);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 34);
-            this.textBox1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Dirección:";
-            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -440,7 +440,12 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_contacto;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+=======
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+>>>>>>> Randall
     }
 }

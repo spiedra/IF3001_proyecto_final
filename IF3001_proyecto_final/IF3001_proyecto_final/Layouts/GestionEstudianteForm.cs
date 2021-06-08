@@ -50,10 +50,5 @@ namespace IF3001_proyecto_final.Layouts
             VerContactoForm vc = new VerContactoForm();
             vc.Show();
         }
-
-        private void btn_agregar_estudiante_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
