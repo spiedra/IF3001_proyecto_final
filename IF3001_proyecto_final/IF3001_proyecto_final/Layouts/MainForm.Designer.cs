@@ -137,9 +137,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem estudianteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administracionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionEstudianteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCarreraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCursotoolStripMenuItem1;
