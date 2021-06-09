@@ -18,6 +18,19 @@ namespace IF3001_proyecto_final.Cluster
             this.conexionMySqlCluster = new ConexionMySqlCluster();
         }
 
+        public bool IsMainNodeReady()
+        {
+            SqlConnection sqlConnection = (SqlConnection)this.conexionSqlServerCluster.ConnectToDatabase();
+            if (sqlConnection != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public object ConnectToDatabaseInstance()
         {
             SqlConnection sqlConnection = (SqlConnection)this.conexionSqlServerCluster.ConnectToDatabase();
@@ -29,6 +42,16 @@ namespace IF3001_proyecto_final.Cluster
             {
                 return this.conexionMySqlCluster.ConnectToDatabase();
             }
+        }
+
+        public SqlConnection ConnectToSqlServerInstance()
+        {
+            return (SqlConnection)this.conexionSqlServerCluster.ConnectToDatabase();
+        }
+
+        public MySqlConnection ConnectToMySqlInstance()
+        {
+            return (MySqlConnection)this.conexionMySqlCluster.ConnectToDatabase();
         }
     }
 }

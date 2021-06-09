@@ -59,7 +59,7 @@ namespace IF3001_proyecto_final.Data
         private void InitNpgsqlComponents(string commandText)
         {
             ListenerCluster listenerCluster = new ListenerCluster();
-            this.mysqlConnection = (MySqlConnection)listenerCluster.ConnectToDatabaseInstance();
+            this.mysqlConnection = listenerCluster.ConnectToMySqlInstance();
             this.mysqlCommand = new MySqlCommand(commandText, this.mysqlConnection);
         }
 

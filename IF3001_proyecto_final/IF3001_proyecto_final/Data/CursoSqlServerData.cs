@@ -44,7 +44,7 @@ namespace IF3001_proyecto_final.Data
         private void InitSqlComponents(string commandText)
         {
             ListenerCluster listenerCluster = new ListenerCluster();
-            this.sqlConnection = (SqlConnection)listenerCluster.ConnectToDatabaseInstance();
+            this.sqlConnection = listenerCluster.ConnectToSqlServerInstance();
             this.sqlCommand = new SqlCommand(commandText, this.sqlConnection);
         }
 
