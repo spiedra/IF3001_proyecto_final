@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 using IF3001_proyecto_final.Cluster;
 using IF3001_proyecto_final.Business;
 using IF3001_proyecto_final.Domain;
+
 
 namespace IF3001_proyecto_final.Layouts
 {
@@ -20,8 +22,6 @@ namespace IF3001_proyecto_final.Layouts
         public MainForm()
         {
             InitializeComponent();
-
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -33,6 +33,7 @@ namespace IF3001_proyecto_final.Layouts
         {
             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
             gestionEstudianteForm.Show();
+
             // ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
 
             //MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
@@ -47,7 +48,6 @@ namespace IF3001_proyecto_final.Layouts
             //estudiante.Sede = "Rodrigo Facio";
             //estudiante.TipoBeca = "5";
             //MessageBox.Show(""+estudianteMySqlBusiness.AgregarEstudiante(estudiante));
-
             // Estudiante[] estudiantes = new Estudiante[1];
             // Estudiante estudiante = new Estudiante(-1, "miguel", "torres", 14, "78", "b97452", "tirrases");
             //  estudiante.Sede = "Rodrigo Facio";
@@ -56,6 +56,7 @@ namespace IF3001_proyecto_final.Layouts
             // ListenerBusiness listenerBusiness = new ListenerBusiness();
             //
             //listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", estudiantes);
+
         }
 
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
