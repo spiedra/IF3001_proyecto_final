@@ -10,6 +10,7 @@
     <None Remove="Business\BecaBusiness.cs~RFe7537b.TMP" />
     <None Remove="Business\CarreraSqlServerBusiness .cs~RF2171785.TMP" />
     <None Remove="Business\CursoSqlServerBusiness.cs~RF210b993.TMP" />
+    <None Remove="Business\EstudianteMySqlBusiness.cs~RF3081619.TMP" />
     <None Remove="Business\EstudiantePostgreSqlBusiness.cs~RF2fa0620.TMP" />
     <None Remove="Business\TelefonoSqlServerBusiness.cs~RF25517e5.TMP" />
     <None Remove="Data\EstudianteSqlServerData.cs~RF18430e4.TMP" />
@@ -38,7 +39,6 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.25" />
-    <PackageReference Include="Npgsql" Version="5.0.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 

@@ -8,18 +8,18 @@ using IF3001_proyecto_final.Domain;
 
 namespace IF3001_proyecto_final.Business
 {
-    class EstudiantePostgreSqlBusiness
+    class EstudianteMySqlBusiness
     {
-        private EstudiantePostgreSqlData estudiantePostgreSqlData;
+        private EstudianteMySqlData estudianteMySqlData;
 
-        public EstudiantePostgreSqlBusiness()
+        public EstudianteMySqlBusiness()
         {
-            this.estudiantePostgreSqlData = new EstudiantePostgreSqlData();
+            this.estudianteMySqlData = new EstudianteMySqlData();
         }
 
         public bool AgregarEstudiante(Estudiante estudiante)
         {
-            return this.estudiantePostgreSqlData.AgregarEstudiante(estudiante);
+            return this.estudianteMySqlData.AgregarEstudiante(estudiante);
         }
     }
 }
