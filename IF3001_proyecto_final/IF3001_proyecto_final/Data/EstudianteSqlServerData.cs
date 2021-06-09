@@ -248,6 +248,8 @@ namespace IF3001_proyecto_final.Data
                 , paramAverage = "@param_PROMEDIO"
                 , paramCarnet = "@param_CARNE"
                 , paramAddress = "@param_direccion"
+                , paramSede = "@param_sede"
+                , paramBecaType = "@param_tipo_beca"
                 , commandText = "ESTUDIANTE.sp_INSERTAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
@@ -257,6 +259,8 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramAverage, SqlDbType.VarChar, estudiante.Promedio);
             this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
+            this.CreateParameter(paramSede, SqlDbType.VarChar, estudiante.Sede);
+            this.CreateParameter(paramBecaType, SqlDbType.VarChar, estudiante.TipoBeca);
             this.ExcecuteReader();
         }
 
