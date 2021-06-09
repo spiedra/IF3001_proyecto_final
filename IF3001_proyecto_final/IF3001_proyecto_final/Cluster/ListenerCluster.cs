@@ -43,5 +43,15 @@ namespace IF3001_proyecto_final.Cluster
                 return this.conexionMySqlCluster.ConnectToDatabase();
             }
         }
+
+        public SqlConnection ConnectToSqlServerInstance()
+        {
+            return (SqlConnection)this.conexionSqlServerCluster.ConnectToDatabase();
+        }
+
+        public MySqlConnection ConnectToMySqlInstance()
+        {
+            return (MySqlConnection)this.conexionMySqlCluster.ConnectToDatabase();
+        }
     }
 }
