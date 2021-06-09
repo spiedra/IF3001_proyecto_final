@@ -36,7 +36,7 @@ namespace IF3001_proyecto_final.Data
                 , commandText = "ESTUDIANTE.sp_INSERTAR_ESTUDIANTE";
 
             this.InitNpgsqlComponents(commandText);
-            this.CreateParameter(paramName, MySqlDbType.VarChar, estudiante.Nombre);
+            this.CreateParameter(paramName, MySqlDbType.Int32, estudiante.Nombre);
             this.CreateParameter(paramLastName, MySqlDbType.VarChar, estudiante.Apellidos);
             this.CreateParameter(paramAge, MySqlDbType.Int32, estudiante.Edad);
             this.CreateParameter(paramAverage, MySqlDbType.VarChar, estudiante.Promedio);
@@ -47,7 +47,6 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
         }
-
         private bool LeerRespuestaInsertarEstudiante()
         {
             if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
@@ -55,6 +54,351 @@ namespace IF3001_proyecto_final.Data
 
             return false;
         }
+
+        private void EjecutarBuscarEstudianteCarne(string carne)
+        {
+            string paramCarne = "param_CARNE"
+            ,commandText="ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES_POR_CARNE";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramCarne, MySqlDbType.VarChar, carne);
+            this.ExcecuteReader();
+        }
+
+        private Estudiante LeerRespuestaBuscarEstudianteCarne()
+        {
+            if (this.mysqlDataReader.Read())
+            {
+                Estudiante estudiante = new Estudiante(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
+                    , this.mysqlDataReader.GetString(2), this.mysqlDataReader.GetInt32(3), this.mysqlDataReader.GetString(4)
+                    , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(8));
+                estudiante.TipoBeca = this.mysqlDataReader.GetString(6);
+                estudiante.Sede = this.mysqlDataReader.GetString(7);
+                return estudiante;
+            }
+            return null;
+        }
+
+        private void EjecutarMostrarEstudiantes()
+        {
+            string commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Estudiante> leerRespuestaMostrarEstudiantes()
+        {
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            while (this.mysqlDataReader.Read())
+            {
+                Estudiante estudiante = new Estudiante(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
+                    , this.mysqlDataReader.GetString(2), this.mysqlDataReader.GetInt32(3), this.mysqlDataReader.GetString(4)
+                    , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(8));
+                estudiante.TipoBeca = this.mysqlDataReader.GetString(6);
+                estudiante.Sede = this.mysqlDataReader.GetString(7);
+                estudiantes.Add(estudiante);
+            }
+            return estudiantes;
+        }
+
+        private void EjecutarMostrarCursosEstudiante()
+        {
+            string commandText = "ESTUDIANTE.sp_MOSTRAR_CURSOS_ESTUDIANTE";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Curso> leerRespuestaMostrarCursosEstudiantes()
+        {
+            List<Curso> cursos = new List<Curso>();
+            while (this.mysqlDataReader.Read())
+            {
+                Curso curso = new Curso(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
+                    , this.mysqlDataReader.GetInt32(2));
+                cursos.Add(curso);
+            }
+            return cursos;
+        }
+
+        private void EjecutarMostrarCarreraEstudiante()
+        {
+            string commandText = "ESTUDIANTE.sp_MOSTRAR_CARRERA_ESTUDIANTE";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Carrera> leerRespuestaMostrarCarrera()
+        {
+            List<Carrera> carreras = new List<Carrera>();
+            while (this.mysqlDataReader.Read())
+            {
+                Carrera carrera = new Carrera(-1, this.mysqlDataReader.GetString(0));
+                carreras.Add(carrera);
+            }
+            return carreras;
+        }
+
+        private void EjecutarMostrarContactoEstudiante()
+        {
+            string commandText = "ESTUDIANTE.sp_MOSTRAR_CONTACTOS_ESTUDIANTE";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Telefono> LeerRespuestaContactoEstudiante()
+        {
+            List<Telefono> telefonos = new List<Telefono>();
+            while (this.mysqlDataReader.Read())
+            {
+                Telefono telefono = new Telefono(-1, this.mysqlDataReader.GetString(0));
+                telefonos.Add(telefono);
+            }
+            return telefonos;
+        }
+
+        private void EjecutarMostrarCursos()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_CURSOS";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Curso> leerRespuestaMostrarCursos()
+        {
+            List<Curso> cursos = new List<Curso>();
+            while (this.mysqlDataReader.Read())
+            {
+                Curso curso = new Curso(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
+                    , this.mysqlDataReader.GetInt32(2));
+                cursos.Add(curso);
+            }
+            return cursos;
+        }
+
+        private void EjecutarMostrarCarreras()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_CARRERAS";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Carrera> LeerRespuestaMostrarCarreras()
+        {
+            List<Carrera> carreras = new List<Carrera>();
+            while (this.mysqlDataReader.Read())
+            {
+                Carrera carrera = new Carrera(-1, this.mysqlDataReader.GetString(0));
+                carreras.Add(carrera);
+            }
+            return carreras;
+        }
+
+        private void EjecutarMostrarBecas()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_BECAS";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Beca> LeerRespuestaMostrarBecas()
+        {
+            List<Beca> becas = new List<Beca>();
+            while (this.mysqlDataReader.Read())
+            {
+                Beca beca = new Beca(-1, this.mysqlDataReader.GetString(0));
+                becas.Add(beca);
+            }
+            return becas;
+        }
+
+        private void EjecutarMostrarSedes()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_SEDES";   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Sede> leerRespuestaMostrarSedes()
+        {
+            List<Sede> sedes = new List<Sede>();
+            while (this.mysqlDataReader.Read())
+            {
+                Sede sede = new Sede(-1, this.mysqlDataReader.GetString(0));
+                sedes.Add(sede);
+            }
+            return sedes;
+        }
+
+
+        private void InsertarCursoEstudiante(int estudianteId, string nombreCurso)
+        {
+            string paramStudentId = "param_ID_ESTUDIANTE"
+              , paramCourseName = "param_NOMBRE_CURSO"
+               , paramOut = "msg"
+              , commandText = "ESTUDIANTE.sp_INSERTAR_CURSO_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramStudentId, MySqlDbType.Int32, estudianteId);
+            this.CreateParameter(paramCourseName, MySqlDbType.VarChar, nombreCurso);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+        }
+
+        private bool leerRespuestaInsertarCursoEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
+       private void QuitarCursoEstudiante(int estudianteId, string nombreCurso)
+        {
+            string paramStudentId = "param_ID_ESTUDIANTE"
+              , paramCourseName = "param_NOMBRE_CURSO"
+               , paramOut = "msg"
+              , commandText = "ESTUDIANTE.sp_QUITAR_CURSO_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramStudentId, MySqlDbType.Int32, estudianteId);
+            this.CreateParameter(paramCourseName, MySqlDbType.VarChar, nombreCurso);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+        }
+
+        private bool leerRespuestaQuitarCursoEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
+        private void InsertarCarreraEstudiante(int estudianteId, string nombreCarrera)
+        {
+            string paramStudentId = "param_ID_ESTUDIANTE"
+              , paramMajorName = "param_NOMBRE_CARRERA"
+               , paramOut = "msg"
+              , commandText = "ESTUDIANTE.sp_INSERTAR_CARRERA_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramStudentId, MySqlDbType.Int32, estudianteId);
+            this.CreateParameter(paramMajorName, MySqlDbType.VarChar, nombreCarrera);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+        }
+
+        private bool LeerRespuestaInsertarCarreraEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
+        private void QuitarCarreraEstudiante(int estudianteId, string nombreCarrera)
+        {
+            string paramStudentId = "param_ID_ESTUDIANTE"
+              , paramMajorName = "param_NOMBRE_CARRERA"
+               , paramOut = "msg"
+              , commandText = "ESTUDIANTE.sp_QUITAR_CARRERA_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramStudentId, MySqlDbType.Int32, estudianteId);
+            this.CreateParameter(paramMajorName, MySqlDbType.VarChar, nombreCarrera);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+        }
+
+        private bool LeerRespuestaQuitarCarreraEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
+       
+
+        private void InsertarTelefonoEstudiante(int estudianteId, string numeroTelefono)
+        {
+            string paramPhoneNumber = "param_NUMERO_TELEFONO"
+              , paramStudentId = "param_ID_ESTUDIANTE"
+               , paramOut = "msg"
+              , commandText = "ESTUDIANTE.sp_INSERTAR_TELEFONO_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramPhoneNumber, MySqlDbType.VarChar, numeroTelefono);
+            this.CreateParameter(paramStudentId, MySqlDbType.Int32, estudianteId);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+        }
+
+        private bool LeerRespuestaInsertarTelefonoEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
+        private void QuitarTelefonoEstudiante(int estudianteId, string numeroTelefonico)
+        {
+            string paramStudentId = "param_ID_ESTUDIANTE"
+               , paramNumber = "param_NUMERO"
+                , paramOut = "msg"
+               , commandText = "ESTUDIANTE.sp_QUITAR_TELEFONO_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramStudentId, MySqlDbType.Int32, estudianteId);
+            this.CreateParameter(paramNumber, MySqlDbType.VarChar, numeroTelefonico);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+
+             
+        }
+
+        private bool LeerRespuestaQuitarTelefonoEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
+        private void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        {
+            string paramId = "param_ID_ESTUDIANTE"
+               , paramName = "param_NOMBRE_ESTUDIANTE"
+               , paramLastName = "param_APELLIDOS_ESTUDIANTE"
+               , paramAge = "param_EDAD"
+               , paramAverage = "param_PROMEDIO"
+               , paramCarnet = "param_CARNE"
+               , paramAddress = "param_direccion"
+               , paramSName = "param_NOMBRE_SEDE"
+                , paramOut = "msg"
+               , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
+
+            this.InitNpgsqlComponents(commandText);
+            this.CreateParameter(paramId, MySqlDbType.Int32, estudiante.Id);
+            this.CreateParameter(paramName, MySqlDbType.VarChar, estudiante.Nombre);
+            this.CreateParameter(paramLastName, MySqlDbType.VarChar, estudiante.Apellidos);
+            this.CreateParameter(paramAge, MySqlDbType.Int32, estudiante.Edad);
+            this.CreateParameter(paramAverage, MySqlDbType.VarChar, estudiante.Promedio);
+            this.CreateParameter(paramCarnet, MySqlDbType.VarChar, estudiante.Carnet);
+            this.CreateParameter(paramAddress, MySqlDbType.VarChar, estudiante.Direccion);
+            this.CreateParameter(paramSName, MySqlDbType.VarChar, estudiante.Sede);
+            this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
+            this.ExecuteNonQuery();
+        }
+
+        private bool LeerRespuestaActualizarEstudiante()
+        {
+            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
+                return true;
+
+            return false;
+        }
+
 
         private void InitNpgsqlComponents(string commandText)
         {

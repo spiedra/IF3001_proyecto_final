@@ -34,20 +34,7 @@ namespace IF3001_proyecto_final.Layouts
             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
             gestionEstudianteForm.Show();
 
-            // ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
-
-            //MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
-
-            //ConexionMySqlCluster conexionMySqlCluster = new ConexionMySqlCluster();
-            //MessageBox.Show("" + conexionMySqlCluster.ConnectToDatabase());
-            // ListenerCluster listenerCluster = new ListenerCluster();
-            // MessageBox.Show("" + listenerCluster.ConnectToDatabaseInstance());
-
-            //EstudianteMySqlBusiness estudianteMySqlBusiness = new EstudianteMySqlBusiness();
-            //Estudiante estudiante = new Estudiante(-1, "miguel", "torres", 14, "78", "b000", "tirrases");
-            //estudiante.Sede = "Rodrigo Facio";
-            //estudiante.TipoBeca = "5";
-            //MessageBox.Show(""+estudianteMySqlBusiness.AgregarEstudiante(estudiante));
+           
             // Estudiante[] estudiantes = new Estudiante[1];
             // Estudiante estudiante = new Estudiante(-1, "miguel", "torres", 14, "78", "b97452", "tirrases");
             //  estudiante.Sede = "Rodrigo Facio";
