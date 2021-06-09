@@ -64,6 +64,12 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lb_sedes = new System.Windows.Forms.Label();
+            this.lb_tipo_beca = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,6 +77,12 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // gp_registro_estudiantes
             // 
+            this.gp_registro_estudiantes.Controls.Add(this.lb_tipo_beca);
+            this.gp_registro_estudiantes.Controls.Add(this.lb_sedes);
+            this.gp_registro_estudiantes.Controls.Add(this.label3);
+            this.gp_registro_estudiantes.Controls.Add(this.label2);
+            this.gp_registro_estudiantes.Controls.Add(this.comboBox2);
+            this.gp_registro_estudiantes.Controls.Add(this.comboBox1);
             this.gp_registro_estudiantes.Controls.Add(this.label1);
             this.gp_registro_estudiantes.Controls.Add(this.txb_direccion);
             this.gp_registro_estudiantes.Controls.Add(this.btn_agregar_estudiante);
@@ -86,7 +98,7 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_registro_estudiantes.Controls.Add(this.lbl_nombre);
             this.gp_registro_estudiantes.Location = new System.Drawing.Point(32, 29);
             this.gp_registro_estudiantes.Name = "gp_registro_estudiantes";
-            this.gp_registro_estudiantes.Size = new System.Drawing.Size(486, 307);
+            this.gp_registro_estudiantes.Size = new System.Drawing.Size(745, 307);
             this.gp_registro_estudiantes.TabIndex = 0;
             this.gp_registro_estudiantes.TabStop = false;
             this.gp_registro_estudiantes.Text = "Registro de estudiantes";
@@ -394,6 +406,58 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(571, 50);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(571, 125);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(151, 28);
+            this.comboBox2.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "label3";
+            // 
+            // lb_sedes
+            // 
+            this.lb_sedes.AutoSize = true;
+            this.lb_sedes.Location = new System.Drawing.Point(473, 56);
+            this.lb_sedes.Name = "lb_sedes";
+            this.lb_sedes.Size = new System.Drawing.Size(51, 20);
+            this.lb_sedes.TabIndex = 17;
+            this.lb_sedes.Text = "Sedes:";
+            // 
+            // lb_tipo_beca
+            // 
+            this.lb_tipo_beca.AutoSize = true;
+            this.lb_tipo_beca.Location = new System.Drawing.Point(473, 129);
+            this.lb_tipo_beca.Name = "lb_tipo_beca";
+            this.lb_tipo_beca.Size = new System.Drawing.Size(78, 20);
+            this.lb_tipo_beca.TabIndex = 18;
+            this.lb_tipo_beca.Text = "Tipo Beca:";
+            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -458,6 +522,11 @@ namespace IF3001_proyecto_final.Layouts
 
        
         private System.Windows.Forms.TextBox txb_direccion;
-
+        private System.Windows.Forms.Label lb_tipo_beca;
+        private System.Windows.Forms.Label lb_sedes;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
