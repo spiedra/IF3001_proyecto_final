@@ -27,6 +27,6 @@ namespace IF3001_proyecto_final.Domain
         public string Carnet { get; set; }
         public string Direccion { get; set; }
         public string Sede { get; set; }
-        public int TipoBeca { get; set; }
+        public string TipoBeca { get; set; }
     }
 }

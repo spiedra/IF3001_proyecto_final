@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using IF3001_proyecto_final.Domain;
 using System.Threading.Tasks;
+using IF3001_proyecto_final.Cluster;
 
 namespace IF3001_proyecto_final.Data
 {
@@ -232,7 +233,7 @@ namespace IF3001_proyecto_final.Data
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
                     , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
                     , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8));
-                estudiante.TipoBeca = this.sqlDataReader.GetInt32(6);
+                estudiante.TipoBeca = this.sqlDataReader.GetString(6);
                 estudiante.Sede = this.sqlDataReader.GetString(7);
                 return estudiante;
             }
@@ -271,8 +272,8 @@ namespace IF3001_proyecto_final.Data
 
         private void InitSqlComponents(string commandText)
         {
-            //ConexionSqlServerData conexionSqlServerData = new ConexionSqlServerData();
-          //  this.sqlConnection = (SqlConnection)conexionSqlServerData.ConnectToDatabase();
+            ListenerCluster listenerCluster = new ListenerCluster();
+            this.sqlConnection = (SqlConnection)listenerCluster.ConnectToDatabaseInstance();
             this.sqlCommand = new SqlCommand(commandText, this.sqlConnection);
         }
 

@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using IF3001_proyecto_final.Domain;
+using IF3001_proyecto_final.Cluster;
 
 namespace IF3001_proyecto_final.Data
 {
@@ -41,8 +42,8 @@ namespace IF3001_proyecto_final.Data
 
         private void InitSqlComponents(string commandText)
         {
-           // ConexionSqlServerData conexionSqlServerData = new ConexionSqlServerData();
-          //  this.sqlConnection = (SqlConnection)conexionSqlServerData.ConnectToDatabase();
+            ListenerCluster listenerCluster = new ListenerCluster();
+            this.sqlConnection = (SqlConnection)listenerCluster.ConnectToDatabaseInstance();
             this.sqlCommand = new SqlCommand(commandText, this.sqlConnection);
         }
 

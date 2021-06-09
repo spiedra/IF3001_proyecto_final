@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 using IF3001_proyecto_final.Cluster;
+using IF3001_proyecto_final.Business;
+using IF3001_proyecto_final.Domain;
 
 namespace IF3001_proyecto_final.Layouts
 {
@@ -27,16 +31,23 @@ namespace IF3001_proyecto_final.Layouts
 
         private void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
-            //gestionEstudianteForm.Show();
-            ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
+             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
+             gestionEstudianteForm.Show();
+            // ConexionSqlServerCluster conexionSqlServer = new ConexionSqlServerCluster();
 
-            MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
+            //MessageBox.Show("hoal" + conexionSqlServer.ConnectToDatabase());
 
             //ConexionMySqlCluster conexionMySqlCluster = new ConexionMySqlCluster();
             //MessageBox.Show("" + conexionMySqlCluster.ConnectToDatabase());
-           // ListenerCluster listenerCluster = new ListenerCluster();
-           // MessageBox.Show("" + listenerCluster.ConnectToDatabaseInstance());
+            // ListenerCluster listenerCluster = new ListenerCluster();
+            // MessageBox.Show("" + listenerCluster.ConnectToDatabaseInstance());
+
+            //EstudianteMySqlBusiness estudianteMySqlBusiness = new EstudianteMySqlBusiness();
+            //Estudiante estudiante = new Estudiante(-1, "miguel", "torres", 14, "78", "b000", "tirrases");
+            //estudiante.Sede = "Rodrigo Facio";
+            //estudiante.TipoBeca = "5";
+            //MessageBox.Show(""+estudianteMySqlBusiness.AgregarEstudiante(estudiante));
+
         }
 
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
