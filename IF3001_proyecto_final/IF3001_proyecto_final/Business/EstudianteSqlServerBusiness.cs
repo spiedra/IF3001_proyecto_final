@@ -80,5 +80,15 @@ namespace IF3001_proyecto_final.Business
         {
             this.estudianteSqlServerData.ActualizarEstudiante(estudiante, nuevaSede);
         }
+
+        public List<Curso> ObtenerTodosLosCursos()
+        {
+            return this.estudianteSqlServerData.ObtenerTodosLosCursos();
+        }
+
+        public List<Carrera> ObtenerTodasLasCarreras()
+        {
+            return this.estudianteSqlServerData.ObtenerTodasLasCarreras();
+        }
     }
 }

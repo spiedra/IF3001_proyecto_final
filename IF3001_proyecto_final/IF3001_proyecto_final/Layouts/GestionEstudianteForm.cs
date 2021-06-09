@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using IF3001_proyecto_final.Business;
+using IF3001_proyecto_final.Domain;
+
 
 namespace IF3001_proyecto_final.Layouts
 {
@@ -49,6 +45,20 @@ namespace IF3001_proyecto_final.Layouts
         {
             VerContactoForm vc = new VerContactoForm();
             vc.Show();
+        }
+
+        private void btn_agregar_estudiante_Click(object sender, EventArgs e)
+        {
+            new ListenerBusiness().ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", this.CreateEstudiante());
+        }
+
+        private Estudiante[] CreateEstudiante()
+        {
+            Estudiante[] estudiante = new Estudiante[1] {
+                new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text),
+                this.txt_promedio.Text, this.txt_carne.Text, this.txb_direccion.Text, null, null)
+            };
+            return estudiante;
         }
     }
 }

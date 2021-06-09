@@ -31,7 +31,7 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.gp_registro_estudiantes = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txb_direccion = new System.Windows.Forms.TextBox();
             this.btn_agregar_estudiante = new System.Windows.Forms.Button();
             this.txt_carne = new System.Windows.Forms.TextBox();
             this.lbl_carne = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_apellidos = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.lvl_carne_buscar = new System.Windows.Forms.Label();
@@ -63,8 +64,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txb_direccion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,13 +100,13 @@ namespace IF3001_proyecto_final.Layouts
             this.label1.TabIndex = 12;
             this.label1.Text = "Dirección:";
             // 
-            // textBox1
+            // txb_direccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 198);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 34);
-            this.textBox1.TabIndex = 11;
+            this.txb_direccion.Location = new System.Drawing.Point(310, 198);
+            this.txb_direccion.Multiline = true;
+            this.txb_direccion.Name = "txb_direccion";
+            this.txb_direccion.Size = new System.Drawing.Size(125, 34);
+            this.txb_direccion.TabIndex = 11;
             // 
             // btn_agregar_estudiante
             // 
@@ -117,7 +116,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_agregar_estudiante.TabIndex = 10;
             this.btn_agregar_estudiante.Text = "Agregar estudiante";
             this.btn_agregar_estudiante.UseVisualStyleBackColor = true;
-
+            this.btn_agregar_estudiante.Click += new System.EventHandler(this.btn_agregar_estudiante_Click);
             // 
             // txt_carne
             // 
@@ -198,6 +197,14 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_nombre.Size = new System.Drawing.Size(67, 20);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(310, 198);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 34);
+            this.textBox1.TabIndex = 11;
             // 
             // btn_buscar
             // 
@@ -386,24 +393,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
-            // 
-
-            // txb_direccion
-            // 
-            this.txb_direccion.Location = new System.Drawing.Point(310, 198);
-            this.txb_direccion.Multiline = true;
-            this.txb_direccion.Name = "txb_direccion";
-            this.txb_direccion.Size = new System.Drawing.Size(125, 34);
-            this.txb_direccion.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Dirección:";
             // 
             // GestionEstudianteForm
             // 
