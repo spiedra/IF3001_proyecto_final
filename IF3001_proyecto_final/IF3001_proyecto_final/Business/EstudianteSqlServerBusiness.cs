@@ -91,14 +91,14 @@ namespace IF3001_proyecto_final.Business
             return this.estudianteSqlServerData.ObtenerTodasLasCarreras();
         }
 
+        public List<Beca> ObtenerTodasLasBecas()
+        {
+            return this.estudianteSqlServerData.ObtenerTodasLasBeca();
+        }
+
         public List<Sede> ObtenerTodasLasSedes()
         {
             return this.estudianteSqlServerData.ObtenerTodasLasSedes();
-        }
-
-        private List<Beca> LeerRespuestaMostrarBecas()
-        {
-            return this.estudianteSqlServerData.ObtenerTodasLasBecas();
         }
     }
 }

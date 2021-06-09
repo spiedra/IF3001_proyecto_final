@@ -141,7 +141,7 @@ namespace IF3001_proyecto_final.Data
                , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramId, SqlDbType.VarChar, estudiante.Id);
+            this.CreateParameter(paramId, SqlDbType.Int, estudiante.Id);
             this.CreateParameter(paramName, SqlDbType.VarChar, estudiante.Nombre);
             this.CreateParameter(paramLastName, SqlDbType.VarChar, estudiante.Apellidos);
             this.CreateParameter(paramAge, SqlDbType.Int, estudiante.Edad);
@@ -170,7 +170,7 @@ namespace IF3001_proyecto_final.Data
             return this.LeerRespuestaMostrarSedes();
         }
 
-        public List<Beca> ObtenerTodasLasBecas()
+        public List<Beca> ObtenerTodasLasBeca()
         {
             this.EjecutarMostrarBecas();
             return this.LeerRespuestaMostrarBecas();
@@ -313,7 +313,7 @@ namespace IF3001_proyecto_final.Data
 
         private void EjecutarMostrarEstudiantePorCarnet(string carnet)
         {
-            string paramCarnet = "@param_CARNE "
+            string paramCarnet = "@param_CARNE"
                 , commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES_POR_CARNE";
 
             this.InitSqlComponents(commandText);

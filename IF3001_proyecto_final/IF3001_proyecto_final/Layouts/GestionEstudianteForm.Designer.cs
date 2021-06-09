@@ -64,8 +64,8 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbx_sedes = new System.Windows.Forms.ComboBox();
+            this.cbx_tipos_beca = new System.Windows.Forms.ComboBox();
             this.lb_sedes = new System.Windows.Forms.Label();
             this.lb_tipo_beca = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
@@ -77,8 +77,8 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.gp_registro_estudiantes.Controls.Add(this.lb_tipo_beca);
             this.gp_registro_estudiantes.Controls.Add(this.lb_sedes);
-            this.gp_registro_estudiantes.Controls.Add(this.comboBox2);
-            this.gp_registro_estudiantes.Controls.Add(this.comboBox1);
+            this.gp_registro_estudiantes.Controls.Add(this.cbx_tipos_beca);
+            this.gp_registro_estudiantes.Controls.Add(this.cbx_sedes);
             this.gp_registro_estudiantes.Controls.Add(this.label1);
             this.gp_registro_estudiantes.Controls.Add(this.txb_direccion);
             this.gp_registro_estudiantes.Controls.Add(this.btn_agregar_estudiante);
@@ -402,21 +402,21 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
-            // comboBox1
+            // cbx_sedes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(571, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 13;
+            this.cbx_sedes.FormattingEnabled = true;
+            this.cbx_sedes.Location = new System.Drawing.Point(571, 50);
+            this.cbx_sedes.Name = "cbx_sedes";
+            this.cbx_sedes.Size = new System.Drawing.Size(151, 28);
+            this.cbx_sedes.TabIndex = 13;
             // 
-            // comboBox2
+            // cbx_tipos_beca
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(571, 125);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 14;
+            this.cbx_tipos_beca.FormattingEnabled = true;
+            this.cbx_tipos_beca.Location = new System.Drawing.Point(571, 125);
+            this.cbx_tipos_beca.Name = "cbx_tipos_beca";
+            this.cbx_tipos_beca.Size = new System.Drawing.Size(151, 28);
+            this.cbx_tipos_beca.TabIndex = 14;
             // 
             // lb_sedes
             // 
@@ -502,7 +502,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.TextBox txb_direccion;
         private System.Windows.Forms.Label lb_tipo_beca;
         private System.Windows.Forms.Label lb_sedes;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_tipos_beca;
+        private System.Windows.Forms.ComboBox cbx_sedes;
     }
 }
