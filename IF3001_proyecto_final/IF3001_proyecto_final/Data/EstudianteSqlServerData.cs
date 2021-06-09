@@ -170,6 +170,29 @@ namespace IF3001_proyecto_final.Data
             return this.LeerRespuestaMostrarSedes();
         }
 
+        public List<Beca> ObtenerTodasLasBecas()
+        {
+            this.EjecutarMostrarBecas();
+            return this.LeerRespuestaMostrarBecas();
+        }
+
+        private void EjecutarMostrarBecas()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_BECAS";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Beca> LeerRespuestaMostrarBecas()
+        {
+            List<Beca> becas = new List<Beca>();
+            while (this.sqlDataReader.Read())
+            {
+                becas.Add(new Beca(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
+            }
+            return becas;
+        }
+
         private void EjecutarMostrarSedes()
         {
             string commandText = "ADMINISTRACION.MOSTRAR_SEDES";

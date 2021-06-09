@@ -93,7 +93,12 @@ namespace IF3001_proyecto_final.Business
 
         public List<Sede> ObtenerTodasLasSedes()
         {
-            return this.ObtenerTodasLasSedes();
+            return this.estudianteSqlServerData.ObtenerTodasLasSedes();
+        }
+
+        private List<Beca> LeerRespuestaMostrarBecas()
+        {
+            return this.estudianteSqlServerData.ObtenerTodasLasBecas();
         }
     }
 }
