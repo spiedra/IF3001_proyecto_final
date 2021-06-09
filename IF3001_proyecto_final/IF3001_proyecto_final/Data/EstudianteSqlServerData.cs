@@ -15,6 +15,7 @@ namespace IF3001_proyecto_final.Data
         private SqlCommand sqlCommand;
         private SqlConnection sqlConnection;
         private SqlDataReader sqlDataReader;
+        private SqlParameter parameterReturn;
 
         public bool AgregarEstudiante(Estudiante estudiante)
         {
@@ -356,13 +357,13 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSede, SqlDbType.VarChar, estudiante.Sede);
             this.CreateParameter(paramBecaType, SqlDbType.VarChar, estudiante.TipoBeca);
-            this.ExcecuteReader();
+            this.CreateParameterOutput();
+            this.ExecuteNonQuery();
         }
 
         private bool LeerRespuestaInsertarEstudiante()
         {
-            this.sqlDataReader.Read();
-            if (this.sqlDataReader.GetInt32(0) == 1)
+            if ((int)this.parameterReturn.Value == 1)
                 return true;
 
             this.sqlConnection.Close();
@@ -381,6 +382,13 @@ namespace IF3001_proyecto_final.Data
             SqlParameter sqlParameter = new SqlParameter(parameterName, dbType);
             sqlParameter.Value = value;
             this.sqlCommand.Parameters.Add(sqlParameter);
+        }
+
+        private void CreateParameterOutput()
+        {
+            this.parameterReturn = new SqlParameter();
+            parameterReturn.Direction = ParameterDirection.ReturnValue;
+            this.sqlCommand.Parameters.Add(this.parameterReturn);
         }
 
         private void ExecuteNonQuery()
