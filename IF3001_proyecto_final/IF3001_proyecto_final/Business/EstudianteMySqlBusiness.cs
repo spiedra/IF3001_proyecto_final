@@ -19,87 +19,87 @@ namespace IF3001_proyecto_final.Business
 
         public bool AgregarEstudiante(Estudiante estudiante)
         {
-            return this.estudianteSqlServerData.AgregarEstudiante(estudiante);
+            return this.estudianteMySqlData.AgregarEstudiante(estudiante);
         }
 
         public Estudiante ObtenerEstudiantePorCarnet(string carnet)
         {
-            return this.estudianteSqlServerData.ObtenerEstudiantePorCarnet(carnet);
+            return this.estudianteMySqlData.EjecutarBuscarEstudianteCarne(carnet);
         }
 
         public List<Curso> ObtenerCursosEstudiante(int estudianteId)
         {
-            return this.estudianteSqlServerData.ObtenerCursosEstudiante(estudianteId);
+            return this.estudianteMySqlData.EjecutarMostrarCursosEstudiante(estudianteId);
         }
 
         public void EliminarCursoEstudiante(string carnetEstudiante, string nombreCurso)
         {
-            this.estudianteSqlServerData.EliminarCursoEstudiante(carnetEstudiante, nombreCurso);
+            this.estudianteMySqlData.QuitarCursoEstudiante(carnetEstudiante, nombreCurso);
         }
 
         public void InsertarCursoEstudiante(int estudianteId, string nombreCurso)
         {
-            this.estudianteSqlServerData.InsertarCursoEstudiante(estudianteId, nombreCurso);
+            this.estudianteMySqlData.InsertarCursoEstudiante(estudianteId, nombreCurso);
         }
 
         public List<Carrera> ObtenerCarrerasEstudiante(int estudianteId)
         {
-            return this.estudianteSqlServerData.ObtenerCarrerasEstudiante(estudianteId);
+            return this.estudianteMySqlData.EjecutarMostrarCarreraEstudiante(estudianteId);
         }
 
         public void EliminarCarreraEstudiante(string nombreCarrera, string carnetEstudiante)
         {
-            this.estudianteSqlServerData.EliminarCarreraEstudiante(nombreCarrera, carnetEstudiante);
+            this.estudianteMySqlData.QuitarCarreraEstudiante(nombreCarrera, carnetEstudiante);
         }
 
         public void InsertarCarreraEstudiante(int estudianteId, string nombreCarrera)
         {
-            this.estudianteSqlServerData.InsertarCarrreraEstudiante(estudianteId, nombreCarrera);
+            this.estudianteMySqlData.InsertarCarreraEstudiante(estudianteId, nombreCarrera);
         }
 
         public void EliminarEstudiante(int estudianteId)
         {
-            this.estudianteSqlServerData.EliminarEstudiante(estudianteId);
+            this.estudianteMySqlData.BorrarEstudiante(estudianteId);
         }
 
         public List<Telefono> ObtenerTelefonosEstudiante(int estudianteId)
         {
-            return this.estudianteSqlServerData.ObtenerTelefonosEstudiante(estudianteId);
+            return this.estudianteMySqlData.EjecutarMostrarContactoEstudiante(estudianteId);
         }
 
         public void EliminarTelefonoEstudiante(int estudianteId, string numeroTelefonico)
         {
-            this.estudianteSqlServerData.EliminarTelefonoEstudiante(estudianteId, numeroTelefonico);
+            this.estudianteMySqlData.QuitarTelefonoEstudiante(estudianteId, numeroTelefonico);
         }
 
         public void InsertarTelefonoEstudiante(int estudianteId, string numeroTelefono)
         {
-            this.estudianteSqlServerData.InsertarTelefonoEstudiante(estudianteId, numeroTelefono);
+            this.estudianteMySqlData.InsertarTelefonoEstudiante(estudianteId, numeroTelefono);
         }
 
         public void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
         {
-            this.estudianteSqlServerData.ActualizarEstudiante(estudiante, nuevaSede);
+            this.estudianteMySqlData.ActualizarEstudiante(estudiante, nuevaSede);
         }
 
         public List<Curso> ObtenerTodosLosCursos()
         {
-            return this.estudianteSqlServerData.ObtenerTodosLosCursos();
+            return this.estudianteMySqlData.EjecutarMostrarCursos();
         }
 
         public List<Carrera> ObtenerTodasLasCarreras()
         {
-            return this.estudianteSqlServerData.ObtenerTodasLasCarreras();
+            return this.estudianteMySqlData.EjecutarMostrarCarreras();
         }
 
         public List<Sede> ObtenerTodasLasSedes()
         {
-            return this.estudianteSqlServerData.ObtenerTodasLasSedes();
+            return this.estudianteMySqlData.EjecutarMostrarSedes();
         }
 
         private List<Beca> LeerRespuestaMostrarBecas()
         {
-            return this.estudianteSqlServerData.ObtenerTodasLasBecas();
+            return this.estudianteMySqlData.EjecutarMostrarBecas();
         }
 
 
