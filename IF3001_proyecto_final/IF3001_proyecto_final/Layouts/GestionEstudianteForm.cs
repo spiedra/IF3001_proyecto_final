@@ -52,7 +52,24 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_agregar_estudiante_Click(object sender, EventArgs e)
         {
-            new ListenerBusiness().ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", this.CreateEstudiante());
+            if (this.txt_nombre.Text != string.Empty && this.txt_apellidos.Text != string.Empty
+                && this.txt_edad.Text != string.Empty && this.txt_promedio.Text != string.Empty
+                && this.txt_carne.Text != string.Empty && this.txb_direccion.Text != string.Empty
+                && this.cbx_sedes.SelectedIndex != -1 && this.cbx_tipos_beca.SelectedIndex != -1)
+            {
+                if ((bool)new ListenerBusiness().ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", this.CreateEstudiante()))
+                {
+                    MessageBox.Show("!Estudiante ingresado correctamente!");
+                }
+                else
+                {
+                    MessageBox.Show("!El carnet ya ha sido ingresado!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rellenar los espacios en blanco");
+            }
         }
 
         private Estudiante[] CreateEstudiante()
