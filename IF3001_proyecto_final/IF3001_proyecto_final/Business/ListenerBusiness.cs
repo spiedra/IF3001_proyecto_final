@@ -19,29 +19,30 @@ namespace IF3001_proyecto_final.Business
             this.InitListDataClasses();
         }
 
-        public void ConnectToListener(string className, string actionName, object[] parameters)
+        public object ConnectToListener(string className, string actionName, object[] parameters)
         {
             if (this.listenerCluster.IsMainNodeReady())
             {
 
-                 this.ExcecuteNode(className, actionName, parameters, "SqlServerBusiness");
+                return this.ExcecuteNode(className, actionName, parameters, "SqlServerBusiness");
             }
             else
             {
-                this.ExcecuteNode(className, actionName, parameters, "MySqlBusiness");
+                return this.ExcecuteNode(className, actionName, parameters, "MySqlBusiness");
             }
         }
 
-        private void ExcecuteNode(string className, string actionName, object[] parameters, string identifier)
+        private object ExcecuteNode(string className, string actionName, object[] parameters, string identifier)
         {
             foreach (object dataClass in this.listDataClasses)
             {
-                if (dataClass.ToString().Equals(className+identifier))
+                if (dataClass.ToString().Equals(className + identifier))
                 {
                     MethodInfo mi = dataClass.GetType().GetMethod(actionName);
-                    mi.Invoke(dataClass, parameters);
+                    return mi.Invoke(dataClass, parameters);
                 }
             }
+            return null;
         }
 
         private void InitListDataClasses()

@@ -141,7 +141,7 @@ namespace IF3001_proyecto_final.Data
                , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramId, SqlDbType.VarChar, estudiante.Id);
+            this.CreateParameter(paramId, SqlDbType.Int, estudiante.Id);
             this.CreateParameter(paramName, SqlDbType.VarChar, estudiante.Nombre);
             this.CreateParameter(paramLastName, SqlDbType.VarChar, estudiante.Apellidos);
             this.CreateParameter(paramAge, SqlDbType.Int, estudiante.Edad);
@@ -150,6 +150,101 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSName, SqlDbType.VarChar, estudiante.Sede);
             this.ExecuteNonQuery();
+        }
+
+        public List<Curso> ObtenerTodosLosCursos()
+        {
+            this.EjecutarMostrarCursos();
+            return this.LeerRespuestaMostrarCursos();
+        }
+
+        public List<Carrera> ObtenerTodasLasCarreras()
+        {
+            this.EjecutarMostrarCarreras();
+            return this.LeerRespuestaMostrarCarreras();
+        }
+
+        public List<Sede> ObtenerTodasLasSedes()
+        {
+            this.EjecutarMostrarSedes();
+            return this.LeerRespuestaMostrarSedes();
+        }
+
+        public List<Beca> ObtenerTodasLasBeca()
+        {
+            this.EjecutarMostrarBecas();
+            return this.LeerRespuestaMostrarBecas();
+        }
+
+        private void EjecutarMostrarBecas()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_BECAS";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Beca> LeerRespuestaMostrarBecas()
+        {
+            List<Beca> becas = new List<Beca>();
+            while (this.sqlDataReader.Read())
+            {
+                becas.Add(new Beca(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
+            }
+            return becas;
+        }
+
+        private void EjecutarMostrarSedes()
+        {
+            string commandText = "ADMINISTRACION.MOSTRAR_SEDES";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Sede> LeerRespuestaMostrarSedes()
+        {
+            List<Sede> sedes = new List<Sede>();
+            while (this.sqlDataReader.Read())
+            {
+                sedes.Add(new Sede(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
+            }
+            return sedes;
+        }
+
+        private void EjecutarMostrarCursos()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_CURSOS";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Curso> LeerRespuestaMostrarCursos()
+        {
+            List<Curso> cursos = new List<Curso>();
+            while (this.sqlDataReader.Read())
+            {
+                Curso curso = new Curso(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
+                    , this.sqlDataReader.GetInt32(2));
+                cursos.Add(curso);
+            }
+            return cursos;
+        }
+
+        private void EjecutarMostrarCarreras()
+        {
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_CARRERAS";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Carrera> LeerRespuestaMostrarCarreras()
+        {
+            List<Carrera> carreras = new List<Carrera>();
+            while (this.sqlDataReader.Read())
+            {
+                Carrera carrera = new Carrera(this.sqlDataReader.GetInt32(1), this.sqlDataReader.GetString(1));
+                carreras.Add(carrera);
+            }
+            return carreras;
         }
 
         private void EjecutarVerContactosEstudiante(int estudianteId)
@@ -218,7 +313,7 @@ namespace IF3001_proyecto_final.Data
 
         private void EjecutarMostrarEstudiantePorCarnet(string carnet)
         {
-            string paramCarnet = "@param_CARNE "
+            string paramCarnet = "@param_CARNE"
                 , commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES_POR_CARNE";
 
             this.InitSqlComponents(commandText);
@@ -232,7 +327,7 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
                     , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
-                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8));
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8), null, null);
                 estudiante.TipoBeca = this.sqlDataReader.GetString(6);
                 estudiante.Sede = this.sqlDataReader.GetString(7);
                 return estudiante;

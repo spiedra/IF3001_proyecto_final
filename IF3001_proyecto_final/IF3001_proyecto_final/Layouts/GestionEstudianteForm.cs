@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using IF3001_proyecto_final.Business;
+using IF3001_proyecto_final.Domain;
+
 
 namespace IF3001_proyecto_final.Layouts
 {
@@ -19,7 +16,9 @@ namespace IF3001_proyecto_final.Layouts
 
         private void GestionEstudianteForm_Load(object sender, EventArgs e)
         {
-
+            ListenerBusiness listenerBusiness = new ListenerBusiness();
+            this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
+            this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -49,6 +48,42 @@ namespace IF3001_proyecto_final.Layouts
         {
             VerContactoForm vc = new VerContactoForm();
             vc.Show();
+        }
+
+        private void btn_agregar_estudiante_Click(object sender, EventArgs e)
+        {
+            new ListenerBusiness().ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", this.CreateEstudiante());
+        }
+
+        private Estudiante[] CreateEstudiante()
+        {
+            Estudiante[] estudiante = new Estudiante[1] {
+                new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text),
+                this.txt_promedio.Text, this.txt_carne.Text, this.txb_direccion.Text, (string)this.cbx_sedes.SelectedItem, (string)this.cbx_tipos_beca.SelectedItem)
+            };
+            return estudiante;
+        }
+
+        private void FillCbxSedes(object methodReturn)
+        {
+            List<Sede> sedes = new List<Sede>();
+            sedes = (List<Sede>)methodReturn;
+
+            foreach (Sede sede in sedes)
+            {
+                this.cbx_sedes.Items.Add(sede.Nombre);
+            }
+        }
+
+        private void FillCbxBeca(object methodReturn)
+        {
+            List<Beca> becas = new List<Beca>();
+            becas = (List<Beca>)methodReturn;
+
+            foreach (Beca beca in becas)
+            {
+                this.cbx_tipos_beca.Items.Add(beca.TipoBeca);
+            }
         }
     }
 }
