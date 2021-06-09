@@ -48,15 +48,14 @@ namespace IF3001_proyecto_final.Layouts
             //estudiante.Sede = "Rodrigo Facio";
             //estudiante.TipoBeca = "5";
             //MessageBox.Show(""+estudianteMySqlBusiness.AgregarEstudiante(estudiante));
-            // Estudiante[] estudiantes = new Estudiante[1];
+            //Estudiante[] estudiantes = new Estudiante[1];
             // Estudiante estudiante = new Estudiante(-1, "miguel", "torres", 14, "78", "b97452", "tirrases");
             //  estudiante.Sede = "Rodrigo Facio";
             // estudiante.TipoBeca = "5";
             // estudiantes[0] = estudiante;
-            // ListenerBusiness listenerBusiness = new ListenerBusiness();
+             //ListenerBusiness listenerBusiness = new ListenerBusiness();
             //
             //listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", estudiantes);
-
         }
 
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
