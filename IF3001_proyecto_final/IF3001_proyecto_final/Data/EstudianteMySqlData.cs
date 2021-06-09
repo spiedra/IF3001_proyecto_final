@@ -392,7 +392,7 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
 
-            return this.LeerRespuesta;
+            return this.LeerRespuesta();
         }
 
         public bool BorrarEstudiante(int id)
