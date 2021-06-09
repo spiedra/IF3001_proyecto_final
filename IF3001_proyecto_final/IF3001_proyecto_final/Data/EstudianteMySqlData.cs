@@ -392,7 +392,7 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
 
-            return this.LeerRespuestaActualizarEstudiante();
+            return this.LeerRespuesta;
         }
 
         public bool BorrarEstudiante(int id)
@@ -407,16 +407,6 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
 
             return LeerRespuesta();
-        }
-
-       
-
-        private bool LeerRespuestaActualizarEstudiante()
-        {
-            if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
-                return true;
-
-            return false;
         }
 
 
