@@ -164,6 +164,29 @@ namespace IF3001_proyecto_final.Data
             return this.LeerRespuestaMostrarCarreras();
         }
 
+        public List<Sede> ObtenerTodasLasSedes()
+        {
+            this.EjecutarMostrarSedes();
+            return this.LeerRespuestaMostrarSedes();
+        }
+
+        private void EjecutarMostrarSedes()
+        {
+            string commandText = "ADMINISTRACION.MOSTRAR_SEDES";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Sede> LeerRespuestaMostrarSedes()
+        {
+            List<Sede> sedes = new List<Sede>();
+            while (this.sqlDataReader.Read())
+            {
+                sedes.Add(new Sede(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
+            }
+            return sedes;
+        }
+
         private void EjecutarMostrarCursos()
         {
             string commandText = "ADMINISTRACION.sp_MOSTRAR_CURSOS";

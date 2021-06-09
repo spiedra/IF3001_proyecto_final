@@ -90,5 +90,10 @@ namespace IF3001_proyecto_final.Business
         {
             return this.estudianteSqlServerData.ObtenerTodasLasCarreras();
         }
+
+        public List<Sede> ObtenerTodasLasSedes()
+        {
+            return this.ObtenerTodasLasSedes();
+        }
     }
 }

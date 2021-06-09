@@ -66,8 +66,6 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lb_sedes = new System.Windows.Forms.Label();
             this.lb_tipo_beca = new System.Windows.Forms.Label();
             this.gp_registro_estudiantes.SuspendLayout();
@@ -79,8 +77,6 @@ namespace IF3001_proyecto_final.Layouts
             // 
             this.gp_registro_estudiantes.Controls.Add(this.lb_tipo_beca);
             this.gp_registro_estudiantes.Controls.Add(this.lb_sedes);
-            this.gp_registro_estudiantes.Controls.Add(this.label3);
-            this.gp_registro_estudiantes.Controls.Add(this.label2);
             this.gp_registro_estudiantes.Controls.Add(this.comboBox2);
             this.gp_registro_estudiantes.Controls.Add(this.comboBox1);
             this.gp_registro_estudiantes.Controls.Add(this.label1);
@@ -422,24 +418,6 @@ namespace IF3001_proyecto_final.Layouts
             this.comboBox2.Size = new System.Drawing.Size(151, 28);
             this.comboBox2.TabIndex = 14;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "label3";
-            // 
             // lb_sedes
             // 
             this.lb_sedes.AutoSize = true;
@@ -524,8 +502,6 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.TextBox txb_direccion;
         private System.Windows.Forms.Label lb_tipo_beca;
         private System.Windows.Forms.Label lb_sedes;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
     }
