@@ -100,6 +100,7 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_registro_estudiantes.TabIndex = 0;
             this.gp_registro_estudiantes.TabStop = false;
             this.gp_registro_estudiantes.Text = "Registro de estudiantes";
+            this.gp_registro_estudiantes.Enter += new System.EventHandler(this.gp_registro_estudiantes_Enter);
             // 
             // lb_tipo_beca
             // 

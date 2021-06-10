@@ -21,7 +21,7 @@ namespace IF3001_proyecto_final.Layouts
         {
             InitializeComponent();
             this.estudiante = (Estudiante)o;
-            this.listenerBusiness = new ListenerBusiness();
+           
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private void ModificarEstudianteForm_Load(object sender, EventArgs e)
         {
-
+            this.listenerBusiness = new ListenerBusiness();
             CargarDatosViejosEstudiante();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
@@ -97,8 +97,8 @@ namespace IF3001_proyecto_final.Layouts
         private Estudiante[] CreateEstudiante()
         {
             Estudiante[] estudiante = new Estudiante[1] {
-                new Estudiante(this.estudiante.Id, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text),
-                this.txt_promedio.Text, this.txt_carne.Text, this.txb_direccion.Text, (string)this.cb_sede.SelectedItem, (string)this.cb_beca.SelectedItem)
+                new Estudiante(this.estudiante.Id, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text)
+               , this.txt_carne.Text,  this.txt_promedio.Text,(string)this.cb_beca.SelectedItem,(string)this.cb_sede.SelectedItem,this.txb_direccion.Text)
             };
             return estudiante;
         }

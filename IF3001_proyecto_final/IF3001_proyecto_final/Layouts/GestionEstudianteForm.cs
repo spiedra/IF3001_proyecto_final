@@ -86,8 +86,8 @@ namespace IF3001_proyecto_final.Layouts
         private Estudiante[] CreateEstudiante()
         {
             Estudiante[] estudiante = new Estudiante[1] {
-                new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text),
-                this.txt_promedio.Text, this.txt_carne.Text, this.txb_direccion.Text, (string)this.cbx_sedes.SelectedItem, (string)this.cbx_tipos_beca.SelectedItem)
+                new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text)
+              , this.txt_carne.Text,  this.txt_promedio.Text, (string)this.cbx_tipos_beca.SelectedItem, (string)this.cbx_sedes.SelectedItem,this.txb_direccion.Text)
             };
             return estudiante;
         }
@@ -174,6 +174,9 @@ namespace IF3001_proyecto_final.Layouts
             }
         }
 
+        private void gp_registro_estudiantes_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }
