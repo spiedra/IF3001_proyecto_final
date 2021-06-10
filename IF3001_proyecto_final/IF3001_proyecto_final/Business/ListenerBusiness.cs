@@ -22,15 +22,15 @@ namespace IF3001_proyecto_final.Business
         public object ConnectToListener(string className, string actionName, object[] parameters)
         {
 
-            if (this.listenerCluster.IsMainNodeReady())
-            {
-                return this.ExcecuteNode(className, actionName, parameters, "SqlServerBusiness");
-            }
-            else
+            //if (this.listenerCluster.IsMainNodeReady())
+            //{
+            //    return this.ExcecuteNode(className, actionName, parameters, "SqlServerBusiness");
+            //}
+            //else
 
-            {
+
                 return this.ExcecuteNode(className, actionName, parameters, "MySqlBusiness");
-            }
+            
 
         }
 
