@@ -9,6 +9,7 @@ namespace IF3001_proyecto_final.Layouts
 {
     public partial class GestionEstudianteForm : Form
     {
+        private ListenerBusiness listenerBusiness;
         public GestionEstudianteForm()
         {
             InitializeComponent();
@@ -16,10 +17,10 @@ namespace IF3001_proyecto_final.Layouts
 
         private void GestionEstudianteForm_Load(object sender, EventArgs e)
         {
-            ListenerBusiness listenerBusiness = new ListenerBusiness();
+            this.listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
+            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace IF3001_proyecto_final.Layouts
                 && this.txt_carne.Text != string.Empty && this.txb_direccion.Text != string.Empty
                 && this.cbx_sedes.SelectedIndex != -1 && this.cbx_tipos_beca.SelectedIndex != -1)
             {
-                if ((bool)new ListenerBusiness().ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", this.CreateEstudiante()))
+                if ((bool)this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "AgregarEstudiante", this.CreateEstudiante()))
                 {
                     MessageBox.Show("!Estudiante ingresado correctamente!");
                 }
@@ -100,7 +101,7 @@ namespace IF3001_proyecto_final.Layouts
             }
         }
 
-        private void FillGridEstudiante(object methodReturn)
+        private void FillGridListEstudiantes(object methodReturn)
         {
             List<Estudiante> estudiantes = (List<Estudiante>)methodReturn;
             for (int f = 0; f < estudiantes.Count; f++)
@@ -118,10 +119,35 @@ namespace IF3001_proyecto_final.Layouts
             }
         }
 
+        private void FillGridEstudiante(object methodReturn)
+        {
+            this.dgrid_estudiantes.Rows.Clear();
+            Estudiante estudiante = (Estudiante)methodReturn;
+            // int f = this.dgrid_estudiantes.Rows.Add
+            int f = 0;
+            this.dgrid_estudiantes.Rows[f].Cells[0].Value = estudiante.Id;
+            this.dgrid_estudiantes.Rows[f].Cells[1].Value = estudiante.Nombre;
+            this.dgrid_estudiantes.Rows[f].Cells[2].Value = estudiante.Apellidos;
+            this.dgrid_estudiantes.Rows[f].Cells[3].Value = estudiante.Edad;
+            this.dgrid_estudiantes.Rows[f].Cells[4].Value = estudiante.Carnet;
+            this.dgrid_estudiantes.Rows[f].Cells[5].Value = estudiante.Promedio;
+            this.dgrid_estudiantes.Rows[f].Cells[6].Value = estudiante.TipoBeca;
+            this.dgrid_estudiantes.Rows[f].Cells[7].Value = estudiante.Sede;
+            this.dgrid_estudiantes.Rows[f].Cells[8].Value = estudiante.Direccion;
+        }
+
         private void btn_refrescar_Click(object sender, EventArgs e)
         {
-            ListenerBusiness listenerBusiness = new ListenerBusiness();
-            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
+            this.dgrid_estudiantes.Rows.Clear();
+            this.FillGridListEstudiantes(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            this.FillGridEstudiante(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerEstudiantePorCarnet"
+                , new string[1]{
+                    this.tbx_buscar_carnet.Text
+            }));
         }
     }
 }

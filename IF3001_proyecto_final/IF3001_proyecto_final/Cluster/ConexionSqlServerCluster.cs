@@ -11,7 +11,7 @@ namespace IF3001_proyecto_final.Cluster
     {
         public ConexionSqlServerCluster()
         {
-            this.ConnectToDatabase();
+            //this.ConnectToDatabase();
         }
 
         public object ConnectToDatabase()
