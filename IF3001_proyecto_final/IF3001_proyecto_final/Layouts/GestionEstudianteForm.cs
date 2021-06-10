@@ -10,12 +10,8 @@ namespace IF3001_proyecto_final.Layouts
 {
     public partial class GestionEstudianteForm : Form
     {
-<<<<<<< HEAD
-
-        
-=======
         private ListenerBusiness listenerBusiness;
->>>>>>> juanc
+
         public GestionEstudianteForm()
         {
             InitializeComponent();
@@ -23,7 +19,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private async void GestionEstudianteForm_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             MessageBox.Show("Cargando... Por favor, espere...");
             ListenerBusiness listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
@@ -35,13 +31,10 @@ namespace IF3001_proyecto_final.Layouts
         
         private void groupBox3_Enter(object sender, EventArgs e)
         {
-
-=======
             this.listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
             this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
->>>>>>> juanc
         }
 
         private void btn_ver_cursos_Click(object sender, EventArgs e)
