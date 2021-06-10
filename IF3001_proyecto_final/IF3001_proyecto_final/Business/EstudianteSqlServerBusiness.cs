@@ -56,9 +56,9 @@ namespace IF3001_proyecto_final.Business
             this.estudianteSqlServerData.InsertarCarrreraEstudiante(estudianteId, nombreCarrera);
         }
 
-        public void EliminarEstudiante(int estudianteId)
+        public void EliminarEstudiante(string carne)
         {
-            this.estudianteSqlServerData.EliminarEstudiante(estudianteId);
+            this.estudianteSqlServerData.EliminarEstudiante(carne);
         }
 
         public List<Telefono> ObtenerTelefonosEstudiante(int estudianteId)

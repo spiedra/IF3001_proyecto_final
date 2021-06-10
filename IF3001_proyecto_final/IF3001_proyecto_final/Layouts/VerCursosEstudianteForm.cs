@@ -76,5 +76,7 @@ namespace IF3001_proyecto_final.Layouts
             this.dgv_cursos.Rows.Clear();
             this.FillGridListCursos(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerCursosEstudiante", new object[1] { this.estudianteId }));
         }
+
+       
     }
 }

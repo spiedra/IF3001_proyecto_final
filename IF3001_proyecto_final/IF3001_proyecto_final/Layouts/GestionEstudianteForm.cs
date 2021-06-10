@@ -22,7 +22,7 @@ namespace IF3001_proyecto_final.Layouts
             this.listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));     
+            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
         }
 
         private void btn_ver_cursos_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_contacto_Click(object sender, EventArgs e)
         {
-            VerContactoForm vc = new VerContactoForm();
+            VerContactoForm vc = new VerContactoForm(Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value),this.tbx_buscar_carnet.Text);
             vc.Show();
         }
 
@@ -146,5 +146,23 @@ namespace IF3001_proyecto_final.Layouts
                     this.tbx_buscar_carnet.Text
             }));
         }
+
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "EliminarEstudiante"
+                , new string[1]{
+                    this.tbx_buscar_carnet.Text
+            })) == true)
+            {
+                MessageBox.Show("Estudiante eliminado");
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido eliminar");
+            }
+        }
+
+
     }
 }
