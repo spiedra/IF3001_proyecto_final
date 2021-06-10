@@ -22,7 +22,7 @@ namespace IF3001_proyecto_final.Layouts
             this.listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));     
+            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
         }
 
         private void btn_ver_cursos_Click(object sender, EventArgs e)
@@ -34,19 +34,30 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_ver_carrera_Click(object sender, EventArgs e)
         {
-            VerCarreraForm vc = new VerCarreraForm();
+            VerCarreraForm vc = new VerCarreraForm(this.tbx_buscar_carnet.Text, Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value));
             vc.Show();
         }
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            ModificarEstudianteForm me = new ModificarEstudianteForm();
+            int EstudianteId = Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value);
+            string nombre= Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[1].Value);
+            string apellidos = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[2].Value);
+            int edad = Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[3].Value);
+            string carne = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[4].Value);
+            string promedio = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[5].Value);
+            string beca = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[6].Value);
+            string sede = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[7].Value);
+            string direccion = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[8].Value);
+
+            Estudiante estudiante = new Estudiante(EstudianteId, nombre, apellidos,  edad,  carne, promedio, beca,  sede,  direccion);
+            ModificarEstudianteForm me = new ModificarEstudianteForm(estudiante);
             me.Show();
         }
 
         private void btn_contacto_Click(object sender, EventArgs e)
         {
-            VerContactoForm vc = new VerContactoForm();
+            VerContactoForm vc = new VerContactoForm(Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value),this.tbx_buscar_carnet.Text);
             vc.Show();
         }
 
@@ -75,8 +86,8 @@ namespace IF3001_proyecto_final.Layouts
         private Estudiante[] CreateEstudiante()
         {
             Estudiante[] estudiante = new Estudiante[1] {
-                new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text),
-                this.txt_promedio.Text, this.txt_carne.Text, this.txb_direccion.Text, (string)this.cbx_sedes.SelectedItem, (string)this.cbx_tipos_beca.SelectedItem)
+                new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text)
+              , this.txt_carne.Text,  this.txt_promedio.Text, (string)this.cbx_tipos_beca.SelectedItem, (string)this.cbx_sedes.SelectedItem,this.txb_direccion.Text)
             };
             return estudiante;
         }
@@ -145,6 +156,27 @@ namespace IF3001_proyecto_final.Layouts
                 , new string[1]{
                     this.tbx_buscar_carnet.Text
             }));
+        }
+
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "EliminarEstudiante"
+                , new string[1]{
+                    this.tbx_buscar_carnet.Text
+            })) == true)
+            {
+                MessageBox.Show("Estudiante eliminado");
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido eliminar");
+            }
+        }
+
+        private void gp_registro_estudiantes_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

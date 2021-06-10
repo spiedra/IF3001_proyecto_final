@@ -63,18 +63,18 @@ namespace IF3001_proyecto_final.Layouts
             }
         }
 
-        private void btn_agregar_curso_Click(object sender, EventArgs e)
+        private void RefreshGridCursos()
+        {
+            this.dgv_cursos.Rows.Clear();
+            this.FillGridListCursos(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerCursosEstudiante", new object[1] { this.estudianteId }));
+        }
+
+        private void btn_agregar_curso_Click_1(object sender, EventArgs e)
         {
             this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "InsertarCursoEstudiante", new object[] {
                     this.estudianteId, this.cb_cursos.SelectedItem
                 });
             this.RefreshGridCursos();
-        }
-
-        private void RefreshGridCursos()
-        {
-            this.dgv_cursos.Rows.Clear();
-            this.FillGridListCursos(this.listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerCursosEstudiante", new object[1] { this.estudianteId }));
         }
     }
 }

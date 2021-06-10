@@ -89,13 +89,13 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public void EliminarEstudiante(int estudianteId)
+        public void EliminarEstudiante(string carne)
         {
-            string paramStudentId = "@param_ID_ESTUDIANTE"
+            string paramStudentId = "@param_CARNE"
               , commandText = "ESTUDIANTE.sp_BORRAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.CreateParameter(paramStudentId, SqlDbType.VarChar, carne);
             this.ExecuteNonQuery();
         }
 
@@ -129,7 +129,7 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        public bool ActualizarEstudiante(Estudiante estudiante)
         {
             string paramId = "@param_ID_ESTUDIANTE"
                , paramName = "@param_NOMBRE_ESTUDIANTE"
@@ -139,6 +139,7 @@ namespace IF3001_proyecto_final.Data
                , paramCarnet = "@param_CARNE"
                , paramAddress = "@param_direccion"
                , paramSName = "@param_NOMBRE_SEDE "
+               , paramBeca="@param_TIPO_BECA"
                , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
@@ -150,7 +151,10 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSName, SqlDbType.VarChar, estudiante.Sede);
+            this.CreateParameter(paramBeca, SqlDbType.VarChar, estudiante.TipoBeca);
+            this.CreateParameterOutput();
             this.ExecuteNonQuery();
+            return this.LeerRespuestaModificarEstudiante();
         }
 
         public List<Curso> ObtenerTodosLosCursos()
@@ -188,6 +192,15 @@ namespace IF3001_proyecto_final.Data
         {
             this.EjecutarMostrarEstudiantes();
             return this.LeerRespuestaMostrarEstudiantes();
+        }
+
+        private bool LeerRespuestaModificarEstudiante()
+        {
+            if ((int)this.parameterReturn.Value == 1)
+                return true;
+
+            this.sqlConnection.Close();
+            return false;
         }
 
         private void EjecutarMostrarEstudiantes()

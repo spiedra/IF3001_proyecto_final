@@ -358,7 +358,7 @@ namespace IF3001_proyecto_final.Data
             return false;
         }
 
-        public bool ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        public bool ActualizarEstudiante(Estudiante estudiante)
         {
             string paramId = "param_ID_ESTUDIANTE"
                , paramName = "param_NOMBRE_ESTUDIANTE"
@@ -368,6 +368,7 @@ namespace IF3001_proyecto_final.Data
                , paramCarnet = "param_CARNE"
                , paramAddress = "param_direccion"
                , paramSName = "param_NOMBRE_SEDE"
+               , paramBeca ="param_TIPO_BECA"
                 , paramOut = "msg"
                , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
 
@@ -380,20 +381,21 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramCarnet, MySqlDbType.VarChar, estudiante.Carnet);
             this.CreateParameter(paramAddress, MySqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSName, MySqlDbType.VarChar, estudiante.Sede);
+            this.CreateParameter(paramBeca, MySqlDbType.VarChar, estudiante.TipoBeca);
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
 
             return this.LeerRespuesta();
         }
 
-        public bool BorrarEstudiante(int id)
+        public bool BorrarEstudiante(string carne)
         {
-            string paramStudentId = "param_ID_ESTUDIANTE"
+            string paramStudentId = "param_CARNE"
                             , paramOut = "msg"
                            , commandText = "ESTUDIANTE.sp_BORRAR_ESTUDIANTE";
 
             this.InitNpgsqlComponents(commandText);
-            this.CreateParameter(paramStudentId, MySqlDbType.Int32, id);
+            this.CreateParameter(paramStudentId, MySqlDbType.VarChar, carne);
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
 

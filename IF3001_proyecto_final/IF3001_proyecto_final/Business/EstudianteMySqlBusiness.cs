@@ -57,9 +57,9 @@ namespace IF3001_proyecto_final.Business
             this.estudianteMySqlData.InsertarCarreraEstudiante(estudianteId, nombreCarrera);
         }
 
-        public void EliminarEstudiante(int estudianteId)
+        public void EliminarEstudiante(string carne)
         {
-            this.estudianteMySqlData.BorrarEstudiante(estudianteId);
+            this.estudianteMySqlData.BorrarEstudiante(carne);
         }
 
         public List<Telefono> ObtenerTelefonosEstudiante(int estudianteId)
@@ -77,9 +77,9 @@ namespace IF3001_proyecto_final.Business
             this.estudianteMySqlData.InsertarTelefonoEstudiante(estudianteId, numeroTelefono);
         }
 
-        public void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        public bool ActualizarEstudiante(Estudiante estudiante)
         {
-            this.estudianteMySqlData.ActualizarEstudiante(estudiante, nuevaSede);
+            return this.estudianteMySqlData.ActualizarEstudiante(estudiante);
         }
 
         public List<Curso> ObtenerTodosLosCursos()

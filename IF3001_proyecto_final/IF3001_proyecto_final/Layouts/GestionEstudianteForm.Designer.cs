@@ -100,6 +100,7 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_registro_estudiantes.TabIndex = 0;
             this.gp_registro_estudiantes.TabStop = false;
             this.gp_registro_estudiantes.Text = "Registro de estudiantes";
+            this.gp_registro_estudiantes.Enter += new System.EventHandler(this.gp_registro_estudiantes_Enter);
             // 
             // lb_tipo_beca
             // 
@@ -332,6 +333,7 @@ namespace IF3001_proyecto_final.Layouts
             this.button4.TabIndex = 4;
             this.button4.Text = "Eliminar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // btn_modificar
             // 
@@ -358,7 +360,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca,
             this.Sede,
             this.Direccion});
-            this.dgrid_estudiantes.Location = new System.Drawing.Point(19, 91);
+            this.dgrid_estudiantes.Location = new System.Drawing.Point(19, 103);
             this.dgrid_estudiantes.Name = "dgrid_estudiantes";
             this.dgrid_estudiantes.ReadOnly = true;
             this.dgrid_estudiantes.RowHeadersWidth = 51;
