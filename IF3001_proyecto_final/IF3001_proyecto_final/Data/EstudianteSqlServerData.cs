@@ -129,7 +129,7 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        public void ActualizarEstudiante(Estudiante estudiante)
         {
             string paramId = "@param_ID_ESTUDIANTE"
                , paramName = "@param_NOMBRE_ESTUDIANTE"

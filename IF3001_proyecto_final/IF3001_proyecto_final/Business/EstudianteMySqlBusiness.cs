@@ -77,9 +77,9 @@ namespace IF3001_proyecto_final.Business
             this.estudianteMySqlData.InsertarTelefonoEstudiante(estudianteId, numeroTelefono);
         }
 
-        public void ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        public void ActualizarEstudiante(Estudiante estudiante)
         {
-            this.estudianteMySqlData.ActualizarEstudiante(estudiante, nuevaSede);
+            this.estudianteMySqlData.ActualizarEstudiante(estudiante);
         }
 
         public List<Curso> ObtenerTodosLosCursos()

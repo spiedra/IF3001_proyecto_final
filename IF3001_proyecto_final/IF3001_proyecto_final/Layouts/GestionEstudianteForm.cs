@@ -40,7 +40,18 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            ModificarEstudianteForm me = new ModificarEstudianteForm();
+            int EstudianteId = Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value);
+            string nombre= Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[1].Value);
+            string apellidos = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[2].Value);
+            int edad = Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[3].Value);
+            string carne = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[4].Value);
+            string promedio = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[5].Value);
+            string beca = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[6].Value);
+            string sede = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[7].Value);
+            string direccion = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[8].Value);
+
+            Estudiante estudiante = new Estudiante(EstudianteId, nombre, apellidos,  edad,  carne, promedio, beca,  sede,  direccion);
+            ModificarEstudianteForm me = new ModificarEstudianteForm(estudiante);
             me.Show();
         }
 

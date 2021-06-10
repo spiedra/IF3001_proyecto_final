@@ -358,7 +358,7 @@ namespace IF3001_proyecto_final.Data
             return false;
         }
 
-        public bool ActualizarEstudiante(Estudiante estudiante, string nuevaSede)
+        public bool ActualizarEstudiante(Estudiante estudiante)
         {
             string paramId = "param_ID_ESTUDIANTE"
                , paramName = "param_NOMBRE_ESTUDIANTE"

@@ -30,6 +30,10 @@ namespace IF3001_proyecto_final.Layouts
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_direccion = new System.Windows.Forms.Label();
+            this.txb_direccion = new System.Windows.Forms.TextBox();
+            this.cb_beca = new System.Windows.Forms.ComboBox();
+            this.lbl_tipo_beca = new System.Windows.Forms.Label();
             this.cb_sede = new System.Windows.Forms.ComboBox();
             this.lbl_sede = new System.Windows.Forms.Label();
             this.txt_carne = new System.Windows.Forms.TextBox();
@@ -44,18 +48,14 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
-            this.lbl_tipo_beca = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl_direccion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbl_direccion);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.txb_direccion);
+            this.groupBox1.Controls.Add(this.cb_beca);
             this.groupBox1.Controls.Add(this.lbl_tipo_beca);
             this.groupBox1.Controls.Add(this.cb_sede);
             this.groupBox1.Controls.Add(this.lbl_sede);
@@ -77,6 +77,40 @@ namespace IF3001_proyecto_final.Layouts
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modificar datos de estudiante";
+            // 
+            // lbl_direccion
+            // 
+            this.lbl_direccion.AutoSize = true;
+            this.lbl_direccion.Location = new System.Drawing.Point(216, 266);
+            this.lbl_direccion.Name = "lbl_direccion";
+            this.lbl_direccion.Size = new System.Drawing.Size(75, 20);
+            this.lbl_direccion.TabIndex = 26;
+            this.lbl_direccion.Text = "Direccion:";
+            // 
+            // txb_direccion
+            // 
+            this.txb_direccion.Location = new System.Drawing.Point(312, 256);
+            this.txb_direccion.Multiline = true;
+            this.txb_direccion.Name = "txb_direccion";
+            this.txb_direccion.Size = new System.Drawing.Size(125, 34);
+            this.txb_direccion.TabIndex = 25;
+            // 
+            // cb_beca
+            // 
+            this.cb_beca.FormattingEnabled = true;
+            this.cb_beca.Location = new System.Drawing.Point(106, 263);
+            this.cb_beca.Name = "cb_beca";
+            this.cb_beca.Size = new System.Drawing.Size(86, 28);
+            this.cb_beca.TabIndex = 24;
+            // 
+            // lbl_tipo_beca
+            // 
+            this.lbl_tipo_beca.AutoSize = true;
+            this.lbl_tipo_beca.Location = new System.Drawing.Point(17, 263);
+            this.lbl_tipo_beca.Name = "lbl_tipo_beca";
+            this.lbl_tipo_beca.Size = new System.Drawing.Size(44, 20);
+            this.lbl_tipo_beca.TabIndex = 23;
+            this.lbl_tipo_beca.Text = "Beca:";
             // 
             // cb_sede
             // 
@@ -184,6 +218,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_cancelar.TabIndex = 1;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_modificar
             // 
@@ -193,40 +228,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_modificar.TabIndex = 0;
             this.btn_modificar.Text = "Modificar cambios";
             this.btn_modificar.UseVisualStyleBackColor = true;
-            // 
-            // lbl_tipo_beca
-            // 
-            this.lbl_tipo_beca.AutoSize = true;
-            this.lbl_tipo_beca.Location = new System.Drawing.Point(17, 263);
-            this.lbl_tipo_beca.Name = "lbl_tipo_beca";
-            this.lbl_tipo_beca.Size = new System.Drawing.Size(44, 20);
-            this.lbl_tipo_beca.TabIndex = 23;
-            this.lbl_tipo_beca.Text = "Beca:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 263);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 28);
-            this.comboBox1.TabIndex = 24;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(312, 256);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 34);
-            this.textBox1.TabIndex = 25;
-            // 
-            // lbl_direccion
-            // 
-            this.lbl_direccion.AutoSize = true;
-            this.lbl_direccion.Location = new System.Drawing.Point(216, 266);
-            this.lbl_direccion.Name = "lbl_direccion";
-            this.lbl_direccion.Size = new System.Drawing.Size(75, 20);
-            this.lbl_direccion.TabIndex = 26;
-            this.lbl_direccion.Text = "Direccion:";
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // ModificarEstudianteForm
             // 
@@ -237,6 +239,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Name = "ModificarEstudianteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarEstudianteForm";
+            this.Load += new System.EventHandler(this.ModificarEstudianteForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -260,9 +263,9 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.ComboBox cb_sede;
         private System.Windows.Forms.Label lbl_sede;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_beca;
         private System.Windows.Forms.Label lbl_tipo_beca;
         private System.Windows.Forms.Label lbl_direccion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txb_direccion;
     }
 }
