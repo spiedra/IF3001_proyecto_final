@@ -26,7 +26,7 @@ namespace IF3001_proyecto_final.Cluster
             }
             catch (MySqlException mysqlException)
             {
-                return mysqlException.ErrorCode;
+                return null;
             }
         }
 

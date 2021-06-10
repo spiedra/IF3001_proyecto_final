@@ -35,7 +35,7 @@ namespace IF3001_proyecto_final.Cluster
             builder.DataSource = "35.193.110.243";
             builder.UserID = "sqlserver";
             builder.Password = "piedra";
-            builder.InitialCatalog = "testsafd";
+            builder.InitialCatalog = "testss";
             return builder.ConnectionString;
         }
     }
