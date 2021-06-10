@@ -495,7 +495,6 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Label lvl_carne_buscar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox gp_lista_estudiantes;
-        private System.Windows.Forms.DataGridView dgrid_estudiantes;
         private System.Windows.Forms.Button btn_ver_cursos;
         private System.Windows.Forms.Button btn_ver_carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
@@ -526,5 +525,6 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.ComboBox cbx_sedes;
         private System.Windows.Forms.Button btn_refrescar;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        public System.Windows.Forms.DataGridView dgrid_estudiantes;
     }
 }

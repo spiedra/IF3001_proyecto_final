@@ -39,7 +39,7 @@ namespace IF3001_proyecto_final.Data
         {
             string paramStudentCarnet = "@param_CARNE_ESTUDIANTE"
                 , paramCourseName = "@param_NOMBRE_CURSO"
-                , commandText = "ESTUDIANTE.QUITAR_CURSO_ESTUDIANTE";
+                , commandText = "ESTUDIANTE.sp_QUITAR_CURSO_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
             this.CreateParameter(paramStudentCarnet, SqlDbType.VarChar, carnetEstudiante);

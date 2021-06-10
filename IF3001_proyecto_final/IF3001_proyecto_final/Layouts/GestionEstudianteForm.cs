@@ -27,7 +27,8 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_ver_cursos_Click(object sender, EventArgs e)
         {
-            VerCursosEstudianteForm vce = new VerCursosEstudianteForm();
+            VerCursosEstudianteForm vce = new VerCursosEstudianteForm(Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value)
+                , (string)this.dgrid_estudiantes.Rows[0].Cells[4].Value);
             vce.Show();
         }
 
