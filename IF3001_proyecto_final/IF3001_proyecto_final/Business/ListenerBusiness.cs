@@ -27,11 +27,9 @@ namespace IF3001_proyecto_final.Business
                 return this.ExcecuteNode(className, actionName, parameters, "SqlServerBusiness");
             }
             else
-
             {
                 return this.ExcecuteNode(className, actionName, parameters, "MySqlBusiness");
             }
-
         }
 
         private object ExcecuteNode(string className, string actionName, object[] parameters, string identifier)
