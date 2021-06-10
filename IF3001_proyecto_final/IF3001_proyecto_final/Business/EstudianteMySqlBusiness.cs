@@ -97,7 +97,7 @@ namespace IF3001_proyecto_final.Business
             return this.estudianteMySqlData.EjecutarMostrarSedes();
         }
 
-         public List<Beca> ObtenerTodasLasBecas()
+        public List<Beca> ObtenerTodasLasBecas()
         {
             return this.estudianteMySqlData.EjecutarMostrarBecas();
         }

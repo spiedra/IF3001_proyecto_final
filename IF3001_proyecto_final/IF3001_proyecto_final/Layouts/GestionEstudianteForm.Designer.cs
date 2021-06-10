@@ -92,9 +92,9 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_registro_estudiantes.Controls.Add(this.lbl_apellidos);
             this.gp_registro_estudiantes.Controls.Add(this.txt_nombre);
             this.gp_registro_estudiantes.Controls.Add(this.lbl_nombre);
-            this.gp_registro_estudiantes.Location = new System.Drawing.Point(32, 29);
+            this.gp_registro_estudiantes.Location = new System.Drawing.Point(32, 44);
             this.gp_registro_estudiantes.Name = "gp_registro_estudiantes";
-            this.gp_registro_estudiantes.Size = new System.Drawing.Size(745, 307);
+            this.gp_registro_estudiantes.Size = new System.Drawing.Size(745, 267);
             this.gp_registro_estudiantes.TabIndex = 0;
             this.gp_registro_estudiantes.TabStop = false;
             this.gp_registro_estudiantes.Text = "Registro de estudiantes";
@@ -152,7 +152,7 @@ namespace IF3001_proyecto_final.Layouts
             // 
             // btn_agregar_estudiante
             // 
-            this.btn_agregar_estudiante.Location = new System.Drawing.Point(163, 262);
+            this.btn_agregar_estudiante.Location = new System.Drawing.Point(528, 198);
             this.btn_agregar_estudiante.Name = "btn_agregar_estudiante";
             this.btn_agregar_estudiante.Size = new System.Drawing.Size(153, 31);
             this.btn_agregar_estudiante.TabIndex = 10;
