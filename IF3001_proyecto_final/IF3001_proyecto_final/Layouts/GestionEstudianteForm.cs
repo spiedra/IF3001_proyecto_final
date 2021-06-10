@@ -123,5 +123,11 @@ namespace IF3001_proyecto_final.Layouts
                 this.dgrid_estudiantes.Rows[f].Cells[8].Value = estudiantes[f].Direccion;
             }
         }
+
+        private void btn_refrescar_Click(object sender, EventArgs e)
+        {
+            ListenerBusiness listenerBusiness = new ListenerBusiness();
+            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
+        }
     }
 }
