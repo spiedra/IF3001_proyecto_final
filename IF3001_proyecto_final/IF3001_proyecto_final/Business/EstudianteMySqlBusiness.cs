@@ -102,6 +102,9 @@ namespace IF3001_proyecto_final.Business
             return this.estudianteMySqlData.EjecutarMostrarBecas();
         }
 
-
+        public List<Estudiante> ObtenerTodosLosEstudiantes()
+        {
+            return this.estudianteMySqlData.EjecutarMostrarEstudiantes();
+        }
     }
 }

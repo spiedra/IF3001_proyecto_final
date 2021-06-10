@@ -204,8 +204,8 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
                     , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
-                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8), this.sqlDataReader.GetString(7)
-                    , this.sqlDataReader.GetString(6));
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(6), this.sqlDataReader.GetString(7)
+                    , this.sqlDataReader.GetString(8));
                 estudiantes.Add(estudiante);
             }
             return estudiantes;

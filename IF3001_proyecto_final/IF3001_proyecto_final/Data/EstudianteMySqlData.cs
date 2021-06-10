@@ -73,8 +73,8 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
                     , this.mysqlDataReader.GetString(2), this.mysqlDataReader.GetInt32(3), this.mysqlDataReader.GetString(4)
-                    , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(8), this.mysqlDataReader.GetString(7)
-                    ,this.mysqlDataReader.GetString(6));
+                    , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(6), this.mysqlDataReader.GetString(7)
+                    ,this.mysqlDataReader.GetString(8));
                 return estudiante;
             }
             return null;
@@ -96,8 +96,8 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
                     , this.mysqlDataReader.GetString(2), this.mysqlDataReader.GetInt32(3), this.mysqlDataReader.GetString(4)
-                    , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(8), this.mysqlDataReader.GetString(7)
-                    , this.mysqlDataReader.GetString(6));
+                    , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(6), this.mysqlDataReader.GetString(7)
+                    , this.mysqlDataReader.GetString(8));
                 estudiantes.Add(estudiante);
             }
             return estudiantes;

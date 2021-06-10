@@ -19,6 +19,7 @@ namespace IF3001_proyecto_final.Layouts
             ListenerBusiness listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
+            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -83,9 +84,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private void FillCbxSedes(object methodReturn)
         {
-            List<Sede> sedes = new List<Sede>();
-            sedes = (List<Sede>)methodReturn;
-
+            List<Sede> sedes = (List<Sede>)methodReturn;
             foreach (Sede sede in sedes)
             {
                 this.cbx_sedes.Items.Add(sede.Nombre);
@@ -94,12 +93,28 @@ namespace IF3001_proyecto_final.Layouts
 
         private void FillCbxBeca(object methodReturn)
         {
-            List<Beca> becas = new List<Beca>();
-            becas = (List<Beca>)methodReturn;
-
+            List<Beca> becas = (List<Beca>)methodReturn;
             foreach (Beca beca in becas)
             {
                 this.cbx_tipos_beca.Items.Add(beca.TipoBeca);
+            }
+        }
+
+        private void FillGridEstudiante(object methodReturn)
+        {
+            List<Estudiante> estudiantes = (List<Estudiante>)methodReturn;
+            for (int f = 0; f < estudiantes.Count; f++)
+            {
+                this.dgrid_estudiantes.Rows.Add();
+                this.dgrid_estudiantes.Rows[f].Cells[0].Value = estudiantes[f].Id;
+                this.dgrid_estudiantes.Rows[f].Cells[1].Value = estudiantes[f].Nombre;
+                this.dgrid_estudiantes.Rows[f].Cells[2].Value = estudiantes[f].Apellidos;
+                this.dgrid_estudiantes.Rows[f].Cells[3].Value = estudiantes[f].Edad;
+                this.dgrid_estudiantes.Rows[f].Cells[4].Value = estudiantes[f].Carnet;
+                this.dgrid_estudiantes.Rows[f].Cells[5].Value = estudiantes[f].Promedio;
+                this.dgrid_estudiantes.Rows[f].Cells[6].Value = estudiantes[f].TipoBeca;
+                this.dgrid_estudiantes.Rows[f].Cells[7].Value = estudiantes[f].Sede;
+                this.dgrid_estudiantes.Rows[f].Cells[8].Value = estudiantes[f].Direccion;
             }
         }
     }
