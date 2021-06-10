@@ -36,17 +36,21 @@ namespace IF3001_proyecto_final.Layouts
 
             this.FillGridListContactos(this.ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTelefonosEstudiante", new object[1]{
                    this.estudianteId
-            })); 
+            }));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string telefono = Convert.ToString(this.dgv_Ver_Contacto.Rows[e.RowIndex].Cells[0].Value);
-            this.ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "EliminarTelefonoEstudiante", new object[2]{
+            if (e.ColumnIndex == this.dgv_Ver_Contacto.Columns["btn_borrar"].Index && e.RowIndex >= 0)
+            {
+                string telefono = Convert.ToString(this.dgv_Ver_Contacto.Rows[e.RowIndex].Cells[0].Value);
+                this.ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "EliminarTelefonoEstudiante", new object[2]{
                   this.estudianteId,  telefono
             });
 
-            verContactosEstudiante();
+                verContactosEstudiante();
+            }
+
 
         }
         private void FillGridListContactos(object methodReturn)
@@ -61,11 +65,17 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            if (this.txb_numero.Text.Length != 0)
+            {
+                this.ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "InsertarTelefonoEstudiante",
+                    new object[] { this.estudianteId, this.txb_numero.Text });
 
-            this.ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "InsertarTelefonoEstudiante",
-                new object[] { this.estudianteId, this.txb_numero.Text });
-
-            this.verContactosEstudiante();
+                this.verContactosEstudiante();
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un numero válido");
+            }
         }
 
 

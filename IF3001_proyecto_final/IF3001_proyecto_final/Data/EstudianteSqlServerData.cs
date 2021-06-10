@@ -139,6 +139,7 @@ namespace IF3001_proyecto_final.Data
                , paramCarnet = "@param_CARNE"
                , paramAddress = "@param_direccion"
                , paramSName = "@param_NOMBRE_SEDE "
+               , paramBeca="@param_TIPO_BECA"
                , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
@@ -150,6 +151,7 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramCarnet, SqlDbType.VarChar, estudiante.Carnet);
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSName, SqlDbType.VarChar, estudiante.Sede);
+            this.CreateParameter(paramBeca, SqlDbType.VarChar, estudiante.TipoBeca);
             this.ExecuteNonQuery();
         }
 

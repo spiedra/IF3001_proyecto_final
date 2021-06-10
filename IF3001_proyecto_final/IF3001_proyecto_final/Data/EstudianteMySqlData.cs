@@ -368,6 +368,7 @@ namespace IF3001_proyecto_final.Data
                , paramCarnet = "param_CARNE"
                , paramAddress = "param_direccion"
                , paramSName = "param_NOMBRE_SEDE"
+               , paramBeca ="param_TIPO_BECA"
                 , paramOut = "msg"
                , commandText = "ESTUDIANTE.sp_ACTUALIZAR_ESTUDIANTE";
 
@@ -380,6 +381,7 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramCarnet, MySqlDbType.VarChar, estudiante.Carnet);
             this.CreateParameter(paramAddress, MySqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSName, MySqlDbType.VarChar, estudiante.Sede);
+            this.CreateParameter(paramBeca, MySqlDbType.VarChar, estudiante.TipoBeca);
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
 

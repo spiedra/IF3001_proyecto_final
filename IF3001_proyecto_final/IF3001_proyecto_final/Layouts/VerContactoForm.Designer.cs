@@ -31,12 +31,12 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.gp_Numeros_contacto = new System.Windows.Forms.GroupBox();
             this.dgv_Ver_Contacto = new System.Windows.Forms.DataGridView();
-            this.col_num_contac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.txb_numero = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.col_num_contac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_borrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gp_Numeros_contacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Ver_Contacto)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -57,7 +57,7 @@ namespace IF3001_proyecto_final.Layouts
             this.dgv_Ver_Contacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Ver_Contacto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_num_contac,
-            this.borrar});
+            this.btn_borrar});
             this.dgv_Ver_Contacto.Location = new System.Drawing.Point(65, 47);
             this.dgv_Ver_Contacto.Name = "dgv_Ver_Contacto";
             this.dgv_Ver_Contacto.RowHeadersWidth = 51;
@@ -65,21 +65,6 @@ namespace IF3001_proyecto_final.Layouts
             this.dgv_Ver_Contacto.Size = new System.Drawing.Size(301, 188);
             this.dgv_Ver_Contacto.TabIndex = 0;
             this.dgv_Ver_Contacto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // col_num_contac
-            // 
-            this.col_num_contac.HeaderText = "Número de contacto";
-            this.col_num_contac.MinimumWidth = 6;
-            this.col_num_contac.Name = "col_num_contac";
-            this.col_num_contac.Width = 125;
-            // 
-            // borrar
-            // 
-            this.borrar.HeaderText = "Acción";
-            this.borrar.MinimumWidth = 6;
-            this.borrar.Name = "borrar";
-            this.borrar.Text = "Borrar";
-            this.borrar.Width = 125;
             // 
             // groupBox2
             // 
@@ -119,6 +104,21 @@ namespace IF3001_proyecto_final.Layouts
             this.label1.TabIndex = 2;
             this.label1.Text = "Número:";
             // 
+            // col_num_contac
+            // 
+            this.col_num_contac.HeaderText = "Número de contacto";
+            this.col_num_contac.MinimumWidth = 6;
+            this.col_num_contac.Name = "col_num_contac";
+            this.col_num_contac.Width = 125;
+            // 
+            // btn_borrar
+            // 
+            this.btn_borrar.HeaderText = "Borrar";
+            this.btn_borrar.MinimumWidth = 6;
+            this.btn_borrar.Name = "btn_borrar";
+            this.btn_borrar.Text = "Borrar";
+            this.btn_borrar.Width = 125;
+            // 
             // VerContactoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -140,12 +140,12 @@ namespace IF3001_proyecto_final.Layouts
 
         #endregion
         private System.Windows.Forms.DataGridView dgv_Ver_Contacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_num_contac;
-        private System.Windows.Forms.DataGridViewButtonColumn borrar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txb_numero;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.GroupBox gp_Numeros_contacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_num_contac;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_borrar;
     }
 }

@@ -34,7 +34,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private void btn_ver_carrera_Click(object sender, EventArgs e)
         {
-            VerCarreraForm vc = new VerCarreraForm();
+            VerCarreraForm vc = new VerCarreraForm(this.tbx_buscar_carnet.Text, Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[0].Value));
             vc.Show();
         }
 
