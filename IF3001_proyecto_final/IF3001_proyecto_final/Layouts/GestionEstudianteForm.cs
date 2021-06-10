@@ -19,19 +19,10 @@ namespace IF3001_proyecto_final.Layouts
         private async void GestionEstudianteForm_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Cargando... Por favor, espere...");
-            ListenerBusiness listenerBusiness = new ListenerBusiness();
-            this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
-            this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));     
-        }
-
-        
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
             this.listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
+            this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));     
         }
 
         private void btn_ver_cursos_Click(object sender, EventArgs e)

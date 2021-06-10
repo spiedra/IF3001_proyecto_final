@@ -386,14 +386,14 @@ namespace IF3001_proyecto_final.Data
             return this.LeerRespuesta();
         }
 
-        public bool BorrarEstudiante(int id)
+        public bool BorrarEstudiante(string carne)
         {
-            string paramStudentId = "param_ID_ESTUDIANTE"
+            string paramStudentId = "param_CARNE"
                             , paramOut = "msg"
                            , commandText = "ESTUDIANTE.sp_BORRAR_ESTUDIANTE";
 
             this.InitNpgsqlComponents(commandText);
-            this.CreateParameter(paramStudentId, MySqlDbType.Int32, id);
+            this.CreateParameter(paramStudentId, MySqlDbType.VarChar, carne);
             this.CreateParameterOutput(paramOut, MySqlDbType.Int32, 0);
             this.ExecuteNonQuery();
 

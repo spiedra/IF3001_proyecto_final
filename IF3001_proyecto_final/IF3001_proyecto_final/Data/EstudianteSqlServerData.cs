@@ -89,13 +89,13 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public void EliminarEstudiante(int estudianteId)
+        public void EliminarEstudiante(string carne)
         {
-            string paramStudentId = "@param_ID_ESTUDIANTE"
+            string paramStudentId = "@param_CARNE"
               , commandText = "ESTUDIANTE.sp_BORRAR_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
+            this.CreateParameter(paramStudentId, SqlDbType.VarChar, carne);
             this.ExecuteNonQuery();
         }
 
