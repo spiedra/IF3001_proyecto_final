@@ -23,11 +23,6 @@ namespace IF3001_proyecto_final.Layouts
             this.FillGridListEstudiantes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_ver_cursos_Click(object sender, EventArgs e)
         {
             VerCursosEstudianteForm vce = new VerCursosEstudianteForm();
@@ -123,8 +118,7 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.dgrid_estudiantes.Rows.Clear();
             Estudiante estudiante = (Estudiante)methodReturn;
-            // int f = this.dgrid_estudiantes.Rows.Add
-            int f = 0;
+            int f = this.dgrid_estudiantes.Rows.Add();
             this.dgrid_estudiantes.Rows[f].Cells[0].Value = estudiante.Id;
             this.dgrid_estudiantes.Rows[f].Cells[1].Value = estudiante.Nombre;
             this.dgrid_estudiantes.Rows[f].Cells[2].Value = estudiante.Apellidos;

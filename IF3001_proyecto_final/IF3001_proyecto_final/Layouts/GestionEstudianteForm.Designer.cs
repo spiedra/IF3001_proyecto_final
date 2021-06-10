@@ -293,7 +293,6 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes.TabIndex = 2;
             this.gp_lista_estudiantes.TabStop = false;
             this.gp_lista_estudiantes.Text = "Lista de estudiantes";
-            this.gp_lista_estudiantes.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btn_contacto
             // 

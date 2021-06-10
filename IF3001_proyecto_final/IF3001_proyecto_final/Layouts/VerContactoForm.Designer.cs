@@ -128,6 +128,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Name = "VerContactoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerContactoForm";
+            this.Load += new System.EventHandler(this.VerContactoForm_Load);
             this.gp_Numeros_contacto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Ver_Contacto)).EndInit();
             this.groupBox2.ResumeLayout(false);
