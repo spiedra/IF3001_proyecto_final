@@ -31,10 +31,11 @@ namespace IF3001_proyecto_final.Layouts
 
         private void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
-            gestionEstudianteForm.Show();
+             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
+             gestionEstudianteForm.Show();
 
-
+           // ListenerBusiness ListenerBusiness = new ListenerBusiness();
+           // MessageBox.Show(""+ ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
         }
 
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace IF3001_proyecto_final.Data
                 , commandText = "ESTUDIANTE.sp_INSERTAR_ESTUDIANTE";
 
             this.InitNpgsqlComponents(commandText);
-            this.CreateParameter(paramName, MySqlDbType.Int32, estudiante.Nombre);
+            this.CreateParameter(paramName, MySqlDbType.VarChar, estudiante.Nombre);
             this.CreateParameter(paramLastName, MySqlDbType.VarChar, estudiante.Apellidos);
             this.CreateParameter(paramAge, MySqlDbType.Int32, estudiante.Edad);
             this.CreateParameter(paramAverage, MySqlDbType.VarChar, estudiante.Promedio);
@@ -205,7 +205,7 @@ namespace IF3001_proyecto_final.Data
             List<Carrera> carreras = new List<Carrera>();
             while (this.mysqlDataReader.Read())
             {
-                Carrera carrera = new Carrera(-1, this.mysqlDataReader.GetString(0));
+                Carrera carrera = new Carrera(-1, this.mysqlDataReader.GetString(1));
                 carreras.Add(carrera);
             }
             return carreras;
@@ -225,7 +225,7 @@ namespace IF3001_proyecto_final.Data
             List<Beca> becas = new List<Beca>();
             while (this.mysqlDataReader.Read())
             {
-                Beca beca = new Beca(-1, this.mysqlDataReader.GetString(0));
+                Beca beca = new Beca(-1, this.mysqlDataReader.GetString(1));
                 becas.Add(beca);
             }
             return becas;
@@ -245,12 +245,11 @@ namespace IF3001_proyecto_final.Data
             List<Sede> sedes = new List<Sede>();
             while (this.mysqlDataReader.Read())
             {
-                Sede sede = new Sede(-1, this.mysqlDataReader.GetString(0));
+                Sede sede = new Sede(-1, this.mysqlDataReader.GetString(1));
                 sedes.Add(sede);
             }
             return sedes;
         }
-
 
         public bool InsertarCursoEstudiante(int estudianteId, string nombreCurso)
         {

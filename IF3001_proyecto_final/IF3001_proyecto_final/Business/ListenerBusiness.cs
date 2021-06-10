@@ -23,7 +23,6 @@ namespace IF3001_proyecto_final.Business
         {
             if (this.listenerCluster.IsMainNodeReady())
             {
-
                 return this.ExcecuteNode(className, actionName, parameters, "SqlServerBusiness");
             }
             else
