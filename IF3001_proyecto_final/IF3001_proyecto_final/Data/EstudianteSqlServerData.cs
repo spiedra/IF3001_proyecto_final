@@ -184,6 +184,33 @@ namespace IF3001_proyecto_final.Data
             this.ExcecuteReader();
         }
 
+        public List<Estudiante> ObtenerTodosLosEstudiantes()
+        {
+            this.EjecutarMostrarEstudiantes();
+            return this.LeerRespuestaMostrarEstudiantes();
+        }
+
+        private void EjecutarMostrarEstudiantes()
+        {
+            string commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES";   
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
+
+        private List<Estudiante> LeerRespuestaMostrarEstudiantes()
+        {
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            while (this.sqlDataReader.Read())
+            {
+                Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
+                    , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8), this.sqlDataReader.GetString(7)
+                    , this.sqlDataReader.GetString(6));
+                estudiantes.Add(estudiante);
+            }
+            return estudiantes;
+        }
+
         private List<Beca> LeerRespuestaMostrarBecas()
         {
             List<Beca> becas = new List<Beca>();
