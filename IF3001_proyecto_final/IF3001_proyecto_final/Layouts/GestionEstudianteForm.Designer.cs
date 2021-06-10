@@ -446,6 +446,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_refrescar.TabIndex = 3;
             this.btn_refrescar.Text = "Refrescar";
             this.btn_refrescar.UseVisualStyleBackColor = true;
+            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
             // 
             // mySqlCommand1
             // 
