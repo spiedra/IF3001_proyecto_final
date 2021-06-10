@@ -68,6 +68,8 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_refrescar = new System.Windows.Forms.Button();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.gp_registro_estudiantes.SuspendLayout();
             this.gp_lista_estudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_estudiantes)).BeginInit();
@@ -436,11 +438,28 @@ namespace IF3001_proyecto_final.Layouts
             this.Direccion.ReadOnly = true;
             this.Direccion.Width = 125;
             // 
+            // btn_refrescar
+            // 
+            this.btn_refrescar.Location = new System.Drawing.Point(921, 307);
+            this.btn_refrescar.Name = "btn_refrescar";
+            this.btn_refrescar.Size = new System.Drawing.Size(94, 29);
+            this.btn_refrescar.TabIndex = 3;
+            this.btn_refrescar.Text = "Refrescar";
+            this.btn_refrescar.UseVisualStyleBackColor = true;
+            // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
             // GestionEstudianteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 672);
+            this.Controls.Add(this.btn_refrescar);
             this.Controls.Add(this.gp_lista_estudiantes);
             this.Controls.Add(this.gp_registro_estudiantes);
             this.Name = "GestionEstudianteForm";
@@ -504,5 +523,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.Label lb_sedes;
         private System.Windows.Forms.ComboBox cbx_tipos_beca;
         private System.Windows.Forms.ComboBox cbx_sedes;
+        private System.Windows.Forms.Button btn_refrescar;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }

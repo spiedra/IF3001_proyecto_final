@@ -13,12 +13,13 @@ using System.Windows.Forms;
 using IF3001_proyecto_final.Cluster;
 using IF3001_proyecto_final.Business;
 using IF3001_proyecto_final.Domain;
-
+using System.Threading;
 
 namespace IF3001_proyecto_final.Layouts
 {
     public partial class MainForm : Form
     {
+        
         public MainForm()
         {
             InitializeComponent();
@@ -29,15 +30,22 @@ namespace IF3001_proyecto_final.Layouts
 
         }
 
-        private void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
-             gestionEstudianteForm.Show();
 
-           // ListenerBusiness ListenerBusiness = new ListenerBusiness();
-           // MessageBox.Show(""+ ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
+
+            MessageBox.Show("Cargando...");
+            GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
+            gestionEstudianteForm.Show();
+
+            
+            // ListenerBusiness ListenerBusiness = new ListenerBusiness();
+            // MessageBox.Show(""+ ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
         }
 
+       
+
+        
         private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             

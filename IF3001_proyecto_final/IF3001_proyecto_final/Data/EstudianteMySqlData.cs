@@ -82,7 +82,7 @@ namespace IF3001_proyecto_final.Data
 
         public List<Estudiante> EjecutarMostrarEstudiantes()
         {
-            string commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES";   //posible error parentesis
+            string commandText = "ESTUDIANTE.sp_MOSTRAR_ESTUDIANTES";   
             this.InitNpgsqlComponents(commandText);
             this.ExcecuteReader();
 
@@ -106,7 +106,7 @@ namespace IF3001_proyecto_final.Data
         public List<Curso> EjecutarMostrarCursosEstudiante(int estudianteId)
         {
             string paramId = "param_ID_ESTUDIANTE"
-                , commandText = "ESTUDIANTE.sp_MOSTRAR_CURSOS_ESTUDIANTE";   //posible error parentesis
+                , commandText = "ESTUDIANTE.sp_MOSTRAR_CURSOS_ESTUDIANTE";   
             this.InitNpgsqlComponents(commandText);
             this.CreateParameter(paramId, MySqlDbType.Int32, estudianteId);
             this.ExcecuteReader();
@@ -267,8 +267,6 @@ namespace IF3001_proyecto_final.Data
             return this.LeerRespuesta();
         }
 
-
-
         public bool QuitarCursoEstudiante(string carneEstudiante, string nombreCurso)
         {
             string paramStudentId = "param_CARNE_ESTUDIANTE"
@@ -286,7 +284,6 @@ namespace IF3001_proyecto_final.Data
         }
 
        
-
         public bool InsertarCarreraEstudiante(int estudianteId, string nombreCarrera)
         {
             string paramStudentId = "param_ID_ESTUDIANTE"
@@ -304,7 +301,6 @@ namespace IF3001_proyecto_final.Data
         }
 
         
-
         public bool QuitarCarreraEstudiante(string nombreCarrera, string carneEstudiante)
         {
             string paramStudentId = "param_CARNE_ESTUDIANTE"
@@ -322,8 +318,6 @@ namespace IF3001_proyecto_final.Data
         }
 
         
-
-
         public bool InsertarTelefonoEstudiante(int estudianteId, string numeroTelefono)
         {
             string paramPhoneNumber = "param_NUMERO_TELEFONO"
@@ -339,8 +333,6 @@ namespace IF3001_proyecto_final.Data
 
             return this.LeerRespuesta();
         }
-
-        
 
         public bool QuitarTelefonoEstudiante(int estudianteId, string numeroTelefonico)
         {
@@ -407,7 +399,6 @@ namespace IF3001_proyecto_final.Data
 
             return LeerRespuesta();
         }
-
 
         private void InitNpgsqlComponents(string commandText)
         {
