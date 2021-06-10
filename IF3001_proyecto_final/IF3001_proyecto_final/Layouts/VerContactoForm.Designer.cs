@@ -101,6 +101,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_agregar.TabIndex = 4;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // txb_numero
             // 

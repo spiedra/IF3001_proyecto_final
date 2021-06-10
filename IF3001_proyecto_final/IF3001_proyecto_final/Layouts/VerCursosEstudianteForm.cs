@@ -32,5 +32,10 @@ namespace IF3001_proyecto_final.Layouts
         {
 
         }
+
+        private void btn_agregar_curso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

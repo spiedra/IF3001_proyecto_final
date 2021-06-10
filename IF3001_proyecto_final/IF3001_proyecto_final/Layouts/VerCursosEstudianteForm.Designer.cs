@@ -31,14 +31,14 @@ namespace IF3001_proyecto_final.Layouts
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_cursos = new System.Windows.Forms.DataGridView();
-            this.cb_cursos = new System.Windows.Forms.ComboBox();
-            this.lbl_seleccionar_curso = new System.Windows.Forms.Label();
-            this.btn_agregar_curso = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_quitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cb_cursos = new System.Windows.Forms.ComboBox();
+            this.lbl_seleccionar_curso = new System.Windows.Forms.Label();
+            this.btn_agregar_curso = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cursos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -70,43 +70,6 @@ namespace IF3001_proyecto_final.Layouts
             this.dgv_cursos.TabIndex = 0;
             this.dgv_cursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // cb_cursos
-            // 
-            this.cb_cursos.FormattingEnabled = true;
-            this.cb_cursos.Location = new System.Drawing.Point(192, 22);
-            this.cb_cursos.Name = "cb_cursos";
-            this.cb_cursos.Size = new System.Drawing.Size(151, 28);
-            this.cb_cursos.TabIndex = 1;
-            // 
-            // lbl_seleccionar_curso
-            // 
-            this.lbl_seleccionar_curso.AutoSize = true;
-            this.lbl_seleccionar_curso.Location = new System.Drawing.Point(15, 23);
-            this.lbl_seleccionar_curso.Name = "lbl_seleccionar_curso";
-            this.lbl_seleccionar_curso.Size = new System.Drawing.Size(142, 20);
-            this.lbl_seleccionar_curso.TabIndex = 2;
-            this.lbl_seleccionar_curso.Text = "Seleccione un curso:";
-            // 
-            // btn_agregar_curso
-            // 
-            this.btn_agregar_curso.Location = new System.Drawing.Point(373, 22);
-            this.btn_agregar_curso.Name = "btn_agregar_curso";
-            this.btn_agregar_curso.Size = new System.Drawing.Size(94, 29);
-            this.btn_agregar_curso.TabIndex = 3;
-            this.btn_agregar_curso.Text = "Agregar";
-            this.btn_agregar_curso.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lbl_seleccionar_curso);
-            this.groupBox2.Controls.Add(this.btn_agregar_curso);
-            this.groupBox2.Controls.Add(this.cb_cursos);
-            this.groupBox2.Location = new System.Drawing.Point(167, 288);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(475, 78);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -135,6 +98,44 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_quitar.Name = "btn_quitar";
             this.btn_quitar.Text = "Quitar";
             this.btn_quitar.Width = 70;
+            // 
+            // cb_cursos
+            // 
+            this.cb_cursos.FormattingEnabled = true;
+            this.cb_cursos.Location = new System.Drawing.Point(192, 22);
+            this.cb_cursos.Name = "cb_cursos";
+            this.cb_cursos.Size = new System.Drawing.Size(151, 28);
+            this.cb_cursos.TabIndex = 1;
+            // 
+            // lbl_seleccionar_curso
+            // 
+            this.lbl_seleccionar_curso.AutoSize = true;
+            this.lbl_seleccionar_curso.Location = new System.Drawing.Point(15, 23);
+            this.lbl_seleccionar_curso.Name = "lbl_seleccionar_curso";
+            this.lbl_seleccionar_curso.Size = new System.Drawing.Size(142, 20);
+            this.lbl_seleccionar_curso.TabIndex = 2;
+            this.lbl_seleccionar_curso.Text = "Seleccione un curso:";
+            // 
+            // btn_agregar_curso
+            // 
+            this.btn_agregar_curso.Location = new System.Drawing.Point(373, 22);
+            this.btn_agregar_curso.Name = "btn_agregar_curso";
+            this.btn_agregar_curso.Size = new System.Drawing.Size(94, 29);
+            this.btn_agregar_curso.TabIndex = 3;
+            this.btn_agregar_curso.Text = "Agregar";
+            this.btn_agregar_curso.UseVisualStyleBackColor = true;
+            this.btn_agregar_curso.Click += new System.EventHandler(this.btn_agregar_curso_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbl_seleccionar_curso);
+            this.groupBox2.Controls.Add(this.btn_agregar_curso);
+            this.groupBox2.Controls.Add(this.cb_cursos);
+            this.groupBox2.Location = new System.Drawing.Point(167, 288);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(475, 78);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
             // 
             // VerCursosEstudianteForm
             // 

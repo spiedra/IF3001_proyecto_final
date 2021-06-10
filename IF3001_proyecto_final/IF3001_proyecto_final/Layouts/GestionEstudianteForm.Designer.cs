@@ -332,6 +332,7 @@ namespace IF3001_proyecto_final.Layouts
             this.button4.TabIndex = 4;
             this.button4.Text = "Eliminar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // btn_modificar
             // 
@@ -358,7 +359,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Beca,
             this.Sede,
             this.Direccion});
-            this.dgrid_estudiantes.Location = new System.Drawing.Point(19, 91);
+            this.dgrid_estudiantes.Location = new System.Drawing.Point(19, 103);
             this.dgrid_estudiantes.Name = "dgrid_estudiantes";
             this.dgrid_estudiantes.ReadOnly = true;
             this.dgrid_estudiantes.RowHeadersWidth = 51;
