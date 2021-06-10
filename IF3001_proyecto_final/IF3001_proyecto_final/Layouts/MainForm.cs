@@ -34,10 +34,11 @@ namespace IF3001_proyecto_final.Layouts
         {
 
 
-            MessageBox.Show("Cargando...");
+           
             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
             gestionEstudianteForm.Show();
-
+            
+            
             
             // ListenerBusiness ListenerBusiness = new ListenerBusiness();
             // MessageBox.Show(""+ ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));

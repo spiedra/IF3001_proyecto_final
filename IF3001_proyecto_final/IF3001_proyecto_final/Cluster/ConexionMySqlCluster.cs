@@ -12,7 +12,7 @@ namespace IF3001_proyecto_final.Cluster
     {
         public ConexionMySqlCluster()
         {
-            this.ConnectToDatabase();
+           
         }
 
         public object ConnectToDatabase()
