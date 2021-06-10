@@ -19,8 +19,9 @@ namespace IF3001_proyecto_final.Layouts
         private Estudiante estudiante;
         public ModificarEstudianteForm(object o)
         {
-            InitializeComponent();
             this.estudiante = (Estudiante)o;
+            InitializeComponent();
+            
            
         }
 
@@ -96,12 +97,16 @@ namespace IF3001_proyecto_final.Layouts
         }
         private Estudiante[] CreateEstudiante()
         {
-            Estudiante[] estudiante = new Estudiante[1] {
+            Estudiante[] estudiantes = new Estudiante []{
                 new Estudiante(this.estudiante.Id, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text)
                , this.txt_carne.Text,  this.txt_promedio.Text,(string)this.cb_beca.SelectedItem,(string)this.cb_sede.SelectedItem,this.txb_direccion.Text)
             };
-            return estudiante;
+            return estudiantes;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

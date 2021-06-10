@@ -129,7 +129,7 @@ namespace IF3001_proyecto_final.Data
             this.ExecuteNonQuery();
         }
 
-        public void ActualizarEstudiante(Estudiante estudiante)
+        public bool ActualizarEstudiante(Estudiante estudiante)
         {
             string paramId = "@param_ID_ESTUDIANTE"
                , paramName = "@param_NOMBRE_ESTUDIANTE"
@@ -153,6 +153,8 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramSName, SqlDbType.VarChar, estudiante.Sede);
             this.CreateParameter(paramBeca, SqlDbType.VarChar, estudiante.TipoBeca);
             this.ExecuteNonQuery();
+
+            return true;
         }
 
         public List<Curso> ObtenerTodosLosCursos()

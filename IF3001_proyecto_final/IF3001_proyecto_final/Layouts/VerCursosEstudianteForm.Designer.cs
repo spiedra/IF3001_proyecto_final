@@ -94,7 +94,6 @@ namespace IF3001_proyecto_final.Layouts
             // btn_quitar
             // 
             this.btn_quitar.HeaderText = "Acción";
-
             this.btn_quitar.MinimumWidth = 6;
             this.btn_quitar.Name = "btn_quitar";
             this.btn_quitar.Text = "Quitar";
@@ -125,7 +124,7 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_agregar_curso.TabIndex = 3;
             this.btn_agregar_curso.Text = "Agregar";
             this.btn_agregar_curso.UseVisualStyleBackColor = true;
-         
+            this.btn_agregar_curso.Click += new System.EventHandler(this.btn_agregar_curso_Click_1);
             // 
             // groupBox2
             // 
