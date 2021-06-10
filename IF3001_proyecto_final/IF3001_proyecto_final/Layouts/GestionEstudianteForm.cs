@@ -11,7 +11,6 @@ namespace IF3001_proyecto_final.Layouts
     public partial class GestionEstudianteForm : Form
     {
         private ListenerBusiness listenerBusiness;
-
         public GestionEstudianteForm()
         {
             InitializeComponent();
@@ -19,13 +18,11 @@ namespace IF3001_proyecto_final.Layouts
 
         private async void GestionEstudianteForm_Load(object sender, EventArgs e)
         {
-
             MessageBox.Show("Cargando... Por favor, espere...");
             ListenerBusiness listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));
-            
+            this.FillGridEstudiante(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodosLosEstudiantes", null));     
         }
 
         
