@@ -126,6 +126,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gp_Numeros_contacto);
             this.Name = "VerContactoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerContactoForm";
             this.gp_Numeros_contacto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Ver_Contacto)).EndInit();
