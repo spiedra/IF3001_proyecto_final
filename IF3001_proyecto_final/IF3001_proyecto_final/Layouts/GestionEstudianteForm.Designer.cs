@@ -49,7 +49,7 @@ namespace IF3001_proyecto_final.Layouts
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbx_buscar_carnet = new System.Windows.Forms.TextBox();
             this.lvl_carne_buscar = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gp_lista_estudiantes = new System.Windows.Forms.GroupBox();
@@ -258,13 +258,14 @@ namespace IF3001_proyecto_final.Layouts
             this.btn_buscar.TabIndex = 2;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // textBox6
+            // tbx_buscar_carnet
             // 
-            this.textBox6.Location = new System.Drawing.Point(98, 37);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 1;
+            this.tbx_buscar_carnet.Location = new System.Drawing.Point(98, 37);
+            this.tbx_buscar_carnet.Name = "tbx_buscar_carnet";
+            this.tbx_buscar_carnet.Size = new System.Drawing.Size(125, 27);
+            this.tbx_buscar_carnet.TabIndex = 1;
             // 
             // lvl_carne_buscar
             // 
@@ -284,7 +285,7 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes.Controls.Add(this.btn_modificar);
             this.gp_lista_estudiantes.Controls.Add(this.btn_buscar);
             this.gp_lista_estudiantes.Controls.Add(this.dgrid_estudiantes);
-            this.gp_lista_estudiantes.Controls.Add(this.textBox6);
+            this.gp_lista_estudiantes.Controls.Add(this.tbx_buscar_carnet);
             this.gp_lista_estudiantes.Controls.Add(this.lvl_carne_buscar);
             this.gp_lista_estudiantes.Location = new System.Drawing.Point(32, 342);
             this.gp_lista_estudiantes.Name = "gp_lista_estudiantes";
@@ -292,7 +293,6 @@ namespace IF3001_proyecto_final.Layouts
             this.gp_lista_estudiantes.TabIndex = 2;
             this.gp_lista_estudiantes.TabStop = false;
             this.gp_lista_estudiantes.Text = "Lista de estudiantes";
-            this.gp_lista_estudiantes.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btn_contacto
             // 
@@ -491,7 +491,7 @@ namespace IF3001_proyecto_final.Layouts
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbx_buscar_carnet;
         private System.Windows.Forms.Label lvl_carne_buscar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox gp_lista_estudiantes;
