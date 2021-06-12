@@ -87,3 +87,25 @@ RETURN 1;
 
 END
 
+-----------------------------------
+
+DELIMITER $$
+CREATE  PROCEDURE AUDITORIA.sp_BORRAR_DATOS_TABLA(IN param_TABLA VARCHAR(70) )
+BEGIN
+
+ ##reinicia el auto increment
+SET @t2 =CONCAT('ALTER TABLE', param_TABLA,+ 'AUTO_INCREMENT = 0');
+ PREPARE stmt4 FROM @t2;
+ EXECUTE stmt4;
+ DEALLOCATE PREPARE stmt4;
+ 
+ ##procede a eliminar los datos de la tabla
+ 
+ SET sql_safe_updates=0;
+ SET @t1 =CONCAT('DELETE FROM ', param_TABLA );
+ PREPARE stmt3 FROM @t1;
+ EXECUTE stmt3;
+ DEALLOCATE PREPARE stmt3;
+ 
+END $$
+
