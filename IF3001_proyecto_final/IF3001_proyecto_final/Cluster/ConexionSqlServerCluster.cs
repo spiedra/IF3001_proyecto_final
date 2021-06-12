@@ -11,17 +11,19 @@ namespace IF3001_proyecto_final.Cluster
     {
         public ConexionSqlServerCluster()
         {
-
+           // this.SqlConnection = "jaja";
         }
 
-        public object ConnectToDatabase()
+        public SqlConnection SqlConnection { get; set; }
+
+        public object EstablishSqlServerConnection()
         {
             try
             {
-                SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
-                sqlConnection.Open();
-                sqlConnection.Close();
-                return sqlConnection;                
+                this.SqlConnection = new SqlConnection(GetConnectionString());
+                this.SqlConnection.Open();
+                this.SqlConnection.Close();
+                return this.SqlConnection;
             }
             catch (SqlException sqlException)
             {

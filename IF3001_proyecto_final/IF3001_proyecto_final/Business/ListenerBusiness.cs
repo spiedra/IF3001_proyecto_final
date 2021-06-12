@@ -15,7 +15,7 @@ namespace IF3001_proyecto_final.Business
 
         public ListenerBusiness()
         {
-            this.listenerCluster = new ListenerCluster();
+            this.listenerCluster = ListenerCluster.GetListenerCluster();
             this.InitListDataClasses();
         }
 

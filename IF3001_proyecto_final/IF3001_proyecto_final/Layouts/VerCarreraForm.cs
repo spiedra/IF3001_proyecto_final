@@ -76,7 +76,6 @@ namespace IF3001_proyecto_final.Layouts
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             string carrera = Convert.ToString(this.dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             if (e.ColumnIndex == this.dataGridView1.Columns["btn_accion"].Index && e.RowIndex >= 0)
             {

@@ -468,6 +468,7 @@ namespace IF3001_proyecto_final.Layouts
             this.Name = "GestionEstudianteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionEstudianteForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionEstudianteForm_FormClosed);
             this.Load += new System.EventHandler(this.GestionEstudianteForm_Load);
             this.gp_registro_estudiantes.ResumeLayout(false);
             this.gp_registro_estudiantes.PerformLayout();
