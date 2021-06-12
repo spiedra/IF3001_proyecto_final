@@ -1,0 +1,17 @@
+CREDENCIALES SQL SERVER: 
+
+nombre del servidor: proyectodbarjk.database.windows.net
+contraseña: contrasenaProyecto1
+de inicio: proyectodbarjkinit
+
+CREDENCIALES MYSQL:
+
+id estancia: proyectodbarjk-mysql
+
+contrasena: contrasenaProyecto1
+
+
+USERS MY SQL:
+
+MYSQL USER: DBA_ADMIN1
+pass: DBA_ADMIN123
