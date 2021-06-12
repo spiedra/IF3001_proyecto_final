@@ -3,8 +3,6 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using IF3001_proyecto_final.Business;
 using IF3001_proyecto_final.Domain;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace IF3001_proyecto_final.Layouts
 {
@@ -16,9 +14,8 @@ namespace IF3001_proyecto_final.Layouts
             InitializeComponent();
         }
 
-        private async void GestionEstudianteForm_Load(object sender, EventArgs e)
+        private void GestionEstudianteForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Cargando... Por favor, espere...");
             this.listenerBusiness = new ListenerBusiness();
             this.FillCbxSedes(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasSedes", null));
             this.FillCbxBeca(listenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
@@ -177,6 +174,11 @@ namespace IF3001_proyecto_final.Layouts
         private void gp_registro_estudiantes_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void GestionEstudianteForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Utility.Utility.IsConnect = false;
         }
     }
 }

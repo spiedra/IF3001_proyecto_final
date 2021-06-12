@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace IF3001_proyecto_final.Cluster
 {
@@ -15,14 +9,16 @@ namespace IF3001_proyecto_final.Cluster
 
         }
 
-        public object ConnectToDatabase()
+        public MySqlConnection MysqlConnection { get; set; }
+
+        public object EstablishMySqlConnection()
         {
             try
             {
-                MySqlConnection mysqlConnection = new MySqlConnection(GetConnectionString());
-                mysqlConnection.Open();
-                mysqlConnection.Close();
-                return mysqlConnection;
+                this.MysqlConnection = new MySqlConnection(GetConnectionString());
+                this.MysqlConnection.Open();
+                this.MysqlConnection.Close();
+                return this.MysqlConnection;
             }
             catch (MySqlException mysqlException)
             {
@@ -37,9 +33,9 @@ namespace IF3001_proyecto_final.Cluster
                 Server = "34.122.1.75",
                 UserID = "root",
                 Password = "superuser",
-                //Database = "ESTUDIANTE",
             };
             return mySqlConnectionStringBuilder.ConnectionString;
         }
+
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using IF3001_proyecto_final.Cluster;
 
 namespace IF3001_proyecto_final.Business
@@ -15,7 +11,7 @@ namespace IF3001_proyecto_final.Business
 
         public ListenerBusiness()
         {
-            this.listenerCluster = new ListenerCluster();
+            this.listenerCluster = ListenerCluster.GetListenerCluster();
             this.InitListDataClasses();
         }
 

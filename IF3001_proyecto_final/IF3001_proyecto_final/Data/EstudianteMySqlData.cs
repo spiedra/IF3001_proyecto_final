@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using IF3001_proyecto_final.Cluster;
 using IF3001_proyecto_final.Domain;
@@ -53,6 +50,7 @@ namespace IF3001_proyecto_final.Data
             if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
                 return true;
 
+            this.mysqlConnection.Close();
             return false;
         }
 
@@ -69,15 +67,16 @@ namespace IF3001_proyecto_final.Data
 
         private Estudiante LeerRespuestaBuscarEstudianteCarne()
         {
+            Estudiante estudiante1 = null;
             if (this.mysqlDataReader.Read())
             {
-                Estudiante estudiante = new Estudiante(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
+                estudiante1 = new Estudiante(this.mysqlDataReader.GetInt32(0), this.mysqlDataReader.GetString(1)
                     , this.mysqlDataReader.GetString(2), this.mysqlDataReader.GetInt32(3), this.mysqlDataReader.GetString(4)
                     , this.mysqlDataReader.GetString(5), this.mysqlDataReader.GetString(6), this.mysqlDataReader.GetString(7)
                     ,this.mysqlDataReader.GetString(8));
-                return estudiante;
             }
-            return null;
+            this.mysqlConnection.Close();
+            return estudiante1;
         }
 
         public List<Estudiante> EjecutarMostrarEstudiantes()
@@ -100,6 +99,7 @@ namespace IF3001_proyecto_final.Data
                     , this.mysqlDataReader.GetString(8));
                 estudiantes.Add(estudiante);
             }
+            this.mysqlConnection.Close();
             return estudiantes;
         }
 
@@ -123,6 +123,7 @@ namespace IF3001_proyecto_final.Data
                     , this.mysqlDataReader.GetInt32(2));
                 cursos.Add(curso);
             }
+            this.mysqlConnection.Close();
             return cursos;
         }
 
@@ -145,6 +146,7 @@ namespace IF3001_proyecto_final.Data
                 Carrera carrera = new Carrera(-1, this.mysqlDataReader.GetString(0));
                 carreras.Add(carrera);
             }
+            this.mysqlConnection.Close();
             return carreras;
         }
 
@@ -167,6 +169,7 @@ namespace IF3001_proyecto_final.Data
                 Telefono telefono = new Telefono(-1, this.mysqlDataReader.GetString(0));
                 telefonos.Add(telefono);
             }
+            this.mysqlConnection.Close();
             return telefonos;
         }
 
@@ -188,6 +191,7 @@ namespace IF3001_proyecto_final.Data
                     , this.mysqlDataReader.GetInt32(2));
                 cursos.Add(curso);
             }
+            this.mysqlConnection.Close();
             return cursos;
         }
 
@@ -208,6 +212,7 @@ namespace IF3001_proyecto_final.Data
                 Carrera carrera = new Carrera(-1, this.mysqlDataReader.GetString(1));
                 carreras.Add(carrera);
             }
+            this.mysqlConnection.Close();
             return carreras;
         }
 
@@ -228,6 +233,7 @@ namespace IF3001_proyecto_final.Data
                 Beca beca = new Beca(-1, this.mysqlDataReader.GetString(1));
                 becas.Add(beca);
             }
+            this.mysqlConnection.Close();
             return becas;
         }
 
@@ -248,6 +254,7 @@ namespace IF3001_proyecto_final.Data
                 Sede sede = new Sede(-1, this.mysqlDataReader.GetString(1));
                 sedes.Add(sede);
             }
+            this.mysqlConnection.Close();
             return sedes;
         }
 
@@ -355,6 +362,7 @@ namespace IF3001_proyecto_final.Data
             if (Convert.ToInt32(this.mysqlCommand.Parameters["msg"].Value) == 1)
                 return true;
 
+            this.mysqlConnection.Close();
             return false;
         }
 
@@ -404,7 +412,7 @@ namespace IF3001_proyecto_final.Data
 
         private void InitNpgsqlComponents(string commandText)
         {
-            ListenerCluster listenerCluster = new ListenerCluster();
+            ListenerCluster listenerCluster = ListenerCluster.GetListenerCluster();
             this.mysqlConnection = listenerCluster.ConnectToMySqlInstance();
             this.mysqlCommand = new MySqlCommand(commandText, this.mysqlConnection);
         }

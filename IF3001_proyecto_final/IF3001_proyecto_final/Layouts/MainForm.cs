@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IF3001_proyecto_final.Utility;
 
 
 
@@ -19,52 +20,18 @@ namespace IF3001_proyecto_final.Layouts
 {
     public partial class MainForm : Form
     {
-        
+        private ListenerCluster listenerCluster;
+
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private async void gestionEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-           
+            MessageBox.Show("Cargando... Por favor, espere...");
             GestionEstudianteForm gestionEstudianteForm = new GestionEstudianteForm();
             gestionEstudianteForm.Show();
-            
-            
-            
-            // ListenerBusiness ListenerBusiness = new ListenerBusiness();
-            // MessageBox.Show(""+ ListenerBusiness.ConnectToListener("IF3001_proyecto_final.Business.Estudiante", "ObtenerTodasLasBecas", null));
-        }
-
-       
-
-        
-        private void gestionCarreraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void gestionCursotoolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void gestionSedetoolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void gestionBecaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

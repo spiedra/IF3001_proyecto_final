@@ -35,10 +35,7 @@
     <None Remove="Layouts\ModificarCarreraForm.cs~RF1f79f00.TMP" />
     <None Remove="Layouts\ModificarCursoForm.cs~RF241c0c9.TMP" />
     <None Remove="Layouts\VerContactoForm.cs~RF1e0b75a.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Utility\" />
+    <None Remove="Utility\Utility.cs~RF28c35f1.TMP" />
   </ItemGroup>
 
   <ItemGroup>

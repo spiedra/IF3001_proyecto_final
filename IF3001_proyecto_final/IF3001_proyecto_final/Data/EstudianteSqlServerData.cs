@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using IF3001_proyecto_final.Domain;
-using System.Threading.Tasks;
 using IF3001_proyecto_final.Cluster;
 
 namespace IF3001_proyecto_final.Data
@@ -221,6 +217,7 @@ namespace IF3001_proyecto_final.Data
                     , this.sqlDataReader.GetString(8));
                 estudiantes.Add(estudiante);
             }
+            this.sqlConnection.Close();
             return estudiantes;
         }
 
@@ -231,6 +228,7 @@ namespace IF3001_proyecto_final.Data
             {
                 becas.Add(new Beca(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
             }
+            this.sqlConnection.Close();
             return becas;
         }
 
@@ -248,6 +246,7 @@ namespace IF3001_proyecto_final.Data
             {
                 sedes.Add(new Sede(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
             }
+            this.sqlConnection.Close();
             return sedes;
         }
 
@@ -267,6 +266,7 @@ namespace IF3001_proyecto_final.Data
                     , this.sqlDataReader.GetInt32(2));
                 cursos.Add(curso);
             }
+            this.sqlConnection.Close();
             return cursos;
         }
 
@@ -285,6 +285,7 @@ namespace IF3001_proyecto_final.Data
                 Carrera carrera = new Carrera(this.sqlDataReader.GetInt32(1), this.sqlDataReader.GetString(1));
                 carreras.Add(carrera);
             }
+            this.sqlConnection.Close();
             return carreras;
         }
 
@@ -306,6 +307,7 @@ namespace IF3001_proyecto_final.Data
                 Telefono telefono = new Telefono(-1, this.sqlDataReader.GetString(0));
                 telefonos.Add(telefono);
             }
+            this.sqlConnection.Close();
             return telefonos;
         }
 
@@ -316,7 +318,7 @@ namespace IF3001_proyecto_final.Data
 
             this.InitSqlComponents(commandText);
             this.CreateParameter(paramStudentId, SqlDbType.Int, estudianteId);
-            this.ExecuteNonQuery();
+            this.ExcecuteReader();
         }
 
         private List<Carrera> LeerRespuestaMostrarCarreraEstudiante()
@@ -327,6 +329,7 @@ namespace IF3001_proyecto_final.Data
                 Carrera carrera = new Carrera(-1, this.sqlDataReader.GetString(0));
                 carreras.Add(carrera);
             }
+            this.sqlConnection.Close();
             return carreras;
         }
 
@@ -349,6 +352,7 @@ namespace IF3001_proyecto_final.Data
                     , this.sqlDataReader.GetInt32(2));
                 cursos.Add(curso);
             }
+            this.sqlConnection.Close();
             return cursos;
         }
 
@@ -373,6 +377,7 @@ namespace IF3001_proyecto_final.Data
                 estudiante.Sede = this.sqlDataReader.GetString(7);
                 return estudiante;
             }
+            this.sqlConnection.Close();
             return null;
         }
 
@@ -412,7 +417,7 @@ namespace IF3001_proyecto_final.Data
 
         private void InitSqlComponents(string commandText)
         {
-            ListenerCluster listenerCluster = new ListenerCluster();
+            ListenerCluster listenerCluster =  ListenerCluster.GetListenerCluster();
             this.sqlConnection = listenerCluster.ConnectToSqlServerInstance();
             this.sqlCommand = new SqlCommand(commandText, this.sqlConnection);
         }
