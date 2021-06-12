@@ -6,9 +6,7 @@ namespace Listening_assistant
     {
         static void Main(string[] args)
         {
-            foreach(char letter in "hola"){
-                Console.WriteLine(letter);
-            }
+            
         }
     }
 }
