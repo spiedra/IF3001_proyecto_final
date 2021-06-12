@@ -21,6 +21,7 @@ namespace Listening_assistant.Cluster
         //SQL SERVER
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
+        private StringBuilder builderInserts;
 
         //MYSQL SERVER
 
@@ -47,12 +48,13 @@ namespace Listening_assistant.Cluster
                 if (VerificarDisponibilidad()) //valida disponiblidad en ambas conexiones para poder proceder con la replica.
                 {
 
+                    EjecutarConsultarAuditorias();
+                    LeerRevisarAuditorias();
 
 
 
 
 
-                    
                 }
 
 
@@ -73,16 +75,11 @@ namespace Listening_assistant.Cluster
 
         }
 
-        private void EjecutarConsultarAuditorias()
-        {
-            string commandText = "AUDITORIA.sp_MOSTRAR_AUDITORIAS";
-            this.InitSqlComponents(commandText);
-            this.ExcecuteReader();
 
 
-        }
 
-        private void RevisarAuditorias()
+
+        private void LeerRevisarAuditorias()
         {
 
             while (this.sqlDataReader.Read())
@@ -103,8 +100,34 @@ namespace Listening_assistant.Cluster
 
         //SQL SERVER 
 
+        private void EjecutarSolicitarInserts()
+        {
+            string commandText = "ADMINISTRACION.sp_TABLE_INSERTS";
+            ConexionSqlServerCluster csql = new ConexionSqlServerCluster();
+            csql.ConnectToDatabaseWithConsole();
+            SqlCommand sqlCommand = new SqlCommand(commandText, csql.sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            this.builderInserts = new StringBuilder();
+
+            int i = 0;
+            while (sqlDataReader.Read())
+            {
+                this.builderInserts.Append(sqlDataReader.GetString(i));
+                i++;
+            }
+            csql.DisconnectFromDatabase();
+        }
 
 
+
+
+        private void EjecutarConsultarAuditorias()
+        {
+            string commandText = "AUDITORIA.sp_MOSTRAR_AUDITORIAS";
+            this.InitSqlComponents(commandText);
+            this.ExcecuteReader();
+        }
 
         private void CreateParameter(string parameterName, SqlDbType dbType, object value)
         {
@@ -129,7 +152,7 @@ namespace Listening_assistant.Cluster
         }
 
 
-        //MYSQL SERVER
+        //MYSQL
 
 
 
