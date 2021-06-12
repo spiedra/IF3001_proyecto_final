@@ -52,8 +52,7 @@ namespace Listening_assistant.Cluster
 
 
 
-                    this.conexionMySqlCluster.DisconnectFromDatabase();
-                    this.conexionSqlServerCluster.DisconnectFromDatabase();
+                    
                 }
 
 
