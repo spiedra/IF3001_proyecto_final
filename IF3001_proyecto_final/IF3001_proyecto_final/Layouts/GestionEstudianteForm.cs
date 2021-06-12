@@ -3,9 +3,6 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using IF3001_proyecto_final.Business;
 using IF3001_proyecto_final.Domain;
-using System.Threading;
-using System.Threading.Tasks;
-using IF3001_proyecto_final.Utility;
 
 namespace IF3001_proyecto_final.Layouts
 {

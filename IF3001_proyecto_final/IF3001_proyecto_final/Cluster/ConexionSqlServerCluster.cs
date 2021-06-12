@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace IF3001_proyecto_final.Cluster
 {
@@ -11,7 +6,6 @@ namespace IF3001_proyecto_final.Cluster
     {
         public ConexionSqlServerCluster()
         {
-           // this.SqlConnection = "jaja";
         }
 
         public SqlConnection SqlConnection { get; set; }
@@ -34,10 +28,10 @@ namespace IF3001_proyecto_final.Cluster
         static private string GetConnectionString()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "35.193.110.243";
-            builder.UserID = "sqlserver";
-            builder.Password = "piedra";
-            builder.InitialCatalog = "test";
+            builder.DataSource = "proyectodbarjk.database.windows.net";
+            builder.UserID = "proyectodbarjkinit";
+            builder.Password = "contrasenaProyecto1";
+            builder.InitialCatalog = "db_proyecto_admin_est";
             return builder.ConnectionString;
         }
     }

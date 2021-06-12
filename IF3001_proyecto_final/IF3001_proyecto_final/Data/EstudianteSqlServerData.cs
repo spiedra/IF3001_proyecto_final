@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using IF3001_proyecto_final.Domain;
-using System.Threading.Tasks;
 using IF3001_proyecto_final.Cluster;
 
 namespace IF3001_proyecto_final.Data
