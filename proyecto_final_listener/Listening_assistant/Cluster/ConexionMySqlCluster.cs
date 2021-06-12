@@ -10,9 +10,24 @@ namespace IF3001_proyecto_final.Cluster
 {
     class ConexionMySqlCluster
     {
-        public ConexionMySqlCluster()
+        public MySqlConnection mysqlConnection { get; set; }
+        public  ConexionMySqlCluster()
         {
+            
+        }
 
+        public MySqlConnection ConnectToDatabaseWithConsole()
+        {
+            try
+            {
+                this.mysqlConnection = new MySqlConnection(GetConnectionString());
+                this.mysqlConnection.Open();
+                return mysqlConnection;
+            }
+            catch (MySqlException mysqlException)
+            {
+                return null;
+            }
         }
 
         public object ConnectToDatabase()
@@ -30,14 +45,18 @@ namespace IF3001_proyecto_final.Cluster
             }
         }
 
+        public void DisconnectFromDatabase()
+        {
+            this.mysqlConnection.Close();
+        }
+
         static private string GetConnectionString()
         {
             var mySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
             {
                 Server = "34.122.1.75",
-                UserID = "root",
-                Password = "superuser",
-                //Database = "ESTUDIANTE",
+                UserID = "DBA_ADMIN2",
+                Password = "DBA_ADMIN123",
             };
             return mySqlConnectionStringBuilder.ConnectionString;
         }
