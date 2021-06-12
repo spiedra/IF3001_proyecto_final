@@ -152,9 +152,9 @@ namespace IF3001_proyecto_final.Data
             this.CreateParameter(paramAddress, SqlDbType.VarChar, estudiante.Direccion);
             this.CreateParameter(paramSName, SqlDbType.VarChar, estudiante.Sede);
             this.CreateParameter(paramBeca, SqlDbType.VarChar, estudiante.TipoBeca);
+            this.CreateParameterOutput();
             this.ExecuteNonQuery();
-
-            return true;
+            return this.LeerRespuestaModificarEstudiante();
         }
 
         public List<Curso> ObtenerTodosLosCursos()
@@ -192,6 +192,15 @@ namespace IF3001_proyecto_final.Data
         {
             this.EjecutarMostrarEstudiantes();
             return this.LeerRespuestaMostrarEstudiantes();
+        }
+
+        private bool LeerRespuestaModificarEstudiante()
+        {
+            if ((int)this.parameterReturn.Value == 1)
+                return true;
+
+            this.sqlConnection.Close();
+            return false;
         }
 
         private void EjecutarMostrarEstudiantes()
