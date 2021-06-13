@@ -20,9 +20,9 @@ namespace IF3001_proyecto_final.Cluster
         {
             try
             {
-                MySqlConnection mysqlConnection = new MySqlConnection(GetConnectionString());
-                mysqlConnection.Open();
-                mysqlConnection.Close();
+                this.mysqlConnection = new MySqlConnection(GetConnectionString());
+                this.mysqlConnection.Open();
+                this.mysqlConnection.Close();
                 return mysqlConnection;
             }
             catch (MySqlException mysqlException)

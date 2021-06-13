@@ -80,11 +80,13 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
-
+                    this.EjecutarManejarIncremento(0);  //apago auto_incremento
                     this.EjecutarBorrarDatosTabla(tabla);
-                    this.EjecutarSolicitarInserts(tabla);
-                    this.EjecutaInsertarDatos();
-                    this.EjecutarMarcarAtendida(id);
+                    Console.WriteLine("manejado");
+                    //this.EjecutarSolicitarInserts(tabla);
+                    //this.EjecutaInsertarDatos();
+                    //this.EjecutarManejarIncremento(1);  //encender auto_increment
+                    //this.EjecutarMarcarAtendida(id);
                 }
             }
             this.conexionSqlServerCluster.DisconnectFromDatabase();
@@ -115,39 +117,8 @@ namespace Listening_assistant.Cluster
             csql.DisconnectFromDatabase();
         }
 
-        private void EjecutarManejarIdentity(int tabla)
-        {
-            this.conexionSqlServerCluster.ConnectFromDatabase();
-            string commandText = "AUDITORIA.sp_MANEJAR_IDENTITY";
-            this.InitSqlComponents(commandText);
-            SqlParameter sqlParameter = new SqlParameter("@param_MODO", SqlDbType.Int);
-            sqlParameter.Value = tabla;
-            sqlCommand.Parameters.Add(sqlParameter);
-            this.ExcecuteReader();
-           this.conexionSqlServerCluster.DisconnectFromDatabase();
-        }
-
-
-        private int VerificarIndiceTabla(string tabla)
-        {
-            switch (tabla)
-            {
-                case "ESTUDIANTE.tb_ESTUDIANTE":
-
-                    return 0;
-                case "ESTUDIANTE.tb_DIRECCION":
-
-                    return 2;
-                case "ESTUDIANTE.tb_TELEFONO":
-
-                    return 4;
-            }
-            return -1;
-        }
-
         private void EjecutarConsultarAuditorias()
         {
-            this.conexionSqlServerCluster.ConnectFromDatabase();
             string commandText = "AUDITORIA.sp_MOSTRAR_AUDITORIAS";
             this.InitSqlComponents(commandText);
             this.ExcecuteReader();
@@ -172,13 +143,16 @@ namespace Listening_assistant.Cluster
             this.ExecuteConnectionCommands();
             this.sqlDataReader = this.sqlCommand.ExecuteReader();
         }
+
         private void InitSqlComponents(string commandText)
         {
+
             this.sqlCommand = new SqlCommand(commandText, this.conexionSqlServerCluster.sqlConnection);
         }
 
         private void ExecuteConnectionCommands()
         {
+            this.conexionSqlServerCluster.ConnectFromDatabase();
             this.sqlCommand.CommandType = CommandType.StoredProcedure;
         }
 
@@ -198,14 +172,23 @@ namespace Listening_assistant.Cluster
                              , commandText = "AUDITORIA.sp_BORRAR_DATOS_TABLA";
             this.conexionMySqlCluster.ConnectFromDatabase();
             this.InitNpgsqlComponents(commandText);
+            this.mysqlCommand.Parameters.Add(new MySqlParameter(paramNombre, MySqlDbType.VarChar)).Value = nombre_tabla;
             this.mysqlCommand.CommandType = CommandType.StoredProcedure;
             this.mysqlCommand.ExecuteNonQuery();
             this.conexionMySqlCluster.DisconnectFromDatabase();
         }
 
-        private void CreateParameterMySQL(string parameterName, MySqlDbType mysqlDbType, object value)
+        private void EjecutarManejarIncremento(int modo)
         {
-            this.mysqlCommand.Parameters.Add(new MySqlParameter(parameterName, mysqlDbType)).Value = value;
+            string paramNombre = "param_MODO"
+                , commandText = "AUDITORIA.sp_MANEJAR_INCREMENTO";
+            this.conexionMySqlCluster.ConnectFromDatabase();
+            this.InitNpgsqlComponents(commandText);
+            this.mysqlCommand.Parameters.Add(new MySqlParameter(paramNombre, MySqlDbType.VarChar)).Value = modo;
+            this.mysqlCommand.CommandType = CommandType.StoredProcedure;
+            this.mysqlCommand.ExecuteNonQuery();
+            this.conexionMySqlCluster.DisconnectFromDatabase();
+            Console.WriteLine("hecha");
         }
 
         private void ExecuteNonQuery()
@@ -218,12 +201,6 @@ namespace Listening_assistant.Cluster
         private void InitNpgsqlComponents(string commandText)
         {
             this.mysqlCommand = new MySqlCommand(commandText, this.conexionMySqlCluster.mysqlConnection);
-        }
-
-        private void ExcecuteReaderMySQL()
-        {
-            this.ExecuteConnectionCommandsMySQL();
-            this.mysqlDataReader = this.mysqlCommand.ExecuteReader();
         }
 
         private void ExecuteConnectionCommandsMySQL()
