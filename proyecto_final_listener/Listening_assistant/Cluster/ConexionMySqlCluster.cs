@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace IF3001_proyecto_final.Cluster
+namespace Listening_assistant.Cluster
 {
     class ConexionMySqlCluster
     {
         public ConexionMySqlCluster()
         {
-
         }
 
-        public object ConnectToDatabase()
+        public MySqlConnection MysqlConnection { get; set; }
+
+        public object EstablishMySqlConnection()
         {
             try
             {
-                MySqlConnection mysqlConnection = new MySqlConnection(GetConnectionString());
-                mysqlConnection.Open();
-                mysqlConnection.Close();
-                return mysqlConnection;
+                this.MysqlConnection = new MySqlConnection(GetConnectionString());
+                this.MysqlConnection.Open();
+                this.MysqlConnection.Close();
+                return this.MysqlConnection;
             }
             catch (MySqlException mysqlException)
             {
@@ -35,8 +36,8 @@ namespace IF3001_proyecto_final.Cluster
             var mySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
             {
                 Server = "34.122.1.75",
-                UserID = "root",
-                Password = "superuser",
+                UserID = "DBA_ADMIN2",
+                Password = "DBA_ADMIN123",
                 //Database = "ESTUDIANTE",
             };
             return mySqlConnectionStringBuilder.ConnectionString;

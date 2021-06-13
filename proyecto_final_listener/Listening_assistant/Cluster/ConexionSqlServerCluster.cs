@@ -5,23 +5,24 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace IF3001_proyecto_final.Cluster
+namespace Listening_assistant.Cluster
 {
     class ConexionSqlServerCluster
     {
         public ConexionSqlServerCluster()
         {
-
         }
 
-        public object ConnectToDatabase()
+        public SqlConnection SqlConnection { get; set; }
+
+        public object EstablishSqlServerConnection()
         {
             try
             {
-                SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
-                sqlConnection.Open();
-                sqlConnection.Close();
-                return sqlConnection;                
+                this.SqlConnection = new SqlConnection(GetConnectionString());
+                this.SqlConnection.Open();
+                this.SqlConnection.Close();
+                return this.SqlConnection;
             }
             catch (SqlException sqlException)
             {
@@ -31,12 +32,13 @@ namespace IF3001_proyecto_final.Cluster
 
         static private string GetConnectionString()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "35.193.110.243";
-            builder.UserID = "sqlserver";
-            builder.Password = "piedra";
-            builder.InitialCatalog = "testfgfgf";
-            return builder.ConnectionString;
+            //SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            //builder.DataSource = "proyectodbarjk.database.windows.net";
+            //builder.UserID = "proyectodbarjkinit";
+            //builder.Password = "contrasenaProyecto1";
+            //builder.InitialCatalog = "db_proyecto_admin_est";
+            //return builder.ConnectionString;
+            return "Data Source=localhost; database=PROYECTO_FINAL_DBA; User Id=juan; Password=piedra";
         }
     }
 }

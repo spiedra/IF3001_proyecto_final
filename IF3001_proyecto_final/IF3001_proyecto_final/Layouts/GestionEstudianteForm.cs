@@ -178,7 +178,7 @@ namespace IF3001_proyecto_final.Layouts
 
         private void GestionEstudianteForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utility.Utility.IsConnect = false;
+           
         }
     }
 }

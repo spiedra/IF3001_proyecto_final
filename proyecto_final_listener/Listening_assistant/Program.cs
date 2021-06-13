@@ -1,4 +1,5 @@
 ﻿using System;
+using Listening_assistant.Cluster;
 
 namespace Listening_assistant
 {
@@ -6,6 +7,7 @@ namespace Listening_assistant
     {
         static void Main(string[] args)
         {
+            ListenerCluster listenerCluster = new ListenerCluster();
             
         }
     }

@@ -1,0 +1,163 @@
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_ESTUDIANTE_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+    SET IDENTITY_INSERT ESTUDIANTE.tb_ESTUDIANTE ON
+	INSERT INTO [ESTUDIANTE].[tb_ESTUDIANTE]
+	(
+		[ID_ESTUDIANTE], [NOMBRE_ESTUDIANTE], [APELLIDOS_ESTUDIANTE], [EDAD], [PROMEDIO], [CARNE], [ID_DIRECCION_ESTUDIANTE], [IS_DELETED]
+	)
+	SELECT Id, Nombre, Apellidos, Edad, Promedio, Carnet, Direccion, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id INT,
+     Nombre nvarchar(32),
+     Apellidos nvarchar(32), 
+     Edad INT,
+     Promedio nvarchar(32),
+     Carnet nvarchar(32),
+     Direccion INT,
+	 IsDeleted INT
+	 )
+	 SET IDENTITY_INSERT ESTUDIANTE.tb_ESTUDIANTE OFF
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_DIRECCION_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+    SET IDENTITY_INSERT ESTUDIANTE.tb_DIRECCION ON
+	INSERT INTO [ESTUDIANTE].[tb_DIRECCION]
+	(
+		[ID_DIRECCION], [DETALLES], [IS_DELETED]
+	)
+	SELECT IdDireccion, Detalles, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 IdDireccion INT,
+     Detalles nvarchar(32),
+	 IsDeleted INT
+	 )
+	 SET IDENTITY_INSERT ESTUDIANTE.tb_DIRECCION OFF
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_TELEFONO_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+    SET IDENTITY_INSERT ESTUDIANTE.tb_TELEFONO ON
+	INSERT INTO [ESTUDIANTE].tb_TELEFONO
+	(
+		[ID_TELEFONO], [NUMERO_TELEFONO], [IS_DELETED]
+	)
+	SELECT Id, Numero, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id INT,
+     Numero nvarchar(32),
+	 IsDeleted INT
+	 )
+	 SET IDENTITY_INSERT ESTUDIANTE.tb_TELEFONO OFF
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_ESTUDIANTE_BECA_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+	INSERT INTO [ESTUDIANTE].tb_ESTUDIANTE_BECA
+	(
+		[ID_ESTUDIANTE], [ID_BECA], [IS_DELETED]
+	)
+	SELECT Id1, Id2, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id1 INT,
+     Id2 INT,
+	 IsDeleted INT
+	 )
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_ESTUDIANTE_CARRERA_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+	INSERT INTO [ESTUDIANTE].tb_ESTUDIANTE_CARRERA
+	(
+		[ID_ESTUDIANTE], [ID_CARRERA], [IS_DELETED]
+	)
+	SELECT Id1, Id2, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id1 INT,
+     Id2 INT,
+	 IsDeleted INT
+	 )
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_ESTUDIANTE_CURSO_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+	INSERT INTO [ESTUDIANTE].tb_ESTUDIANTE_CURSO
+	(
+		[ID_ESTUDIANTE], [ID_CURSO], [IS_DELETED]
+	)
+	SELECT Id1, Id2, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id1 INT,
+     Id2 INT,
+	 IsDeleted INT
+	 )
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_ESTUDIANTE_SEDE_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+	INSERT INTO [ESTUDIANTE].tb_ESTUDIANTE_SEDE
+	(
+		[ID_ESTUDIANTE], [ID_SEDE], [IS_DELETED]
+	)
+	SELECT Id1, Id2, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id1 INT,
+     Id2 INT,
+	 IsDeleted INT
+	 )
+END
+GO
+-------------------------------------------------------------
+
+CREATE PROCEDURE AUDITORIA.sp_INSERTAR_ESTUDIANTE_TELEFONO_JSON
+@param_JSON_DATA NVARCHAR(MAX)
+AS 
+BEGIN
+	INSERT INTO [ESTUDIANTE].tb_ESTUDIANTE_TELEFONO
+	(
+		[ID_ESTUDIANTE], [ID_TELEFONO], [IS_DELETED]
+	)
+	SELECT Id1, Id2, IsDeleted
+	FROM OPENJSON(@param_JSON_DATA)
+	WITH(
+	 Id1 INT,
+     Id2 INT,
+	 IsDeleted INT
+	 )
+END
+GO
+
+

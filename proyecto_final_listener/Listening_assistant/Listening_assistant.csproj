@@ -6,7 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\ConexionSqlSereverData.cs~RF9b2539.TMP" />
+    <None Remove="Domain\Auditoria.cs~RF3eabbd4.TMP" />
+    <None Remove="Domain\ObjectoRelacion.cs~RF120bf8e.TMP" />
+    <None Remove="Program.cs~RF3cb8077.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.25" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
