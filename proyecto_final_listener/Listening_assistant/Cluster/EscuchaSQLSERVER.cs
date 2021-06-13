@@ -80,12 +80,12 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
-                    this.EjecutarManejarIncremento(0);  //apago auto_incremento
-                    this.EjecutarBorrarDatosTabla(tabla);
-                    Console.WriteLine("manejado");
-                    //this.EjecutarSolicitarInserts(tabla);
-                    //this.EjecutaInsertarDatos();
-                    //this.EjecutarManejarIncremento(1);  //encender auto_increment
+                    //this.EjecutarManejarIncremento(0);  //apago auto_incremento
+                    //this.EjecutarBorrarDatosTabla(tabla);
+                    //Console.WriteLine("manejado");
+                   //this.EjecutarSolicitarInserts(tabla);
+                  // this.EjecutaInsertarDatos();
+                   //this.EjecutarManejarIncremento(1);  //encender auto_increment
                     //this.EjecutarMarcarAtendida(id);
                 }
             }
@@ -99,8 +99,9 @@ namespace Listening_assistant.Cluster
         {
             string commandText = "ADMINISTRACION.sp_TABLE_INSERTS";
             ConexionSqlServerCluster csql = new ConexionSqlServerCluster();
-            csql.ConnectFromDatabase();
+            csql.ConnectToDatabase();
             SqlCommand sqlCommand = new SqlCommand(commandText, csql.sqlConnection);
+            csql.ConnectFromDatabase();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             SqlParameter sqlParameter = new SqlParameter("@param_NOMBRE_TABLA", SqlDbType.VarChar);
             sqlParameter.Value = nombre_tabla;
@@ -108,13 +109,13 @@ namespace Listening_assistant.Cluster
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             this.builderInserts = new StringBuilder();
 
-            int i = 0;
             while (sqlDataReader.Read())
             {
-                this.builderInserts.Append(sqlDataReader.GetString(i));
-                i++;
+                this.builderInserts.Append(sqlDataReader.GetString(0));
             }
             csql.DisconnectFromDatabase();
+
+            Console.WriteLine(this.builderInserts.ToString());
         }
 
         private void EjecutarConsultarAuditorias()
@@ -128,8 +129,9 @@ namespace Listening_assistant.Cluster
         {
             string commandText = "AUDITORIA.sp_MARCAR_ATENDIDO";
             ConexionSqlServerCluster csql = new ConexionSqlServerCluster();
-            csql.ConnectFromDatabase();
+            csql.ConnectToDatabase();
             SqlCommand sqlCommand = new SqlCommand(commandText, csql.sqlConnection);
+            csql.ConnectFromDatabase();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             SqlParameter sqlParameter = new SqlParameter("@param_Id", SqlDbType.Int);
             sqlParameter.Value = id_tabla;
@@ -161,8 +163,11 @@ namespace Listening_assistant.Cluster
         private void EjecutaInsertarDatos()
         {
             string commandText = this.builderInserts.ToString();   //posible error parentesis
+            this.conexionMySqlCluster.ConnectFromDatabase();
             this.InitNpgsqlComponents(commandText);
-            this.ExecuteNonQuery();
+            this.mysqlCommand.CommandType = CommandType.Text;
+            this.mysqlCommand.ExecuteNonQuery();
+            this.conexionMySqlCluster.DisconnectFromDatabase();
         }
 
         private void EjecutarBorrarDatosTabla(string nombre_tabla)
