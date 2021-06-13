@@ -16,20 +16,6 @@ namespace IF3001_proyecto_final.Cluster
 
         }
 
-        public SqlConnection ConnectToDatabaseWithConsole()
-        {
-            try
-            {
-                this.sqlConnection = new SqlConnection(GetConnectionString());
-                this.sqlConnection.Open();
-                return sqlConnection;
-            }
-            catch (SqlException sqlException)
-            {
-                return null;
-            }
-        }
-
         public object ConnectToDatabase()
         {
             try
@@ -43,6 +29,11 @@ namespace IF3001_proyecto_final.Cluster
             {
                 return null;
             }
+        }
+
+        public void ConnectFromDatabase()
+        {
+            this.sqlConnection.Open();
         }
 
         public void DisconnectFromDatabase()

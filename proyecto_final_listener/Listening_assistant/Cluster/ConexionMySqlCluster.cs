@@ -16,20 +16,6 @@ namespace IF3001_proyecto_final.Cluster
             
         }
 
-        public MySqlConnection ConnectToDatabaseWithConsole()
-        {
-            try
-            {
-                this.mysqlConnection = new MySqlConnection(GetConnectionString());
-                this.mysqlConnection.Open();
-                return mysqlConnection;
-            }
-            catch (MySqlException mysqlException)
-            {
-                return null;
-            }
-        }
-
         public object ConnectToDatabase()
         {
             try
@@ -48,6 +34,11 @@ namespace IF3001_proyecto_final.Cluster
         public void DisconnectFromDatabase()
         {
             this.mysqlConnection.Close();
+        }
+
+        public void ConnectFromDatabase()
+        {
+            this.mysqlConnection.Open();
         }
 
         static private string GetConnectionString()

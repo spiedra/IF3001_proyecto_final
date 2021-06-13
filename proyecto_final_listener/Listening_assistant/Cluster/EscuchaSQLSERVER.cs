@@ -1,4 +1,5 @@
 ﻿using IF3001_proyecto_final.Cluster;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,9 +24,9 @@ namespace Listening_assistant.Cluster
         private SqlDataReader sqlDataReader;
         private StringBuilder builderInserts;
 
-        //MYSQL SERVER
-
-
+        //MYSQL
+        private MySqlCommand mysqlCommand;
+        private MySqlDataReader mysqlDataReader;
 
         public EscuchaSQLSERVER()
         {
@@ -47,17 +48,10 @@ namespace Listening_assistant.Cluster
             {
                 if (VerificarDisponibilidad()) //valida disponiblidad en ambas conexiones para poder proceder con la replica.
                 {
-
+                    Console.WriteLine("Se establece conexion");
                     EjecutarConsultarAuditorias();
                     LeerRevisarAuditorias();
-
-
-
-
-
                 }
-
-
                 Thread.Sleep(300);
 
             }//while
@@ -66,7 +60,7 @@ namespace Listening_assistant.Cluster
         private bool VerificarDisponibilidad()
         {
 
-            if (this.conexionMySqlCluster.ConnectToDatabaseWithConsole() != null && this.conexionSqlServerCluster.ConnectToDatabaseWithConsole() != null)
+            if (this.conexionMySqlCluster.ConnectToDatabase() != null && this.conexionSqlServerCluster.ConnectToDatabase() != null)
             {
                 return true;
             }
@@ -74,10 +68,6 @@ namespace Listening_assistant.Cluster
             return false;
 
         }
-
-
-
-
 
         private void LeerRevisarAuditorias()
         {
@@ -90,23 +80,28 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
-
+                    this.EjecutarBorrarDatosTabla(tabla);
+                    this.EjecutarSolicitarInserts(tabla);
+                    this.EjecutaInsertarDatos();
+                    this.EjecutarMarcarAtendida(id);
                 }
             }
             this.conexionSqlServerCluster.DisconnectFromDatabase();
-
         }
 
 
-        //SQL SERVER 
+        //**********************SQL SERVER*******************
 
-        private void EjecutarSolicitarInserts()
+        private void EjecutarSolicitarInserts(string nombre_tabla)
         {
             string commandText = "ADMINISTRACION.sp_TABLE_INSERTS";
             ConexionSqlServerCluster csql = new ConexionSqlServerCluster();
-            csql.ConnectToDatabaseWithConsole();
+            csql.ConnectFromDatabase();
             SqlCommand sqlCommand = new SqlCommand(commandText, csql.sqlConnection);
             sqlCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParameter = new SqlParameter("@param_NOMBRE_TABLA", SqlDbType.VarChar);
+            sqlParameter.Value = nombre_tabla;
+            sqlCommand.Parameters.Add(sqlParameter);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             this.builderInserts = new StringBuilder();
 
@@ -119,21 +114,26 @@ namespace Listening_assistant.Cluster
             csql.DisconnectFromDatabase();
         }
 
-
-
-
         private void EjecutarConsultarAuditorias()
         {
+            this.conexionSqlServerCluster.ConnectFromDatabase();
             string commandText = "AUDITORIA.sp_MOSTRAR_AUDITORIAS";
             this.InitSqlComponents(commandText);
             this.ExcecuteReader();
         }
 
-        private void CreateParameter(string parameterName, SqlDbType dbType, object value)
+        private void EjecutarMarcarAtendida(int id_tabla)
         {
-            SqlParameter sqlParameter = new SqlParameter(parameterName, dbType);
-            sqlParameter.Value = value;
-            this.sqlCommand.Parameters.Add(sqlParameter);
+            string commandText = "AUDITORIA.sp_MARCAR_ATENDIDO";
+            ConexionSqlServerCluster csql = new ConexionSqlServerCluster();
+            csql.ConnectFromDatabase();
+            SqlCommand sqlCommand = new SqlCommand(commandText, csql.sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParameter = new SqlParameter("@param_Id", SqlDbType.Int);
+            sqlParameter.Value = id_tabla;
+            sqlCommand.Parameters.Add(sqlParameter);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            csql.DisconnectFromDatabase();
         }
 
         private void ExcecuteReader()
@@ -151,11 +151,54 @@ namespace Listening_assistant.Cluster
             this.sqlCommand.CommandType = CommandType.StoredProcedure;
         }
 
+        //**********************************MYSQL************************************
 
-        //MYSQL
+        private void EjecutaInsertarDatos()
+        {
+            string commandText = this.builderInserts.ToString();   //posible error parentesis
+            this.InitNpgsqlComponents(commandText);
+            this.ExecuteNonQuery();
+        }
 
+        private void EjecutarBorrarDatosTabla(string nombre_tabla)
+        {
+            string paramNombre = "param_TABLA"
+                     
+                             , commandText = "AUDITORIA.sp_BORRAR_DATOS_TABLA";
+            this.conexionMySqlCluster.ConnectFromDatabase();
+            this.InitNpgsqlComponents(commandText);
+            this.mysqlCommand.CommandType = CommandType.StoredProcedure;
+            this.mysqlCommand.ExecuteNonQuery();
+            this.conexionMySqlCluster.DisconnectFromDatabase();
+        }
 
+        private void CreateParameterMySQL(string parameterName, MySqlDbType mysqlDbType, object value)
+        {
+            this.mysqlCommand.Parameters.Add(new MySqlParameter(parameterName, mysqlDbType)).Value = value;
+        }
 
+        private void ExecuteNonQuery()
+        {
+            this.ExecuteConnectionCommandsMySQL();
+            this.mysqlCommand.ExecuteNonQuery();
+            this.conexionMySqlCluster.DisconnectFromDatabase();
+        }
 
+        private void InitNpgsqlComponents(string commandText)
+        {
+            this.mysqlCommand = new MySqlCommand(commandText, this.conexionMySqlCluster.mysqlConnection);
+        }
+
+        private void ExcecuteReaderMySQL()
+        {
+            this.ExecuteConnectionCommandsMySQL();
+            this.mysqlDataReader = this.mysqlCommand.ExecuteReader();
+        }
+
+        private void ExecuteConnectionCommandsMySQL()
+        {
+            this.conexionMySqlCluster.ConnectFromDatabase();
+            this.mysqlCommand.CommandType = CommandType.Text;
+        }
     }
 }
