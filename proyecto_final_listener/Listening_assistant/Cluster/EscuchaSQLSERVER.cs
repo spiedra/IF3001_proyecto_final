@@ -80,6 +80,7 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
+
                     this.EjecutarBorrarDatosTabla(tabla);
                     this.EjecutarSolicitarInserts(tabla);
                     this.EjecutaInsertarDatos();
@@ -112,6 +113,36 @@ namespace Listening_assistant.Cluster
                 i++;
             }
             csql.DisconnectFromDatabase();
+        }
+
+        private void EjecutarManejarIdentity(int tabla)
+        {
+            this.conexionSqlServerCluster.ConnectFromDatabase();
+            string commandText = "AUDITORIA.sp_MANEJAR_IDENTITY";
+            this.InitSqlComponents(commandText);
+            SqlParameter sqlParameter = new SqlParameter("@param_MODO", SqlDbType.Int);
+            sqlParameter.Value = tabla;
+            sqlCommand.Parameters.Add(sqlParameter);
+            this.ExcecuteReader();
+           this.conexionSqlServerCluster.DisconnectFromDatabase();
+        }
+
+
+        private int VerificarIndiceTabla(string tabla)
+        {
+            switch (tabla)
+            {
+                case "ESTUDIANTE.tb_ESTUDIANTE":
+
+                    return 0;
+                case "ESTUDIANTE.tb_DIRECCION":
+
+                    return 2;
+                case "ESTUDIANTE.tb_TELEFONO":
+
+                    return 4;
+            }
+            return -1;
         }
 
         private void EjecutarConsultarAuditorias()
