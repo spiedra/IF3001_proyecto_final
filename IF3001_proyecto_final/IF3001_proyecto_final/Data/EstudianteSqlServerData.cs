@@ -64,12 +64,13 @@ namespace IF3001_proyecto_final.Data
         public void EliminarCarreraEstudiante(string nombreCarrera, string carnetEstudiante)
         {
             string paramStudentCarnet = "@param_CARNE_ESTUDIANTE"
-                , paramMajorName = "@param_NOMBRE_CURSO"
-                , commandText = "ESTUDIANTE.QUITAR_CARRERA_ESTUDIANTE";
+                , paramMajorName = "@param_NOMBRE_CARRERA"
+                , commandText = "ESTUDIANTE.sp_QUITAR_CARRERA_ESTUDIANTE";
 
             this.InitSqlComponents(commandText);
-            this.CreateParameter(paramMajorName, SqlDbType.VarChar, nombreCarrera);
             this.CreateParameter(paramStudentCarnet, SqlDbType.VarChar, carnetEstudiante);
+            this.CreateParameter(paramMajorName, SqlDbType.VarChar, nombreCarrera);
+           
             this.ExecuteNonQuery();
         }
 
@@ -213,7 +214,7 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
                     , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
-                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(6), this.sqlDataReader.GetString(7)
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetInt32(6), this.sqlDataReader.GetString(7)
                     , this.sqlDataReader.GetString(8));
                 estudiantes.Add(estudiante);
             }
@@ -226,7 +227,7 @@ namespace IF3001_proyecto_final.Data
             List<Beca> becas = new List<Beca>();
             while (this.sqlDataReader.Read())
             {
-                becas.Add(new Beca(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
+                becas.Add(new Beca(this.sqlDataReader.GetInt32(0),  this.sqlDataReader.GetInt32(1).ToString()));
             }
             this.sqlConnection.Close();
             return becas;
@@ -234,7 +235,7 @@ namespace IF3001_proyecto_final.Data
 
         private void EjecutarMostrarSedes()
         {
-            string commandText = "ADMINISTRACION.MOSTRAR_SEDES";
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_SEDES";
             this.InitSqlComponents(commandText);
             this.ExcecuteReader();
         }
@@ -282,7 +283,7 @@ namespace IF3001_proyecto_final.Data
             List<Carrera> carreras = new List<Carrera>();
             while (this.sqlDataReader.Read())
             {
-                Carrera carrera = new Carrera(this.sqlDataReader.GetInt32(1), this.sqlDataReader.GetString(1));
+                Carrera carrera = new Carrera(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1));
                 carreras.Add(carrera);
             }
             this.sqlConnection.Close();
@@ -372,9 +373,8 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
                     , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
-                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8), null, null);
-                estudiante.TipoBeca = this.sqlDataReader.GetString(6);
-                estudiante.Sede = this.sqlDataReader.GetString(7);
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetInt32(6), this.sqlDataReader.GetString(7)
+                    , this.sqlDataReader.GetString(8));
                 return estudiante;
             }
             this.sqlConnection.Close();

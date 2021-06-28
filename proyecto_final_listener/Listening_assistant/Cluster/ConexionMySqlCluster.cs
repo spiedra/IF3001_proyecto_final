@@ -45,9 +45,9 @@ namespace IF3001_proyecto_final.Cluster
         {
             var mySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
             {
-                Server = "34.122.1.75",
-                UserID = "DBA_ADMIN2",
-                Password = "DBA_ADMIN123",
+                Server = "104.198.146.87",
+                UserID = "root",
+                Password = "root",
             };
             return mySqlConnectionStringBuilder.ConnectionString;
         }

@@ -43,7 +43,7 @@ namespace IF3001_proyecto_final.Layouts
             int edad = Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[3].Value);
             string carne = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[4].Value);
             string promedio = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[5].Value);
-            string beca = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[6].Value);
+            int beca = Convert.ToInt32(this.dgrid_estudiantes.Rows[0].Cells[6].Value);
             string sede = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[7].Value);
             string direccion = Convert.ToString(this.dgrid_estudiantes.Rows[0].Cells[8].Value);
 
@@ -84,7 +84,7 @@ namespace IF3001_proyecto_final.Layouts
         {
             Estudiante[] estudiante = new Estudiante[1] {
                 new Estudiante(-1, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text)
-              , this.txt_carne.Text,  this.txt_promedio.Text, (string)this.cbx_tipos_beca.SelectedItem, (string)this.cbx_sedes.SelectedItem,this.txb_direccion.Text)
+              , this.txt_carne.Text,  this.txt_promedio.Text, Convert.ToInt32(this.cbx_tipos_beca.SelectedItem.ToString()), (string)this.cbx_sedes.SelectedItem,this.txb_direccion.Text)
             };
             return estudiante;
         }
@@ -178,7 +178,12 @@ namespace IF3001_proyecto_final.Layouts
 
         private void GestionEstudianteForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utility.Utility.IsConnect = false;
+            //Utility.Utility.IsConnect = false;
+        }
+
+        private void cbx_sedes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -135,6 +135,7 @@ namespace IF3001_proyecto_final.Layouts
             this.cbx_sedes.Name = "cbx_sedes";
             this.cbx_sedes.Size = new System.Drawing.Size(151, 28);
             this.cbx_sedes.TabIndex = 13;
+            this.cbx_sedes.SelectedIndexChanged += new System.EventHandler(this.cbx_sedes_SelectedIndexChanged);
             // 
             // label1
             // 
