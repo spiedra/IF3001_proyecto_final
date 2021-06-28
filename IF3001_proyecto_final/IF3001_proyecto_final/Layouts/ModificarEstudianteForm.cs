@@ -48,7 +48,7 @@ namespace IF3001_proyecto_final.Layouts
             this.txt_promedio.Text = this.estudiante.Promedio;
             this.cb_sede.Text = this.estudiante.Sede;
             this.txb_direccion.Text = this.estudiante.Direccion;
-            this.cb_beca.Text = this.estudiante.TipoBeca;
+            this.cb_beca.Text = Convert.ToString(this.estudiante.TipoBeca);
         }
 
         private void FillCbxSedes(object methodReturn)
@@ -99,7 +99,7 @@ namespace IF3001_proyecto_final.Layouts
         {
             Estudiante[] estudiantes = new Estudiante []{
                 new Estudiante(this.estudiante.Id, this.txt_nombre.Text, this.txt_apellidos.Text, Convert.ToInt32(this.txt_edad.Text)
-               , this.txt_carne.Text,  this.txt_promedio.Text,(string)this.cb_beca.SelectedItem,(string)this.cb_sede.SelectedItem,this.txb_direccion.Text)
+               , this.txt_carne.Text,  this.txt_promedio.Text,(int)this.cb_beca.SelectedItem,(string)this.cb_sede.SelectedItem,this.txb_direccion.Text)
             };
             return estudiantes;
         }

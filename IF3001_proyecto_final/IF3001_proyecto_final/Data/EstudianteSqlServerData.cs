@@ -213,7 +213,7 @@ namespace IF3001_proyecto_final.Data
             {
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
                     , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
-                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(6), this.sqlDataReader.GetString(7)
+                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetInt32(6), this.sqlDataReader.GetString(7)
                     , this.sqlDataReader.GetString(8));
                 estudiantes.Add(estudiante);
             }
@@ -226,7 +226,7 @@ namespace IF3001_proyecto_final.Data
             List<Beca> becas = new List<Beca>();
             while (this.sqlDataReader.Read())
             {
-                becas.Add(new Beca(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)));
+                becas.Add(new Beca(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetInt32(1)));
             }
             this.sqlConnection.Close();
             return becas;
@@ -234,7 +234,7 @@ namespace IF3001_proyecto_final.Data
 
         private void EjecutarMostrarSedes()
         {
-            string commandText = "ADMINISTRACION.MOSTRAR_SEDES";
+            string commandText = "ADMINISTRACION.sp_MOSTRAR_SEDES";
             this.InitSqlComponents(commandText);
             this.ExcecuteReader();
         }
@@ -371,10 +371,11 @@ namespace IF3001_proyecto_final.Data
             if (this.sqlDataReader.Read())
             {
                 Estudiante estudiante = new Estudiante(this.sqlDataReader.GetInt32(0), this.sqlDataReader.GetString(1)
-                    , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
-                    , this.sqlDataReader.GetString(5), this.sqlDataReader.GetString(8), null, null);
-                estudiante.TipoBeca = this.sqlDataReader.GetString(6);
-                estudiante.Sede = this.sqlDataReader.GetString(7);
+                                  , this.sqlDataReader.GetString(2), this.sqlDataReader.GetInt32(3), this.sqlDataReader.GetString(4)
+                                  , this.sqlDataReader.GetString(5), this.sqlDataReader.GetInt32(6), this.sqlDataReader.GetString(7)
+                                  , this.sqlDataReader.GetString(8));
+                //estudiante.TipoBeca = this.sqlDataReader.GetInt32(6);
+                //estudiante.Sede = this.sqlDataReader.GetString(7);
                 return estudiante;
             }
             this.sqlConnection.Close();

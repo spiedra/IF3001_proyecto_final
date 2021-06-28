@@ -9,8 +9,6 @@ namespace IF3001_proyecto_final.Cluster
         private static ListenerCluster _instance = null;
         private ConexionSqlServerCluster conexionSqlServerCluster;
         private ConexionMySqlCluster conexionMySqlCluster;
-        private Thread t;
-
 
         private ListenerCluster()
         {
@@ -18,7 +16,6 @@ namespace IF3001_proyecto_final.Cluster
             this.conexionMySqlCluster = new ConexionMySqlCluster();
             this.ContadorConnection = 0;
         }
-
 
         public static ListenerCluster GetListenerCluster()
         {
