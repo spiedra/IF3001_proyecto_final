@@ -80,13 +80,13 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
-                    //this.EjecutarManejarIncremento(0);  //apago auto_incremento
-                    //this.EjecutarBorrarDatosTabla(tabla);
+                    this.EjecutarManejarIncremento(0);  //apago auto_incremento
+                    this.EjecutarBorrarDatosTabla(tabla);
                     //Console.WriteLine("manejado");
-                   //this.EjecutarSolicitarInserts(tabla);
-                  // this.EjecutaInsertarDatos();
-                   //this.EjecutarManejarIncremento(1);  //encender auto_increment
-                    //this.EjecutarMarcarAtendida(id);
+                   this.EjecutarSolicitarInserts(tabla);
+                   this.EjecutaInsertarDatos();
+                   this.EjecutarManejarIncremento(1);  //encender auto_increment
+                    this.EjecutarMarcarAtendida(id);
                 }
             }
             this.conexionSqlServerCluster.DisconnectFromDatabase();
