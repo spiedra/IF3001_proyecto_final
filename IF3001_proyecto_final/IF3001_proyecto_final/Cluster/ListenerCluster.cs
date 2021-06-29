@@ -31,23 +31,26 @@ namespace IF3001_proyecto_final.Cluster
 
         public bool IsMainNodeReady()
         {
-            if (this.ContadorConnection == 0)
-            {
-               return this.TryConnectToSqlServer();
-            }
-            else
-            {
-                if (this.ContadorConnection < 4)
-                {
-                    this.ContadorConnection++;
-                    return false;
-                }
-                else
-                {
-                    this.ContadorConnection = 0;
-                    return this.TryConnectToSqlServer();
-                }
-            }
+            //if (this.ContadorConnection == 0)
+            //{
+            //   return this.TryConnectToSqlServer();
+            //}
+            //else
+            //{
+            //    if (this.ContadorConnection < 4)
+            //    {
+            //        this.ContadorConnection++;
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        this.ContadorConnection = 0;
+            //        return this.TryConnectToSqlServer();
+            //    }
+            //}
+
+            this.conexionMySqlCluster.EstablishMySqlConnection();
+            return false;
         }
 
         public bool TryConnectToSqlServer()

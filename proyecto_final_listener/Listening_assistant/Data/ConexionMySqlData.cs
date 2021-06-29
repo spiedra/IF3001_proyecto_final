@@ -40,6 +40,8 @@ namespace Listening_assistant.Data
             for (int i = 0; i < auditorias.Count; i++)
             {
                 string commandText = auditorias[i].NombreProcedimiento;
+                Console.WriteLine("AUDITORIO ID: " + auditorias[i].Id 
+                    + ", Nombre tabla: " + auditorias[i].NombreTabla + ", sp_name: " + auditorias[i].NombreProcedimiento);
                 this.InitMySqlComponents(commandText);
                 this.ExcecuteReader();
                 this.LeerRespuestaObtenerNuevosDatos(1, auditorias[i]);
@@ -145,7 +147,7 @@ namespace Listening_assistant.Data
         {
             Console.WriteLine("marcando atendido. Id: "+id);
             string paramId = "PARAM_ID"
-                , commandText = " AUDITORIA.sp_MARCAR_ATENDIDO";
+                , commandText = "AUDITORIA.sp_MARCAR_ATENDIDO";
             this.InitMySqlComponents(commandText);
             this.CreateParameter(paramId, MySqlDbType.Int32, id);
             this.ExecuteNonQuery();

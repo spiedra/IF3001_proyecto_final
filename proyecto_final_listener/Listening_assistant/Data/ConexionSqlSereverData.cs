@@ -19,6 +19,7 @@ namespace Listening_assistant.Data
 
         public void SendNewDataToSqlServer(List<string> jsonList, string spName, string tableName, bool isIdentity)
         {
+            Console.WriteLine("ENVIANDO DATOS");
             string paramJsonList = "@param_JSON_DATA"
               , commandText = spName;
 
@@ -27,6 +28,7 @@ namespace Listening_assistant.Data
             {
                 this.InitSqlComponents(commandText);
                 this.CreateParameter(paramJsonList, SqlDbType.NVarChar, jsonObjet);
+                Console.WriteLine(jsonObjet);
                 this.ExecuteNonQuery();
             }
         }

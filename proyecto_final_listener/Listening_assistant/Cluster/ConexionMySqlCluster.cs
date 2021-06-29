@@ -35,10 +35,9 @@ namespace Listening_assistant.Cluster
         {
             var mySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
             {
-                Server = "34.122.1.75",
-                UserID = "DBA_ADMIN2",
-                Password = "DBA_ADMIN123",
-                //Database = "ESTUDIANTE",
+                Server = "104.198.146.87",
+                UserID = "root",
+                Password = "root",
             };
             return mySqlConnectionStringBuilder.ConnectionString;
         }
