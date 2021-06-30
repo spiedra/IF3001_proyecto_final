@@ -98,7 +98,7 @@ BEGIN
 SET @table_name1 = param_TABLA;
 
  ##reinicia el auto increment
-SET @t2 =('ALTER TABLE',@table_name1,'AUTO_INCREMENT = 0');
+SET @t2 = CONCAT('ALTER TABLE ',@table_name1,' AUTO_INCREMENT = 0');
  PREPARE stmt4 FROM @t2;
  EXECUTE stmt4;
  DEALLOCATE PREPARE stmt4;

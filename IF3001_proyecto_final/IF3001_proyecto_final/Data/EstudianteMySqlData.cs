@@ -230,7 +230,7 @@ namespace IF3001_proyecto_final.Data
             List<Beca> becas = new List<Beca>();
             while (this.mysqlDataReader.Read())
             {
-                Beca beca = new Beca(-1, this.mysqlDataReader.GetString(1));
+                Beca beca = new Beca(-1, this.mysqlDataReader.GetInt32(1).ToString());
                 becas.Add(beca);
             }
             this.mysqlConnection.Close();

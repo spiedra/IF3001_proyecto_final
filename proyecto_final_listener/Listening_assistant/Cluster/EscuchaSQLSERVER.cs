@@ -80,6 +80,9 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
+
+                    //apagar los triggers
+                    this.manejar_triggers(2);
                     this.EjecutarManejarIncremento(0);  //apago auto_incremento
                     this.EjecutarBorrarDatosTabla(tabla);
                     //Console.WriteLine("manejado");
@@ -87,6 +90,8 @@ namespace Listening_assistant.Cluster
                    this.EjecutaInsertarDatos();
                    this.EjecutarManejarIncremento(1);  //encender auto_increment
                     this.EjecutarMarcarAtendida(id);
+                    this.manejar_triggers(0);
+                    //encender triggers
                 }
             }
             this.conexionSqlServerCluster.DisconnectFromDatabase();
@@ -159,6 +164,20 @@ namespace Listening_assistant.Cluster
         }
 
         //**********************************MYSQL************************************
+
+        private void manejar_triggers(int n)
+        {
+            string commandText = "SET @disable_triggers=NULL";
+            if (n == 0)
+            {
+                commandText = "SET @disable_triggers=0";
+            }
+            this.conexionMySqlCluster.ConnectFromDatabase();
+            this.InitNpgsqlComponents(commandText);
+            this.mysqlCommand.CommandType = CommandType.Text;
+            this.mysqlCommand.ExecuteNonQuery();
+            this.conexionMySqlCluster.DisconnectFromDatabase();
+        }
 
         private void EjecutaInsertarDatos()
         {
