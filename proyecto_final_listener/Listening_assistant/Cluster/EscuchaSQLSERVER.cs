@@ -59,7 +59,7 @@ namespace Listening_assistant.Cluster
 
         private bool VerificarDisponibilidad()
         {
-
+            Console.WriteLine("verificando");
             if (this.conexionMySqlCluster.ConnectToDatabase() != null && this.conexionSqlServerCluster.ConnectToDatabase() != null)
             {
                 return true;
@@ -83,6 +83,7 @@ namespace Listening_assistant.Cluster
 
                     //apagar los triggers
                     this.manejar_triggers(2);
+
                     this.EjecutarManejarIncremento(0);  //apago auto_incremento
                     this.EjecutarBorrarDatosTabla(tabla);
                     //Console.WriteLine("manejado");
@@ -90,6 +91,7 @@ namespace Listening_assistant.Cluster
                    this.EjecutaInsertarDatos();
                    this.EjecutarManejarIncremento(1);  //encender auto_increment
                     this.EjecutarMarcarAtendida(id);
+
                     this.manejar_triggers(0);
                     //encender triggers
                 }
@@ -167,14 +169,11 @@ namespace Listening_assistant.Cluster
 
         private void manejar_triggers(int n)
         {
-            string commandText = "SET @disable_triggers=NULL";
-            if (n == 0)
-            {
-                commandText = "SET @disable_triggers=0";
-            }
+            string commandText = "AUDITORIA.sp_MANEJAR_TRIGGER", param_bandera="param_FLAG";
             this.conexionMySqlCluster.ConnectFromDatabase();
             this.InitNpgsqlComponents(commandText);
-            this.mysqlCommand.CommandType = CommandType.Text;
+            this.mysqlCommand.Parameters.Add(new MySqlParameter(param_bandera, MySqlDbType.Int32)).Value = n;
+            this.mysqlCommand.CommandType = CommandType.StoredProcedure;
             this.mysqlCommand.ExecuteNonQuery();
             this.conexionMySqlCluster.DisconnectFromDatabase();
         }
