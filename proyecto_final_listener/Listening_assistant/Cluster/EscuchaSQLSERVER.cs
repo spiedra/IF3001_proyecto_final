@@ -180,12 +180,16 @@ namespace Listening_assistant.Cluster
 
         private void EjecutaInsertarDatos()
         {
+
+            
             string commandText = this.builderInserts.ToString();   //posible error parentesis
+            if (commandText.Length != 0) { 
             this.conexionMySqlCluster.ConnectFromDatabase();
             this.InitNpgsqlComponents(commandText);
             this.mysqlCommand.CommandType = CommandType.Text;
             this.mysqlCommand.ExecuteNonQuery();
             this.conexionMySqlCluster.DisconnectFromDatabase();
+            }
         }
 
         private void EjecutarBorrarDatosTabla(string nombre_tabla)
