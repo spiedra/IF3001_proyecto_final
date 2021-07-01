@@ -59,7 +59,7 @@ namespace Listening_assistant.Cluster
 
         private bool VerificarDisponibilidad()
         {
-
+            Console.WriteLine("verificando");
             if (this.conexionMySqlCluster.ConnectToDatabase() != null && this.conexionSqlServerCluster.ConnectToDatabase() != null)
             {
                 return true;
@@ -80,6 +80,10 @@ namespace Listening_assistant.Cluster
 
                 if (!atendida)
                 {
+
+                    //apagar los triggers
+                    this.manejar_triggers(2);
+
                     this.EjecutarManejarIncremento(0);  //apago auto_incremento
                     this.EjecutarBorrarDatosTabla(tabla);
                     //Console.WriteLine("manejado");
@@ -87,6 +91,9 @@ namespace Listening_assistant.Cluster
                    this.EjecutaInsertarDatos();
                    this.EjecutarManejarIncremento(1);  //encender auto_increment
                     this.EjecutarMarcarAtendida(id);
+
+                    this.manejar_triggers(0);
+                    //encender triggers
                 }
             }
             this.conexionSqlServerCluster.DisconnectFromDatabase();
@@ -160,14 +167,29 @@ namespace Listening_assistant.Cluster
 
         //**********************************MYSQL************************************
 
+        private void manejar_triggers(int n)
+        {
+            string commandText = "AUDITORIA.sp_MANEJAR_TRIGGER", param_bandera="param_FLAG";
+            this.conexionMySqlCluster.ConnectFromDatabase();
+            this.InitNpgsqlComponents(commandText);
+            this.mysqlCommand.Parameters.Add(new MySqlParameter(param_bandera, MySqlDbType.Int32)).Value = n;
+            this.mysqlCommand.CommandType = CommandType.StoredProcedure;
+            this.mysqlCommand.ExecuteNonQuery();
+            this.conexionMySqlCluster.DisconnectFromDatabase();
+        }
+
         private void EjecutaInsertarDatos()
         {
+
+            
             string commandText = this.builderInserts.ToString();   //posible error parentesis
+            if (commandText.Length != 0) { 
             this.conexionMySqlCluster.ConnectFromDatabase();
             this.InitNpgsqlComponents(commandText);
             this.mysqlCommand.CommandType = CommandType.Text;
             this.mysqlCommand.ExecuteNonQuery();
             this.conexionMySqlCluster.DisconnectFromDatabase();
+            }
         }
 
         private void EjecutarBorrarDatosTabla(string nombre_tabla)
