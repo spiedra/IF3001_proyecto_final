@@ -81,7 +81,7 @@ namespace Listening_assistant.Data
                     break;
 
                 case "ESTUDIANTE.tb_ESTUDIANTE_TELEFONO":
-                    this.SendNewData(this.SerializeObjectRelacion(), "AUDITORIA.sp_INSERTAR_TELEFONO_JSON", auditoria.NombreTabla, false);
+                    this.SendNewData(this.SerializeObjectRelacion(), "AUDITORIA.sp_INSERTAR_ESTUDIANTE_TELEFONO_JSON", auditoria.NombreTabla, false);
                     break;
             }
             this.mysqlConnection.Close();

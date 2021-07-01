@@ -23,6 +23,7 @@ namespace Listening_assistant.Data
             string paramJsonList = "@param_JSON_DATA"
               , commandText = spName;
 
+            this.EjecutarDisableTriggers();
             this.EjecutarBorrarDatosTabla(tableName, isIdentity);
             foreach (string jsonObjet in jsonList)
             {
@@ -31,6 +32,7 @@ namespace Listening_assistant.Data
                 Console.WriteLine(jsonObjet);
                 this.ExecuteNonQuery();
             }
+            this.EjecutarEnableTriggers();
         }
 
         public void EjecutarBorrarDatosTabla(string tableName, bool isIdentity)
@@ -49,6 +51,22 @@ namespace Listening_assistant.Data
 
             this.InitSqlComponents(commandText);
             this.CreateParameter(paramTable, SqlDbType.VarChar, tableName);
+            this.ExecuteNonQuery();
+        }
+
+        public void EjecutarDisableTriggers()
+        {
+            Console.WriteLine("Desabilitando el trigger");
+            string commandText = "AUDITORIA.sp_DISABLE_TRIGGER";
+            this.InitSqlComponents(commandText);
+            this.ExecuteNonQuery();
+        }
+
+        public void EjecutarEnableTriggers()
+        {
+            Console.WriteLine("Habilitando los triggers");
+            string commandText = "AUDITORIA.sp_ENABLE_TRIGGER";
+            this.InitSqlComponents(commandText);
             this.ExecuteNonQuery();
         }
 
