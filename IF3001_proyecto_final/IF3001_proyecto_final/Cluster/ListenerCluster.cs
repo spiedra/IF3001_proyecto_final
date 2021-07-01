@@ -33,7 +33,7 @@ namespace IF3001_proyecto_final.Cluster
         {
             //if (this.ContadorConnection == 0)
             //{
-            //   return this.TryConnectToSqlServer();
+            //    return this.TryConnectToSqlServer();
             //}
             //else
             //{
@@ -48,9 +48,8 @@ namespace IF3001_proyecto_final.Cluster
             //        return this.TryConnectToSqlServer();
             //    }
             //}
-
-            this.conexionMySqlCluster.EstablishMySqlConnection();
-            return false;
+            this.conexionSqlServerCluster.EstablishSqlServerConnection();
+            return true;
         }
 
         public bool TryConnectToSqlServer()
